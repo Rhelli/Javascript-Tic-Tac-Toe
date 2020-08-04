@@ -32,9 +32,9 @@ const displayController = (function(doc, player) {
       player.addSymbol(element,symbol);
     })
   });
-  const renderBoard = () => { boardContainer.innerHTML = gameBoard.getBoard.map(element => {
-    ``
-  }) }
+  // const renderBoard = () => { boardContainer.innerHTML = gameBoard.getBoard.map(element => {
+  //   ``
+  // }) }
   return { addEvents }
 })(document);
 
