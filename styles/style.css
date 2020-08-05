@@ -21,7 +21,7 @@ body {
           flex-flow: row wrap;
 }
 
-.item {
+.cell {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

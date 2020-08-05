@@ -1,10 +1,12 @@
-const game = (() =>{ // PLAYERS - FACTORY FUNCTIONS
+// PLAYERS - FACTORY FUNCTIONS
+const game = (() => {
   const namePlayerOne = document.getElementById('player-one');
   const namePlayerTwo = document.getElementById('player-two');
   let currentPlayer = '';
 
   const Player = (name, symbol) => {
     getName = () => name;
+    getSymbol = () => symbol;
     return { name, symbol, getName };
   };
 
@@ -20,53 +22,33 @@ const game = (() =>{ // PLAYERS - FACTORY FUNCTIONS
   const CreatePlayers = (() => {
     const newPlayerArray = [];
     const setPlayersArray = (array) => {
-    const playerOne = array[0];
-    const playerTwo = array[1];
-    newPlayerArray.push(Player(playerOne, 'X'));
-    newPlayerArray.push(Player(playerTwo, 'O'));
-    return newPlayerArray;
-    }
+      const playerOne = array[0];
+      const playerTwo = array[1];
+      newPlayerArray.push(Player(playerOne, 'X'));
+      newPlayerArray.push(Player(playerTwo, 'O'));
+      return newPlayerArray;
+    };
     const getPlayerArray = (array) =>  setPlayersArray(array);
     return { getPlayerArray, setPlayersArray };
   })();
-  return { gameInit }
+
+  return { gameInit };
 })();
 
-  // const playersEmpty = () => {
-  //   const playersArray = [];
-  //   if (document.getElementById('player-one').value.length === 0 && document.getElementById('player-two').value.length === 0) {
-  //     alert('Please Complete All Fields!');
-  //     throw new Error('Player name is empty!');
-  //   } else {
-  //     const playerOne = document.getElementById('player-one').value;
-  //     const playerTwo = document.getElementById('player-two').value;
-  //     playersArray.push(playerOne);
-  //     playersArray.push(playerTwo);
-  //   }
-  //   return playersArray;
-  // };
+// GAMEBOARD
+const gameBoard = (() => {
+  const board = [ '', '', '', '', '', '', '', '', ''];
+  const boardContainer = document.getElementById('gameboard');
+  const cells = boardContainer.childNodes;
 
-  //const createPlayer = (() => {
-  //  const players = [];
-  //  if (players.length === 0) {
-  //    let TheOriginalPlayer = Player(name, 'X');
-  //    players.push(TheOriginalPlayer);
-  //  } else {
-  //    let luigiOrLoserPlayer = Player(name, 'O');
-  //    players.push(luigiOrLoserPlayer);
-  //  }
-  //  return { players };
-  //})();
-
-  // GAMEBOARD / GAMESTATE
-  const gameBoard = (function () {
-    const board = [
-      ['O', 'X', 'O'],
-      ['X', 'O', 'O'],
-      ['X', 'O', 'X']];
-    const getBoard = () => board;
-    return { getBoard };
-  }());
+  const clickCell = (currentPlayer) => {
+    const cellPlayed = cells.target;
+    alert(cells.target);
+  };
+  
+  const cellClicks = cells.forEach(cell => cell.addEventListener('click', clickCell));
+  return { clickCell };
+})();
 
   // VISUAL / RENDER BOARD
   // const displayController = (function (doc, player) {
