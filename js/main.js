@@ -7,7 +7,7 @@ const game = (() => {
   const Player = (name, symbol) => {
     getName = () => name;
     getSymbol = () => symbol;
-    return { name, symbol, getName };
+    return { getName, getSymbol };
   };
 
   const gameInit = () => {
@@ -15,7 +15,7 @@ const game = (() => {
       playerOne = Player(namePlayerOne.value, 'X');
       playerTwo = Player(namePlayerTwo.value, 'O');
       currentPlayer = playerOne;
-      console.log(`playerOne: ${playerOne.getName()} playerTwo: ${playerTwo.getName()}`);
+      console.log(currentPlayer.getSymbol());
     }
   };
 
@@ -32,22 +32,23 @@ const game = (() => {
     return { getPlayerArray, setPlayersArray };
   })();
 
-  return { gameInit };
-})();
+
 
 // GAMEBOARD
 const gameBoard = (() => {
   const board = [ '', '', '', '', '', '', '', '', ''];
   const boardContainer = document.getElementById('gameboard');
-  const cells = boardContainer.childNodes;
+  const cells = document.querySelectorAll('.cell');
 
   const clickCell = (currentPlayer) => {
-    const cellPlayed = cells.target;
-    alert(cells.target);
+    //Currently stuck with this.
+    console.log(cells.target.innerHTML)
   };
   
-  const cellClicks = cells.forEach(cell => cell.addEventListener('click', clickCell));
+  cells.forEach(cell => cell.addEventListener('click', clickCell));
   return { clickCell };
+  })();
+  return { gameInit };
 })();
 
   // VISUAL / RENDER BOARD
