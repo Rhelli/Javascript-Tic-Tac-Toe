@@ -1,28 +1,21 @@
 const game = (() =>{ // PLAYERS - FACTORY FUNCTIONS
-  const namePlayerOne = document.querySelector('#player-one').value;
-  const namePlayerTwo = document.querySelector('#player-two').value;
+  const namePlayerOne = document.getElementById('player-one');
+  const namePlayerTwo = document.getElementById('player-two');
   let currentPlayer = '';
-  const Player = (name, symbol) => {
-    getName = () =>  name;
-    const addSymbol = (cell, symbol) => { cell.innerHTML = symbol; };
-    return { name, symbol };
-  };
 
+  const Player = (name, symbol) => {
+    getName = () => name;
+    return { name, symbol, getName };
+  };
 
   const gameInit = () => {
     if (namePlayerOne.value !== '' && namePlayerTwo.value !== '') {
       playerOne = Player(namePlayerOne.value, 'X');
       playerTwo = Player(namePlayerTwo.value, 'O');
       currentPlayer = playerOne;
-      console.log(`playerOne: ${playerOne.name} playerTwo: ${playerTwo}`)
+      console.log(`playerOne: ${playerOne.getName()} playerTwo: ${playerTwo.getName()}`);
     }
   };
-
-  // const createPlayerOne = (() => {
-  //   const playerDOM = document.getElementById('player-one');
-  //   const name = playerDOM.value;
-  //   const player = Player(name,'X');
-  // })();
 
   const CreatePlayers = (() => {
     const newPlayerArray = [];
@@ -38,8 +31,6 @@ const game = (() =>{ // PLAYERS - FACTORY FUNCTIONS
   })();
   return { gameInit }
 })();
-
-game.gameInit()
 
   // const playersEmpty = () => {
   //   const playersArray = [];
