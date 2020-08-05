@@ -3,7 +3,7 @@ const Player = (name, symbol) => {
   const namePlayerOne = document.getElementById('player-one').value;
   const namePlayerTwo = document.getElementById('player-two').value;
   getName = () =>  name;
-  setNamePlayerOne = () =>  namePlayerOne;
+  setNamePlayerOne = () => namePlayerOne;
   setNamePlayerTwo = () => namePlayerTwo;
   const addSymbol = (cell, symbol) => { cell.innerHTML = symbol; };
   return { getName };
@@ -16,19 +16,45 @@ const Player = (name, symbol) => {
 //   const player = Player(name,'X');
 // })();
 
-const createPlayer = ((name) => {
-  const players = [];
-  if (players.length == 0) {
-    let TheOriginalPlayer = Player(name, 'X');
-    players.push(TheOriginalPlayer)
-  }
-  else {
-    let luigiOrLoserPlayer = Player(name, 'O');
-    players.push(luigiOrLoserPlayer)
-  }
-return { players }
-
+const createPlayers = ((array) => {
+  const newPlayerArray = [];
+  const playerOne = array[0];
+  const playerTwo = array[1];
+  newPlayerArray.push(Player(playerOne, 'X'));
+  newPlayerArray.push(Player(playerTwo, 'O'));
+  const getPlayerArray = () => {
+    return newPlayerArray;
+  };
+  return { getPlayerArray };
 })();
+
+const playersEmpty = () => {
+  const playersArray = [];
+  if (document.getElementById('player-one').value.length === 0 && document.getElementById('player-two').value.length === 0) {
+    alert('Please Complete All Fields!');
+    throw new Error('Player name is empty!');
+  } else {
+    const playerOne = document.getElementById('player-one').value;
+    const playerTwo = document.getElementById('player-two').value;
+    playersArray.push(playerOne);
+    playersArray.push(playerTwo);
+  }
+  return { playersArray };
+};
+
+createPlayers(playersArray).getPlayersArray;
+
+//const createPlayer = (() => {
+//  const players = [];
+//  if (players.length === 0) {
+//    let TheOriginalPlayer = Player(name, 'X');
+//    players.push(TheOriginalPlayer);
+//  } else {
+//    let luigiOrLoserPlayer = Player(name, 'O');
+//    players.push(luigiOrLoserPlayer);
+//  }
+//  return { players };
+//})();
 
 // GAMEBOARD / GAMESTATE
 const gameBoard = (function () {
@@ -87,6 +113,3 @@ const gameBoard = (function () {
 // FUNCTION - HANDLE CELL CLICK
 
 // FUNCTION - HANDLE GAME RESTART AFTER FINISH
-console.log(createPlayer(document.getElementById('player-one').value).players)
-createPlayer(document.getElementById('player-two').value).players
-
