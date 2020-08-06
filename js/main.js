@@ -1,5 +1,6 @@
 // PLAYERS - FACTORY FUNCTIONS
 const game = (() => {
+  let count = 1;
   const namePlayerOne = document.getElementById('player-one');
   const namePlayerTwo = document.getElementById('player-two');
   let currentPlayer = '';
@@ -33,34 +34,48 @@ const game = (() => {
       return false;
     };
 
+      const reset = (array) => {  array.forEach(element => {
+          element.innerHTML = '';
+          count = 0;
+      });; }
+
     const winningValidation = (array, symbol) => {
+        
       // HORIZONTAL
       if (checkForThree(array[0], array[1], array[2], symbol)) {
-        alert('GAME OVER');
+        return true;
       }
-      if (checkForThree(array[3], array[4], array[5])) {
-        alert('GAME OVER');
+      else if (checkForThree(array[3], array[4], array[5], symbol)) {
+        return true;
       }
-      if (checkForThree(array[6], array[7], array[8])) {
-        alert('GAME OVER');
+      else if (checkForThree(array[6], array[7], array[8], symbol)) {
+        return true;
+        
       }
       // VERTICAL
-      if (checkForThree(array[0], array[3], array[6])) {
-        alert('GAME OVER');
+      else if (checkForThree(array[0], array[3], array[6], symbol)) {
+        return true;
+        
       }
-      if (checkForThree(array[1], array[4], array[7])) {
-        alert('GAME OVER');
+      else if (checkForThree(array[1], array[4], array[7], symbol)) {
+        return true;
+        
       }
       // DIAGONAL
-      if (checkForThree(array[2], array[5], array[8])) {
-        alert('GAME OVER');
+      else if (checkForThree(array[2], array[5], array[8], symbol)) {
+        return true;
+        
       }
-      if (checkForThree(array[0], array[4], array[8])) {
-        alert('GAME OVER');
+      else if (checkForThree(array[0], array[4], array[8], symbol)) {
+        return true;
+        
       }
-      if (checkForThree(array[2], array[4], array[6])) {
-        alert('GAME OVER');
+      else if (checkForThree(array[2], array[4], array[6], symbol)) {
+        return true;
+          
       }
+
+
     }
 
     const updateBoardArray = () => {
@@ -70,13 +85,20 @@ const game = (() => {
     };
 
     const playerSwitch = () => {
+      console.log(count)
       console.log(updateBoardArray());
-      winningValidation(updateBoardArray(), currentPlayer.getSymbol());
-      if (currentPlayer.getNumber() === 1) {
-        currentPlayer = playerTwo;
-      } else {
-        currentPlayer = playerOne;
+      if (winningValidation(updateBoardArray(), currentPlayer.getSymbol()) || count === 9 ) {
+        alert('Press F') 
+        reset(cells);
       }
+      else { 
+        if (currentPlayer.getNumber() === 1) {
+          currentPlayer = playerTwo;
+        } else {
+          currentPlayer = playerOne;
+        }
+      }
+      count++
     };
 
     const ifCellEmpty = (event, symbol) => {
