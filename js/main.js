@@ -25,19 +25,41 @@ const game = (() => {
     const boardContainer = document.getElementById('gameboard');
     const cells = document.querySelectorAll('.cell');
 
-    const checkForThree = (one,two,three) => {
-      (one === two && two === three && one === three) ? true : false
-    }
+    const checkForThree = (one, two, three) => {
+      //(one === two && two === three && one === three) ? true : false;
+      if (one !== '[]' && two !== '[]' && three !== '[]' && one === two && one === three && two === three) {
+        return true;
+      };
+      return false;
+    };
 
     const winningValidation = (array) => {
-      switch (array) {
-        case checkForThree(array[0],array[1],array[2]) :
-          alert('You made it mate')
-          console.log('Why JS, WHY!!')
-          break;
-      
-        default:
-          break;
+      // HORIZONTAL
+      if (checkForThree(array[0], array[1], array[2])) {
+        alert('GAME OVER');
+      }
+      if (checkForThree(array[3], array[4], array[5])) {
+        alert('GAME OVER');
+      }
+      if (checkForThree(array[6], array[7], array[8])) {
+        alert('GAME OVER');
+      }
+      // VERTICAL
+      if (checkForThree(array[0], array[3], array[6])) {
+        alert('GAME OVER');
+      }
+      if (checkForThree(array[1], array[4], array[7])) {
+        alert('GAME OVER');
+      }
+      // DIAGONAL
+      if (checkForThree(array[2], array[5], array[8])) {
+        alert('GAME OVER');
+      }
+      if (checkForThree(array[0], array[4], array[8])) {
+        alert('GAME OVER');
+      }
+      if (checkForThree(array[2], array[4], array[6])) {
+        alert('GAME OVER');
       }
     }
 
@@ -49,7 +71,7 @@ const game = (() => {
 
     const playerSwitch = () => {
       console.log(updateBoardArray());
-      winningValidation(updateBoardArray())
+      winningValidation(updateBoardArray());
       if (currentPlayer.getNumber() === 1) {
         currentPlayer = playerTwo;
       } else {
@@ -82,24 +104,6 @@ const game = (() => {
 
   return { gameInit };
 })();
-
-// VISUAL / RENDER BOARD
-// const displayController = (function (doc, player) {
-//   const boardContainer = doc.getElementById('gameboard');
-//   const childrens = boardContainer.childNodes;
-
-//   const addEvents = childrens.forEach(element => {
-//     element.addEventListener('click', () => {
-//       player.addSymbol(element, symbol);
-//     });
-//   });
-//   // const renderBoard = () => { boardContainer.innerHTML = gameBoard.getBoard.map(element => {
-//   //   ``
-//   // }) }
-//   return { addEvents };
-// }(document));
-
-// displayController.addEvents;
 
 
 // USER MESSAGES
