@@ -126,31 +126,23 @@ const game = (() => {
   return { gameInit, gameBoard };
 })();
 
+/*
+TO DO LIST
+  - ADD FORM THAT APPEARS ON GAME STARTUP
+    - LIST PROMPTS USERS FOR THEIR NAMES
+    - USERS CAN CHOOSE THEIR SYMBOLS / ICONS
+    - FORM'S BUTTON STARTS THE GAME
+    - FORM REAPPEARS AT THE END OF THE GAME
 
-// USER MESSAGES
-// const userMessage = ((playerOne, playerTwo, winner, loser) => {
-//   let name = '';
-//   const playerOneAssign = `Congratulations, ${playerOne}, you are player one.`;
-//   const playerTwoAssign = `${playerTwo}, you are player two. Unlucky.`;
-//   const gameWelcome = `${playerOne}, ${playerTwo}, we're so sorry that you've had the misfortune of playing this terribly made game of tic-tac-toe. But you're here now, so we may as well make the most of it.`;
-//   const rulesPrompt = 'Would you like to know the rules of the game?';
-//   const rulesStatement = "The aim of the game is to place three of your symbols in a row before the other player. You can place your symbols horizontally, vertically or diagonally, however, they must be in a continuous, unbroken line. Each player gets one move before the other player gets theirs. The first player to get three in a row wins. LET'S PLAY MURDERBALL!!!!!";
-//   const gameStart = 'LETS PLAY TIC TAC TOE!!!!!!!!';
-//   const playerOneMovePrompt = `${playerOne}, make your move.`;
-//   const playerTwoMovePrompt = `${playerTwo}, you're not as good or as beautiful as ${playerOne}, so just take your turn so we can stop looking at you already.`;
-//   const gameDrawMessage = "Wow, you're both as bad as each other. Well done.";
-//   const gameWinMessage = `${winner}, congratulations, you are a weiner. ${loser}, better luck next time.`;
-//   const rematchPrompt = `${loser}, don't let ${winner} get away with it. Even if he is the weiner. Play again?`;
-// })(playerOne, playerTwo, winner, loser);
+  - COLORS & DESIGN
+    - STONE BACKGROUND (RED)
+    - WOOD FOR TABLE EFFECT (SLATEBLUE)
+    - PARCHMENT FOR THE GAMEBOARD (GREEN)
+    - YELLOW COLOR????
 
+  - USER ICONS / TURN COUNTER
+    - USERS SELECT THEIR ICONS FROM THE FORM
+    - ICONS ARE DISPLAYED ON THE RIGHT HAND SIDE OF THE BOARD
+    - RED & GREEN TRAFFIC LIGHTS BESIDE EACH PLAYERS ICON, GREEN FOR THEIR TURN AND RED WHEN IT ISNT
 
-// FUNCTION - HANDLE THE CELL PLAYED
-
-// FUNCTION - HANDLE THE PLAYER CHANGE
-
-
-// FUNCTION HANDLE THE RESULT/MOVE VALIDATION - IS THE GAME WON, DRAWN OR LOST?
-
-// FUNCTION - HANDLE CELL CLICK
-
-// FUNCTION - HANDLE GAME RESTART AFTER FINISH
+*/
