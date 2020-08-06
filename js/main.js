@@ -39,13 +39,14 @@ const gameBoard = (() => {
   const board = [ '', '', '', '', '', '', '', '', ''];
   const boardContainer = document.getElementById('gameboard');
   const cells = document.querySelectorAll('.cell');
-
-  const clickCell = (currentPlayer) => {
+ 
+  const clickCell = (event) => {
     //Currently stuck with this.
-    console.log(cells.target.innerHTML)
+    let arg = currentPlayer.getSymbol()
+    console.log(event.target.innerHTML = arg)
   };
   
-  cells.forEach(cell => cell.addEventListener('click', clickCell));
+  cells.forEach(cell => cell.addEventListener('click',clickCell, false));
   return { clickCell };
   })();
   return { gameInit };
