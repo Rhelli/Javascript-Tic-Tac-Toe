@@ -1,5 +1,6 @@
 // PLAYERS - FACTORY FUNCTIONS
 const game = (() => {
+  let count = 1;
   const namePlayerOne = document.getElementById('player-one');
   const namePlayerTwo = document.getElementById('player-two');
   let currentPlayer = '';
@@ -25,6 +26,51 @@ const game = (() => {
     const boardContainer = document.getElementById('gameboard');
     const cells = document.querySelectorAll('.cell');
 
+    const checkForThree = (one, two, three, symb) => {
+      // (one === two && two === three && one === three) ? true : false;
+      if (one === `${symb}` && two === `${symb}` && three === `${symb}`) {
+        return true;
+      }
+      return false;
+    };
+
+    const reset = (array) => {
+      array.forEach(element => {
+        element.innerHTML = '';
+        count = 0;
+      });
+    };
+
+    const winningValidation = (array, symbol) => {
+      // HORIZONTAL
+      if (checkForThree(array[0], array[1], array[2], symbol)) {
+        return true;
+      }
+      if (checkForThree(array[3], array[4], array[5], symbol)) {
+        return true;
+      }
+      if (checkForThree(array[6], array[7], array[8], symbol)) {
+        return true;
+      }
+      // VERTICAL
+      if (checkForThree(array[0], array[3], array[6], symbol)) {
+        return true;
+      }
+      if (checkForThree(array[1], array[4], array[7], symbol)) {
+        return true;
+      }
+      // DIAGONAL
+      if (checkForThree(array[2], array[5], array[8], symbol)) {
+        return true;
+      }
+      if (checkForThree(array[0], array[4], array[8], symbol)) {
+        return true;
+      }
+      if (checkForThree(array[2], array[4], array[6], symbol)) {
+        return true;
+      }
+    };
+
     const updateBoardArray = () => {
       const cellsArray = Array.from(cells);
       const renderBoard = cellsArray.map(cell => cell = cell.innerHTML);
@@ -32,12 +78,17 @@ const game = (() => {
     };
 
     const playerSwitch = () => {
+      console.log(count);
       console.log(updateBoardArray());
-      if (currentPlayer.getNumber() === 1) {
+      if (winningValidation(updateBoardArray(), currentPlayer.getSymbol()) || count === 9) {
+        alert('Press F');
+        reset(cells);
+      } else if (currentPlayer.getNumber() === 1) {
         currentPlayer = playerTwo;
       } else {
         currentPlayer = playerOne;
       }
+      count++;
     };
 
     const ifCellEmpty = (event, symbol) => {
@@ -65,24 +116,6 @@ const game = (() => {
 
   return { gameInit };
 })();
-
-// VISUAL / RENDER BOARD
-// const displayController = (function (doc, player) {
-//   const boardContainer = doc.getElementById('gameboard');
-//   const childrens = boardContainer.childNodes;
-
-//   const addEvents = childrens.forEach(element => {
-//     element.addEventListener('click', () => {
-//       player.addSymbol(element, symbol);
-//     });
-//   });
-//   // const renderBoard = () => { boardContainer.innerHTML = gameBoard.getBoard.map(element => {
-//   //   ``
-//   // }) }
-//   return { addEvents };
-// }(document));
-
-// displayController.addEvents;
 
 
 // USER MESSAGES
