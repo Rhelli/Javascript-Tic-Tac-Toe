@@ -25,6 +25,22 @@ const game = (() => {
     const boardContainer = document.getElementById('gameboard');
     const cells = document.querySelectorAll('.cell');
 
+    const checkForThree = (one,two,three) => {
+      (one === two && two === three && one === three) ? true : false
+    }
+
+    const winningValidation = (array) => {
+      switch (array) {
+        case checkForThree(array[0],array[1],array[2]) :
+          alert('You made it mate')
+          console.log('Why JS, WHY!!')
+          break;
+      
+        default:
+          break;
+      }
+    }
+
     const updateBoardArray = () => {
       const cellsArray = Array.from(cells);
       const renderBoard = cellsArray.map(cell => cell = cell.innerHTML);
@@ -33,6 +49,7 @@ const game = (() => {
 
     const playerSwitch = () => {
       console.log(updateBoardArray());
+      winningValidation(updateBoardArray())
       if (currentPlayer.getNumber() === 1) {
         currentPlayer = playerTwo;
       } else {
