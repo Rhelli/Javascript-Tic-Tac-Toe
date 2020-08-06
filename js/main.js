@@ -41,6 +41,14 @@ const game = (() => {
       });
     };
 
+    const resetButton = () => {
+      cells.forEach(cells => {
+        cells.innerHTML = '';
+        count = 0;
+      });
+      alert('LETS NOT PLAY MURDERBALL!!!!!!');
+    };
+
     const winningValidation = (array, symbol) => {
       // HORIZONTAL
       if (checkForThree(array[0], array[1], array[2], symbol)) {
@@ -111,10 +119,11 @@ const game = (() => {
     };
 
     cells.forEach(cell => cell.addEventListener('click', clickCell, false));
-    return { clickCell };
+    return { clickCell, reset, resetButton };
+
   })();
 
-  return { gameInit };
+  return { gameInit, gameBoard };
 })();
 
 

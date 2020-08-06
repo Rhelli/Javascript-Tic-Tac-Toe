@@ -4,6 +4,59 @@ body {
   height: 100vh;
 }
 
+.main-container {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.gameboard-container {
+  width: 70%;
+  height: 100%;
+  margin: 40px auto 0 40px;
+}
+
+.form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  width: 30%;
+  height: 100%;
+  margin: 40px 40px 0 0;
+}
+
+.form-container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  margin-bottom: 20px;
+  padding: 12px 20px;
+}
+
+.form-container .row label {
+  margin-bottom: 6px;
+}
+
 #gameboard {
   width: 100%;
   display: -webkit-box;
