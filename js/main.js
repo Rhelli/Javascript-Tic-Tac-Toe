@@ -24,8 +24,11 @@ const game = (() => {
     const board = ['', '', '', '', '', '', '', '', ''];
     const boardContainer = document.getElementById('gameboard');
     const cells = document.querySelectorAll('.cell');
+    let renderBoard = Array.from(cells);
+    let renderBoardWithHTML = renderBoard.innerHTML;
 
     const playerSwitch = () => {
+      console.log(renderBoard)
       if (currentPlayer.getNumber() === 1) {
         currentPlayer = playerTwo;
       } else {
@@ -39,7 +42,7 @@ const game = (() => {
         else {
            event.target.innerHTML = symbol;
           playerSwitch() }
-
+          
     }
 
     const clickCell = (event) => {
