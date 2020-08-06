@@ -49,7 +49,12 @@ body {
   background: yellow;
 }
 
-.form-container .row {
+.form-container .name-container {
+  background-color: pink;
+  height: 50%;
+}
+
+.form-container .name-container .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,8 +66,50 @@ body {
   padding: 12px 20px;
 }
 
-.form-container .row label {
+.form-container .name-container .row label {
   margin-bottom: 6px;
+}
+
+.form-container .select-character-container {
+  height: 50%;
+  background-color: plum;
+}
+
+.form-container .select-character-container #character-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  height: 80%;
+}
+
+.form-container .select-character-container #character-container .character-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+
+.form-container .select-character-container #character-container .character-item img {
+  min-width: 50px;
+  min-width: 50px;
+  width: 50%;
+  height: 50%;
+}
+
+.form-container .select-character-container .button-container {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 20%;
 }
 
 #gameboard {

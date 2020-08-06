@@ -33,16 +33,49 @@ body {
   margin: 40px 40px 0 0;
   background: yellow;
 
-  .row {
-    display: flex;
-    flex-flow: column nowrap;
-    margin-bottom: 20px;
-    padding: 12px 20px;
-
-    label {
-      margin-bottom: 6px;
+  .name-container {
+    background-color: pink;
+    height: 50%;
+    .row {
+      display: flex;
+      flex-flow: column nowrap;
+      margin-bottom: 20px;
+      padding: 12px 20px;
+  
+      label {
+        margin-bottom: 6px;
+      }
     }
   }
+
+  .select-character-container {
+    height: 50%;
+    background-color: plum;
+    #character-container {
+      display: flex;
+      flex-flow: row wrap;
+      height: 80%;
+      .character-item {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        height: 100%;
+
+        img {
+          min-width: 50px;
+          min-width: 50px;
+          width: 50%;
+          height: 50%;
+        }
+      }
+    }
+    .button-container {
+      margin: 0;
+      display: flex;
+      height: 20%;
+    }
+  }
+
 }
 
 #gameboard {

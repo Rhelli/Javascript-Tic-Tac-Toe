@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <title>Document</title>
 </head>
+
 <body>
-  <div class="main-container">
-    <div class="gameboard-container">
-      <div id="gameboard">
-        <div class="cell"></div> <div class="cell"></div> <div class="cell"></div>
-        <div class="cell"></div> <div class="cell"></div> <div class="cell"></div>
-        <div class="cell"></div> <div class="cell"></div> <div class="cell"></div>
-      </div>
+    <div class="main-container">
+        <div class="gameboard-container">
+            <div id="gameboard">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="name-container">
+                <div class="row">
+                    <label for="player-one">Player 1</label><input placeholder="Player one, please enter your name..."
+                        required='required' type="text" id="player-one">
+                </div>
+                <div class="row">
+                    <label for="player-two">Player 2</label><input placeholder='Player two, please enter your name...'
+                        required='required' type="text" id="player-two">
+                </div>
+            </div>
+            <div class="select-character-container">
+                <div id="character-container">
+                    <div data-image="1"  class="character-item"><img id="image" src="assets/got/cersei.png" alt=""></div>
+                    <div data-image="2" class="character-item"><img src="assets/got/jon.png" alt=""></div>
+                    <div data-image="3" class="character-item"><img src="assets/got/dragon.png" alt=""></div>
+                    <div data-image="4" class="character-item"><img src="assets/lotr/gandalf.png" alt=""></div>
+                    <div data-image="5" class="character-item"><img src="assets/lotr/golum.png" alt=""></div>
+                    <div data-image="6" class="character-item"><img src="assets/lotr/legolas.png" alt=""></div>
+                </div>
+                <div class="button-container">
+                    <button onclick="game.gameInit()" id="submit-player">Play modafuka!</button>
+                    <button onclick="game.gameBoard.resetButton()">Reset modafucka!</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-container">
-      <div class="row">
-        <label for="player-one">Player 1</label><input placeholder="Player one, please enter your name..."  required = 'required'  type="text" id="player-one">
-      </div>
-      <div class="row">
-        <label for="player-two">Player 2</label><input placeholder= 'Player two, please enter your name...' required = 'required' type="text" id="player-two">
-      </div>
-      <button onclick="game.gameInit()" id="submit-player">Play modafuka!</button>
-      <button onclick="game.gameBoard.resetButton()">Reset modafucka!</button>
-    </div>
-  </div>
-  <script src="./js/main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>

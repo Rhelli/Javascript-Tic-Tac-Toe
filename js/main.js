@@ -25,6 +25,7 @@ const game = (() => {
     const board = ['', '', '', '', '', '', '', '', ''];
     const boardContainer = document.getElementById('gameboard');
     const cells = document.querySelectorAll('.cell');
+    
 
     const checkForThree = (one, two, three, symb) => {
       // (one === two && two === three && one === three) ? true : false;
@@ -122,6 +123,7 @@ const game = (() => {
     return { clickCell, reset, resetButton };
 
   })();
+
 
   return { gameInit, gameBoard };
 })();
