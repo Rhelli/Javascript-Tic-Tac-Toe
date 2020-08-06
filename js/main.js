@@ -25,17 +25,17 @@ const game = (() => {
     const boardContainer = document.getElementById('gameboard');
     const cells = document.querySelectorAll('.cell');
 
-    const checkForThree = (one, two, three) => {
+    const checkForThree = (one, two, three, symb) => {
       //(one === two && two === three && one === three) ? true : false;
-      if (one !== '[]' && two !== '[]' && three !== '[]' && one === two && one === three && two === three) {
+      if (one === `${symb}` &&  two  === `${symb}` && three === `${symb}`) {
         return true;
       };
       return false;
     };
 
-    const winningValidation = (array) => {
+    const winningValidation = (array, symbol) => {
       // HORIZONTAL
-      if (checkForThree(array[0], array[1], array[2])) {
+      if (checkForThree(array[0], array[1], array[2], symbol)) {
         alert('GAME OVER');
       }
       if (checkForThree(array[3], array[4], array[5])) {
@@ -71,7 +71,7 @@ const game = (() => {
 
     const playerSwitch = () => {
       console.log(updateBoardArray());
-      winningValidation(updateBoardArray());
+      winningValidation(updateBoardArray(), currentPlayer.getSymbol());
       if (currentPlayer.getNumber() === 1) {
         currentPlayer = playerTwo;
       } else {
