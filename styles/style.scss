@@ -1,0 +1,24 @@
+html,
+body {
+    width: 100%;
+    height: 100vh;
+}
+#gameboard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px black solid;
+    border-radius: 25px;
+    width: calc(33% - 30px);
+    height: 200px;
+    background-color: violet;
+
+}
