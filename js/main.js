@@ -33,14 +33,22 @@ const game = (() => {
       }
     };
 
+    const ifCellEmpty = (event, symbol) => {
+      if (event.target.innerHTML == 'X' || event.target.innerHTML == 'O')  {
+        alert('But bro') } 
+        else {
+           event.target.innerHTML = symbol;
+          playerSwitch() }
+
+    }
+
     const clickCell = (event) => {
       if (namePlayerOne.value === "" && namePlayerTwo.value === "") {
         alert("Please Enter All Player's Names.");
         throw new Error("Please Enter All Player's Names");
       } else {
-        const arg = currentPlayer.getSymbol();
-        event.target.innerHTML = arg;
-        playerSwitch();
+        const symbol = currentPlayer.getSymbol();
+        ifCellEmpty(event,symbol);
       }
     };
 
