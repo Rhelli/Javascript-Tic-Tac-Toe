@@ -3,11 +3,13 @@ const game = (() => {
   let count = 1;
   const namePlayerOne = document.getElementById('player-one');
   const namePlayerTwo = document.getElementById('player-two');
+  const allSymbols = document.querySelectorAll('.character-item');
   let currentPlayer = '';
 
   const Player = (name, symbol, playerNumber, img) => {
     getName = () => name;
     getSymbol = () => symbol;
+    setPlayerSymbol = (symbol) => img = symbol;
     getImg  = () => img;
     getNumber = () => playerNumber;
     return { getName, getSymbol, getNumber, getImg };
@@ -18,8 +20,28 @@ const game = (() => {
       playerOne = Player(namePlayerOne.value, 'X',1,gameBoard.symbolHandler().jon.src);
       playerTwo = Player(namePlayerTwo.value, 'O',2,gameBoard.symbolHandler().cersei.src);
       currentPlayer = playerOne;
+      currentPlayer.setPlayerSymbol(choosePlayerSymbol());
     }
   };
+
+  const gameInitMotherfucker = () => {
+    //if (namePlayerOne.value !== '' && namePlayerTwo.value !== '') {
+      currentPlayer = playerOne;
+      alert('Player one, please select your character');
+      playerOne = Player(namePlayerOne.value, 'X', 1, setPlayerSymbol(choosePlayerSymbol()));
+      alert('Player two, please select your character');
+      currentPlayer = playerTwo;
+      playerTwo = Player(namePlayerOne.value, 'O', 2, setPlayerSymbol(choosePlayerSymbol()));
+      currentPlayer = playerOne;
+    //}
+  };
+
+  const choosePlayerSymbol = (event) => {
+    const chosenSymbol = event.target.src;
+    currentPlayer.setPlayerSymbol(chosenSymbol);
+  };
+
+  allSymbols.forEach.addEventListener('click', choosePlayerSymbol, false);
 
   // GAMEBOARD
   const gameBoard = (() => {
