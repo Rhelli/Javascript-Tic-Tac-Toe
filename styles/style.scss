@@ -95,5 +95,11 @@ body {
     width: calc(33% - 30px);
     height: 200px;
     background-color: violet;
+      img {
+        min-width: 50px;
+        min-width: 50px;
+        width: 80%;
+        height: auto;
+    }
 
 }

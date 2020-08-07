@@ -5,17 +5,18 @@ const game = (() => {
   const namePlayerTwo = document.getElementById('player-two');
   let currentPlayer = '';
 
-  const Player = (name, symbol, playerNumber) => {
+  const Player = (name, symbol, playerNumber, img) => {
     getName = () => name;
     getSymbol = () => symbol;
+    getImg  = () => img;
     getNumber = () => playerNumber;
-    return { getName, getSymbol, getNumber };
+    return { getName, getSymbol, getNumber, getImg };
   };
 
   const gameInit = () => {
     if (namePlayerOne.value !== '' && namePlayerTwo.value !== '') {
-      playerOne = Player(namePlayerOne.value, gameBoard.symbolHandler().jon.src, 1);
-      playerTwo = Player(namePlayerTwo.value, gameBoard.symbolHandler().cersei.src, 2);
+      playerOne = Player(namePlayerOne.value, 'X',1,gameBoard.symbolHandler().jon.src);
+      playerTwo = Player(namePlayerTwo.value, 'O',2,gameBoard.symbolHandler().cersei.src);
       currentPlayer = playerOne;
     }
   };
@@ -114,11 +115,14 @@ const game = (() => {
       count++;
     };
 
-    const ifCellEmpty = (event, symbol) => {
-      if (event.target.innerHTML === 'X' || event.target.innerHTML === 'O') {
+    const ifCellEmpty = (event, symbol, img) => {
+      if (event.target.innerHTML !== '') {
         alert('But bro');
       } else {
-        event.target.innerHTML = symbol;
+        imgE = document.createElement('img');
+        console.log(img)
+        imgE.src = img;
+        event.target.appendChild(imgE);
         playerSwitch();
       }
     };
@@ -129,7 +133,8 @@ const game = (() => {
         throw new Error("Please Enter All Player's Names");
       } else {
         const symbol = currentPlayer.getSymbol();
-        ifCellEmpty(event, symbol);
+        const img = currentPlayer.getImg();
+        ifCellEmpty(event, symbol, img);
       }
     };
 

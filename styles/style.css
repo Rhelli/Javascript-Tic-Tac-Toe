@@ -145,4 +145,11 @@ body {
   height: 200px;
   background-color: violet;
 }
+
+.cell img {
+  min-width: 50px;
+  min-width: 50px;
+  width: 80%;
+  height: auto;
+}
 /*# sourceMappingURL=style.css.map */
