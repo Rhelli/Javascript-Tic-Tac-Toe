@@ -82,9 +82,13 @@ const game = (() => {
     const winningValidation = (array, symbol) => {
       // HORIZONTAL
       if (checkForThree(array[0], array[1], array[2], symbol)) {
-        const win = document.querySelectorAll("c1, c2, c3");
-        win.style.background = 'red';
+        const win = document.querySelectorAll("#c1, #c2, #c3");
+        let winningwin = [...win]
+        winningwin.forEach(element => {
+          element.style.background = "red";
+        });
         return true;
+        
       }
       if (checkForThree(array[3], array[4], array[5], symbol)) {
         return true;
