@@ -14,8 +14,8 @@ const game = (() => {
 
   const gameInit = () => {
     if (namePlayerOne.value !== '' && namePlayerTwo.value !== '') {
-      playerOne = Player(namePlayerOne.value, 'X', 1);
-      playerTwo = Player(namePlayerTwo.value, 'O', 2);
+      playerOne = Player(namePlayerOne.value, gameBoard.symbolHandler().jon.src, 1);
+      playerTwo = Player(namePlayerTwo.value, gameBoard.symbolHandler().cersei.src, 2);
       currentPlayer = playerOne;
     }
   };
@@ -25,7 +25,21 @@ const game = (() => {
     const board = ['', '', '', '', '', '', '', '', ''];
     const boardContainer = document.getElementById('gameboard');
     const cells = document.querySelectorAll('.cell');
-    
+
+    const symbolHandler = () => {
+      const allSymbols = document.querySelectorAll('.character-item');
+      const symbolArray = Array.from(allSymbols);
+      const symbolSources = symbolArray.map(symbol => symbol = symbol.src);
+      const cersei = symbolArray[0];
+      const jon = symbolArray[1];
+      const dragon = symbolArray[2];
+      const gandalf = symbolArray[3];
+      const golum = symbolArray[4];
+      const legolas = symbolArray[5];
+      return {
+        cersei, jon, dragon, gandalf, golum, legolas
+      };
+    };
 
     const checkForThree = (one, two, three, symb) => {
       // (one === two && two === three && one === three) ? true : false;
@@ -119,8 +133,13 @@ const game = (() => {
       }
     };
 
+    //const clickCharacter = (event) => {
+    //  if (event.target.getAttribute('src'))
+    //}
+
     cells.forEach(cell => cell.addEventListener('click', clickCell, false));
-    return { clickCell, reset, resetButton };
+    //allSymbols.forEach(symbol => symbol.addEventListener('click', clickCharacter, false));
+    return { clickCell, reset, resetButton, symbolHandler };
 
   })();
 

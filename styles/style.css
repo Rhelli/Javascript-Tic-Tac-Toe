@@ -86,7 +86,7 @@ body {
   height: 80%;
 }
 
-.form-container .select-character-container #character-container .character-item {
+.form-container .select-character-container #character-container .character-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,7 +97,7 @@ body {
   height: 100%;
 }
 
-.form-container .select-character-container #character-container .character-item img {
+.form-container .select-character-container #character-container .character-div img {
   min-width: 50px;
   min-width: 50px;
   width: 50%;
