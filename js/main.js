@@ -120,7 +120,7 @@ const game = (() => {
         alert('But bro');
       } else {
         imgE = document.createElement('img');
-        console.log(img)
+        console.log(img);
         imgE.src = img;
         event.target.appendChild(imgE);
         playerSwitch();
