@@ -1,10 +1,12 @@
 // PLAYERS - FACTORY FUNCTIONS
 const game = (() => {
   let count = 1;
+  let numberOfPlayer = 1;
   const namePlayerOne = document.getElementById('player-one');
   const namePlayerTwo = document.getElementById('player-two');
-  const allSymbols = document.querySelectorAll('.character-item');
+  const allIcons = document.querySelectorAll('.character-item');
   let currentPlayer = '';
+  let icons = [];
 
   const Player = (name, symbol, playerNumber, img) => {
     getName = () => name;
@@ -12,57 +14,47 @@ const game = (() => {
     setPlayerSymbol = (symbol) => img = symbol;
     getImg  = () => img;
     getNumber = () => playerNumber;
-    return { getName, getSymbol, getNumber, getImg };
+    return { getName, getSymbol, getNumber, getImg, setPlayerSymbol };
   };
 
+  const choosePlayerIcon = (event) => {
+    const chosenIcon = event.target.src;
+    if(Icons.length < 2) { 
+    if(numberOfPlayer == 1) {
+      Icons.push(chosenIcon);
+      console.log(`player one ${[icons[0]]}`)
+      numberOfPlayer = 2;
+    }
+    else {
+      Icons.push(chosenIcon);
+      console.log(`player two: ${icons[1]}`)
+      numberOfPlayer = 1;
+    }
+  }
+
+    // currentPlayer.setPlayerSymbol(chosenSymbol);
+    return  {Icons };
+  };
+  
+  
   const gameInit = () => {
-    if (namePlayerOne.value !== '' && namePlayerTwo.value !== '') {
-      playerOne = Player(namePlayerOne.value, 'X',1,gameBoard.symbolHandler().jon.src);
-      playerTwo = Player(namePlayerTwo.value, 'O',2,gameBoard.symbolHandler().cersei.src);
+    if (namePlayerOne.value !== '' && namePlayerTwo.value !== '' && Icons.length == 2) {
+      playerOne = Player(namePlayerOne.value, 'X',1,Icons[0]);
+      playerTwo = Player(namePlayerTwo.value, 'O',2,Icons[1]);
+      console.log(`player one: ${playerOne} player two: ${playerTwo}`)
       currentPlayer = playerOne;
-      currentPlayer.setPlayerSymbol(choosePlayerSymbol());
     }
   };
 
-  const gameInitMotherfucker = () => {
-    //if (namePlayerOne.value !== '' && namePlayerTwo.value !== '') {
-      currentPlayer = playerOne;
-      alert('Player one, please select your character');
-      playerOne = Player(namePlayerOne.value, 'X', 1, setPlayerSymbol(choosePlayerSymbol()));
-      alert('Player two, please select your character');
-      currentPlayer = playerTwo;
-      playerTwo = Player(namePlayerOne.value, 'O', 2, setPlayerSymbol(choosePlayerSymbol()));
-      currentPlayer = playerOne;
-    //}
-  };
+  
 
-  const choosePlayerSymbol = (event) => {
-    const chosenSymbol = event.target.src;
-    currentPlayer.setPlayerSymbol(chosenSymbol);
-  };
-
-  allSymbols.forEach.addEventListener('click', choosePlayerSymbol, false);
+  allIcons.forEach(element => { element.addEventListener('click', choosePlayerIcon, false);});
 
   // GAMEBOARD
-  const gameBoard = (() => {
+  const gameBoard = (() => {  
     const board = ['', '', '', '', '', '', '', '', ''];
     const boardContainer = document.getElementById('gameboard');
     const cells = document.querySelectorAll('.cell');
-
-    const symbolHandler = () => {
-      const allSymbols = document.querySelectorAll('.character-item');
-      const symbolArray = Array.from(allSymbols);
-      const symbolSources = symbolArray.map(symbol => symbol = symbol.src);
-      const cersei = symbolArray[0];
-      const jon = symbolArray[1];
-      const dragon = symbolArray[2];
-      const gandalf = symbolArray[3];
-      const golum = symbolArray[4];
-      const legolas = symbolArray[5];
-      return {
-        cersei, jon, dragon, gandalf, golum, legolas
-      };
-    };
 
     const checkForThree = (one, two, three, symb) => {
       // (one === two && two === three && one === three) ? true : false;
@@ -164,7 +156,7 @@ const game = (() => {
     };
 
     cells.forEach(cell => cell.addEventListener('click', clickCell, false));
-    return { clickCell, reset, resetButton, symbolHandler };
+    return { clickCell, reset, resetButton };
 
   })();
 
