@@ -53,14 +53,16 @@ const game = (() => {
     const reset = (array) => {
       array.forEach(element => {
         element.innerHTML = '';
-        count = 0;
+        element.dataset.datasymbol = '';
+        count = 1;
       });
     };
 
     const resetButton = () => {
       cells.forEach(cells => {
         cells.innerHTML = '';
-        count = 0;
+        cells.dataset.datasymbol = '';
+        count = 1;
       });
       alert('LETS NOT PLAY MURDERBALL!!!!!!');
     };
@@ -139,12 +141,7 @@ const game = (() => {
       }
     };
 
-    //const clickCharacter = (event) => {
-    //  if (event.target.getAttribute('src'))
-    //}
-
     cells.forEach(cell => cell.addEventListener('click', clickCell, false));
-    //allSymbols.forEach(symbol => symbol.addEventListener('click', clickCharacter, false));
     return { clickCell, reset, resetButton, symbolHandler };
 
   })();
