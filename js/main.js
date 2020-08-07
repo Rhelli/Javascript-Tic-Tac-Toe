@@ -97,7 +97,7 @@ const game = (() => {
 
     const updateBoardArray = () => {
       const cellsArray = Array.from(cells);
-      const renderBoard = cellsArray.map(cell => cell = cell.innerHTML);
+      const renderBoard = cellsArray.map(cell => cell = cell.dataset.datasymbol);
       return renderBoard;
     };
 
@@ -122,6 +122,7 @@ const game = (() => {
         imgE = document.createElement('img');
         console.log(img);
         imgE.src = img;
+        event.target.dataset.datasymbol = symbol;
         event.target.appendChild(imgE);
         playerSwitch();
       }
