@@ -6,7 +6,7 @@ const game = (() => {
   const namePlayerTwo = document.getElementById('player-two');
   const allIcons = document.querySelectorAll('.character-item');
   let currentPlayer = '';
-  let icons = [];
+  let Icons = [];
 
   const Player = (name, symbol, playerNumber, img) => {
     getName = () => name;
@@ -22,18 +22,18 @@ const game = (() => {
     if(Icons.length < 2) { 
     if(numberOfPlayer == 1) {
       Icons.push(chosenIcon);
-      console.log(`player one ${[icons[0]]}`)
+      console.log(`player one ${[Icons[0]]}`)
       numberOfPlayer = 2;
     }
     else {
       Icons.push(chosenIcon);
-      console.log(`player two: ${icons[1]}`)
+      console.log(`player two: ${Icons[1]}`)
       numberOfPlayer = 1;
     }
   }
 
     // currentPlayer.setPlayerSymbol(chosenSymbol);
-    return  {Icons };
+    return { Icons };
   };
   
   
@@ -45,8 +45,6 @@ const game = (() => {
       currentPlayer = playerOne;
     }
   };
-
-  
 
   allIcons.forEach(element => { element.addEventListener('click', choosePlayerIcon, false);});
 
@@ -84,6 +82,8 @@ const game = (() => {
     const winningValidation = (array, symbol) => {
       // HORIZONTAL
       if (checkForThree(array[0], array[1], array[2], symbol)) {
+        const win = document.querySelectorAll("c1, c2, c3");
+        win.style.background = 'red';
         return true;
       }
       if (checkForThree(array[3], array[4], array[5], symbol)) {
@@ -121,8 +121,14 @@ const game = (() => {
       console.log(count);
       console.log(updateBoardArray());
       if (winningValidation(updateBoardArray(), currentPlayer.getSymbol()) || count === 9) {
-        alert('Press F');
-        reset(cells);
+        setTimeout(() => {
+          const rematch = confirm(`${currentPlayer.getName()} has won. Would you like to play again?`);
+          if (rematch === true) {
+            reset(cells);
+          } else {
+            alert('Loser.');
+          };
+        }, 450);
       } else if (currentPlayer.getNumber() === 1) {
         currentPlayer = playerTwo;
       } else {

@@ -152,4 +152,8 @@ body {
   width: 80%;
   height: auto;
 }
+
+.cell-win {
+  background-color: green;
+}
 /*# sourceMappingURL=style.css.map */
