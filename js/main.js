@@ -54,14 +54,6 @@ const game = (() => {
     const boardContainer = document.getElementById('gameboard');
     const cells = document.querySelectorAll('.cell');
 
-    const checkForThree = (one, two, three, symb) => {
-      // (one === two && two === three && one === three) ? true : false;
-      if (one === `${symb}` && two === `${symb}` && three === `${symb}`) {
-        return true;
-      }
-      return false;
-    };
-
     const reset = (array) => {
       array.forEach(element => {
         element.innerHTML = '';
@@ -78,6 +70,12 @@ const game = (() => {
       });
       alert('LETS NOT PLAY MURDERBALL!!!!!!');
     };
+
+    //const reset = (array = null) {
+    //  if (array) {
+    //    
+    //  }
+    //};
 
     const winningValidation = (array) => {
       let roundWon = false;
@@ -105,6 +103,7 @@ const game = (() => {
         }
         if (a === b && b === c) {
           const style = [aa, bb, cc];
+          console.log('INSIDE LOOP');
           roundWon = true;
           style.forEach(element => {
             element.style.background = 'green ';
