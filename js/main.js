@@ -54,14 +54,6 @@ const game = (() => {
     const boardContainer = document.getElementById('gameboard');
     const cells = document.querySelectorAll('.cell');
 
-    const checkForThree = (one, two, three, symb) => {
-      // (one === two && two === three && one === three) ? true : false;
-      if (one === `${symb}` && two === `${symb}` && three === `${symb}`) {
-        return true;
-      }
-      return false;
-    };
-
     const reset = (array) => {
       array.forEach(element => {
         element.innerHTML = '';
@@ -79,39 +71,45 @@ const game = (() => {
       alert('LETS NOT PLAY MURDERBALL!!!!!!');
     };
 
-    const winningValidation = (array, symbol) => {
-      // HORIZONTAL
-      if (checkForThree(array[0], array[1], array[2], symbol)) {
-        const win = document.querySelectorAll("#c1, #c2, #c3");
-        let winningwin = [...win]
-        winningwin.forEach(element => {
-          element.style.background = "green ";
-        });
-        return true;
-        
-      }
-      if (checkForThree(array[3], array[4], array[5], symbol)) {
-        return true;
-      }
-      if (checkForThree(array[6], array[7], array[8], symbol)) {
-        return true;
-      }
-      // VERTICAL
-      if (checkForThree(array[0], array[3], array[6], symbol)) {
-        return true;
-      }
-      if (checkForThree(array[1], array[4], array[7], symbol)) {
-        return true;
-      }
-      // DIAGONAL
-      if (checkForThree(array[2], array[5], array[8], symbol)) {
-        return true;
-      }
-      if (checkForThree(array[0], array[4], array[8], symbol)) {
-        return true;
-      }
-      if (checkForThree(array[2], array[4], array[6], symbol)) {
-        return true;
+    //const reset = (array = null) {
+    //  if (array) {
+    //    
+    //  }
+    //};
+
+    const winningValidation = (array) => {
+      let roundWon = false;
+      const winningConditions = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+      ];
+
+      for (let i = 0; i <= 7; i++) {
+        const winCondition = winningConditions[i];
+        const a = array[winCondition[0]];
+        const b = array[winCondition[1]];
+        const c = array[winCondition[2]];
+        const aa = document.getElementById(`c${winCondition[0]}`);
+        const bb = document.getElementById(`c${winCondition[1]}`);
+        const cc = document.getElementById(`c${winCondition[2]}`);
+        if (a === undefined || b === undefined || c === undefined) {
+          continue;
+        }
+        if (a === b && b === c) {
+          const style = [aa, bb, cc];
+          console.log('INSIDE LOOP');
+          roundWon = true;
+          style.forEach(element => {
+            element.style.background = 'green ';
+          });
+          return roundWon;
+        }
       }
     };
 
@@ -124,18 +122,22 @@ const game = (() => {
     const playerSwitch = () => {
       console.log(count);
       console.log(updateBoardArray());
-      if (winningValidation(updateBoardArray(), currentPlayer.getSymbol()) || count === 9) {
+      if (winningValidation(updateBoardArray())) {
         setTimeout(() => {
           const rematch = confirm(`${currentPlayer.getName()} has won. Would you like to play again?`);
           if (rematch === true) {
             reset(cells);
           } else {
             alert('Loser.');
-          };
+          }
         }, 450);
       }
-
-      else if (currentPlayer.getNumber() === 1) {
+      if (count === 9 && winningValidation(updateBoardArray()) === false) {
+        setTimeout(() => {
+          alert("You both suck so hard. Would you like to play again to prove that you dont both suck as much as each other or are you both absolute losers who have no lives and cant even win a simple game of tic tac toe. I mean seriously, how difficult is it to place three symbols in a row. Do you even like Game of Thrones or Lord of The Rings? I bet you're both absolute neckbeards who live in the basement and dont meet the national recommended dietry requirements for vitamin d.");
+          confirm("Would you like to play again? 🙂 ❤️❤️❤️ 💕💕💕") ? reset(cells) : alert('Knew it.');
+        }, 450);
+      } else if (currentPlayer.getNumber() === 1) {
         currentPlayer = playerTwo;
       } else {
         currentPlayer = playerOne;
@@ -196,45 +198,3 @@ TO DO LIST
     - RED & GREEN TRAFFIC LIGHTS BESIDE EACH PLAYERS ICON, GREEN FOR THEIR TURN AND RED WHEN IT ISNT
 
 */
-const winningValidation = (array, symbol) => {
-  const winningConditions = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-  ];
-
-  for (let i = 0; i <= 7; i++) {
-    const winCondition = winningConditions[i];
-    let a = gameState[ winCondition[0] ];
-    let b = gameState[ winCondition[1] ];
-    let c = gameState[ winCondition[2] ];
-    let aa = document.getElementById(`c${winCondition[0]}`)
-    let bb = document.getElementById(`c${winCondition[1]}`)
-    let cc = document.getElementById(`c${winCondition[2]}`)
-    if (a === '' || b === '' || c === '') {
-        continue;
-    }
-    if (a === `${symb}` && b === `${symb}` && c === `${symb}`) {
-        let style = [...aa,...bb,...cc]
-        roundWon = true;
-        style.forEach(element => {
-          element.style.background = "green ";
-        });
-        break
-    }
-  }
-  
-  if(roundWon) {
-  
-  }
-}
-
-
-
-
-
