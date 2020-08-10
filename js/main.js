@@ -85,7 +85,7 @@ const game = (() => {
         const win = document.querySelectorAll("#c1, #c2, #c3");
         let winningwin = [...win]
         winningwin.forEach(element => {
-          element.style.background = "red";
+          element.style.background = "green ";
         });
         return true;
         
@@ -194,3 +194,45 @@ TO DO LIST
     - RED & GREEN TRAFFIC LIGHTS BESIDE EACH PLAYERS ICON, GREEN FOR THEIR TURN AND RED WHEN IT ISNT
 
 */
+const winningValidation = (array, symbol) => {
+  const winningConditions = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ];
+
+  for (let i = 0; i <= 7; i++) {
+    const winCondition = winningConditions[i];
+    let a = gameState[ winCondition[0] ];
+    let b = gameState[ winCondition[1] ];
+    let c = gameState[ winCondition[2] ];
+    let aa = document.getElementById(`c${winCondition[0]}`)
+    let bb = document.getElementById(`c${winCondition[1]}`)
+    let cc = document.getElementById(`c${winCondition[2]}`)
+    if (a === '' || b === '' || c === '') {
+        continue;
+    }
+    if (a === `${symb}` && b === `${symb}` && c === `${symb}`) {
+        let style = [...aa,...bb,...cc]
+        roundWon = true;
+        style.forEach(element => {
+          element.style.background = "green ";
+        });
+        break
+    }
+  }
+  
+  if(roundWon) {
+  
+  }
+}
+
+
+
+
+
