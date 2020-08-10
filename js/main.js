@@ -79,41 +79,6 @@ const game = (() => {
       alert('LETS NOT PLAY MURDERBALL!!!!!!');
     };
 
-    //const winningValidation = (array, symbol) => {
-    //  // HORIZONTAL
-    //  if (checkForThree(array[0], array[1], array[2], symbol)) {
-    //    const win = document.querySelectorAll('#c1, #c2, #c3');
-    //    const winningwin = [...win];
-    //    winningwin.forEach(element => {
-    //      element.style.background = 'green ';
-    //    });
-    //    return true;
-    //  }
-    //  if (checkForThree(array[3], array[4], array[5], symbol)) {
-    //    return true;
-    //  }
-    //  if (checkForThree(array[6], array[7], array[8], symbol)) {
-    //    return true;
-    //  }
-    //  // VERTICAL
-    //  if (checkForThree(array[0], array[3], array[6], symbol)) {
-    //    return true;
-    //  }
-    //  if (checkForThree(array[1], array[4], array[7], symbol)) {
-    //    return true;
-    //  }
-    //  // DIAGONAL
-    //  if (checkForThree(array[2], array[5], array[8], symbol)) {
-    //    return true;
-    //  }
-    //  if (checkForThree(array[0], array[4], array[8], symbol)) {
-    //    return true;
-    //  }
-    //  if (checkForThree(array[2], array[4], array[6], symbol)) {
-    //    return true;
-    //  }
-    //};
-
     const winningValidation = (array) => {
       let roundWon = false;
       const winningConditions = [
@@ -157,62 +122,29 @@ const game = (() => {
     };
 
     const playerSwitch = () => {
-      const rematch = confirm(`${currentPlayer.getName()} has won. Would you like to play again?`);
-      const drawRematch = confirm(`Wow ${playerOne}, how did you not manage to beat ${playerTwo}? That guy is an IDIOT.`);
-      let winCheck = winningValidation(updateBoardArray());
-      //if (winningValidation(updateBoardArray())) {
-      //  setTimeout(() => {
-      //    if (rematch === true) {
-      //      reset(cells);
-      //    } else {
-      //      alert('Loser.');
-      //    }
-      //  }, 450);
-      //} else if (currentPlayer.getNumber() === 1) {
-      //  currentPlayer = playerTwo;
-      //} else {
-      //  currentPlayer = playerOne;
-      //}
-      //if (winningValidation(updateBoardArray() === false && count === 9)) {
-      //  setTimeout(() => {
-      //    if (drawRematch === true) {
-      //      reset(cells);
-      //    } else {
-      //      alert(`${playerOne}, I had so much faith in you....`);
-      //    }
-      //  }, 450);
-      //}
-      switch(winCheck) {
-        case true:
-          setTimeout(() => {
-            if (rematch === true) {
-              reset(cells);
-            } else {
-              alert('Loser.');
-            }
-          }, 450);
-          break;
-
-        case false && count === 9:
-          setTimeout(() => {
-            if (drawRematch === true) {
-              reset(cells);
-            } else {
-              alert(`${playerOne}, I had so much faith in you....`);
-            }
-          }, 450);
-          break;
-
-        //default:
-        //  (function() { 
-        //    if (currentPlayer.getNumber() === 1) {
-        //    currentPlayer = playerTwo;
-        //    } else {
-        //    currentPlayer = playerOne;
-        //    }
-        //  })();
-      count++;
+      console.log(count);
+      console.log(updateBoardArray());
+      if (winningValidation(updateBoardArray())) {
+        setTimeout(() => {
+          const rematch = confirm(`${currentPlayer.getName()} has won. Would you like to play again?`);
+          if (rematch === true) {
+            reset(cells);
+          } else {
+            alert('Loser.');
+          }
+        }, 450);
       }
+      if (count === 9 && winningValidation(updateBoardArray()) === false) {
+        setTimeout(() => {
+          alert("You both suck so hard. Would you like to play again to prove that you dont both suck as much as each other or are you both absolute losers who have no lives and cant even win a simple game of tic tac toe. I mean seriously, how difficult is it to place three symbols in a row. Do you even like Game of Thrones or Lord of The Rings? I bet you're both absolute neckbeards who live in the basement and dont meet the national recommended dietry requirements for vitamin d.");
+          confirm("Would you like to play again? 🙂 ❤️❤️❤️ 💕💕💕") ? reset(cells) : alert('Knew it.');
+        }, 450);
+      } else if (currentPlayer.getNumber() === 1) {
+        currentPlayer = playerTwo;
+      } else {
+        currentPlayer = playerOne;
+      }
+      count++;
     };
 
     const ifCellEmpty = (event, symbol, img) => {
@@ -267,4 +199,3 @@ TO DO LIST
     - RED & GREEN TRAFFIC LIGHTS BESIDE EACH PLAYERS ICON, GREEN FOR THEIR TURN AND RED WHEN IT ISNT
 
 */
-
