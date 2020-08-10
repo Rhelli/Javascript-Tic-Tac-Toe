@@ -133,8 +133,8 @@ const game = (() => {
             alert('Loser.');
           };
         }, 450);
-      if (winningValidation(updateBoardArray()) ===  || count === 9) {
       }
+
       else if (currentPlayer.getNumber() === 1) {
         currentPlayer = playerTwo;
       } else {
