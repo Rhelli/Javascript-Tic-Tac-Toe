@@ -77,7 +77,7 @@ const game = (() => {
     //  }
     //};
 
-    const winningValidation = (array) => {
+    const winningValidation = (array,symbol) => {
       let roundWon = false;
       const winningConditions = [
         [0, 1, 2],
@@ -98,10 +98,7 @@ const game = (() => {
         const aa = document.getElementById(`c${winCondition[0]}`);
         const bb = document.getElementById(`c${winCondition[1]}`);
         const cc = document.getElementById(`c${winCondition[2]}`);
-        if (a === undefined || b === undefined || c === undefined) {
-          continue;
-        }
-        if (a === b && b === c) {
+        if (a === symbol && b == symbol && c === symbol) {
           const style = [aa, bb, cc];
           console.log('INSIDE LOOP');
           roundWon = true;
@@ -122,7 +119,7 @@ const game = (() => {
     const playerSwitch = () => {
       console.log(count);
       console.log(updateBoardArray());
-      if (winningValidation(updateBoardArray())) {
+      if (winningValidation(updateBoardArray(), currentPlayer.getSymbol())) {
         setTimeout(() => {
           const rematch = confirm(`${currentPlayer.getName()} has won. Would you like to play again?`);
           if (rematch === true) {
@@ -132,7 +129,7 @@ const game = (() => {
           }
         }, 450);
       }
-      if (count === 9 && winningValidation(updateBoardArray()) === false) {
+      if (count === 9 && winningValidation(updateBoardArray(),currentPlayer.getSymbol()) === false) {
         setTimeout(() => {
           alert("You both suck so hard. Would you like to play again to prove that you dont both suck as much as each other or are you both absolute losers who have no lives and cant even win a simple game of tic tac toe. I mean seriously, how difficult is it to place three symbols in a row. Do you even like Game of Thrones or Lord of The Rings? I bet you're both absolute neckbeards who live in the basement and dont meet the national recommended dietry requirements for vitamin d.");
           confirm("Would you like to play again? 🙂 ❤️❤️❤️ 💕💕💕") ? reset(cells) : alert('Knew it.');
