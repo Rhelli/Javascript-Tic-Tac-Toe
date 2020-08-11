@@ -64,8 +64,7 @@ body {
 .form-container {
 
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-top: 50px;
   display: flex;
   flex-flow: column nowrap;
   width: 60%;
@@ -115,7 +114,7 @@ body {
     #character-container-1,
     #character-container-2 {
       display: flex;
-      flex-flow: row nowrap;
+      flex-flow: row wrap;
       justify-content: center;
       align-items: center;
       height: auto;
@@ -125,31 +124,11 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 25%;
+        width: 70%;
         height: auto;
         background: rgba(1, 1, 1, 0.3);
         margin: 10px;
         border-radius: 6px;
-        @media  screen and (min-width: 320px) {
-          & {
-            width: 60%;
-          }
-        }
-        @media  screen and (min-width: 468px) {
-          & {
-            width: 100%;
-          }
-        }
-        @media  screen and (min-width: 768px) {
-          & {
-            width: 27%;
-          }
-        }
-        @media  screen and (min-width: 1024px) {
-          & {
-            width: 25%;
-          }
-        }
         img {
           max-height: auto;
           width:  100%;
@@ -216,6 +195,50 @@ body {
   
 }
 
+
+@media  screen and (min-width: 468px) {
+  .form-container { 
+    .select-character-container {
+      flex-flow: column nowrap;
+      #character-container-1,
+      #character-container-2 {
+        width: 100%;
+        flex-flow: row nowrap;
+        .character-div {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+@media  screen and (min-width: 768px) {
+  .form-container { 
+    .select-character-container {
+      #character-container-1,
+      #character-container-2 {
+        width: 80%;
+      }
+    }
+  }
+}
+
+
+
+@media  screen and (min-width: 1024px) {
+  .form-container {
+    height: 60%;
+    .select-character-container {
+      #character-container-1,
+      #character-container-2 {
+        .character-div {
+          width: 27%;
+        }
+      }
+    }
+  }
+}
 
 
 

@@ -44,9 +44,7 @@ body {
 
 .form-container {
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,8 +128,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -153,39 +151,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 25%;
+  width: 70%;
   height: auto;
   background: rgba(1, 1, 1, 0.3);
   margin: 10px;
   border-radius: 6px;
-}
-
-@media screen and (min-width: 320px) {
-  .form-container .select-character-container #character-container-1 .character-div,
-  .form-container .select-character-container #character-container-2 .character-div {
-    width: 60%;
-  }
-}
-
-@media screen and (min-width: 468px) {
-  .form-container .select-character-container #character-container-1 .character-div,
-  .form-container .select-character-container #character-container-2 .character-div {
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .form-container .select-character-container #character-container-1 .character-div,
-  .form-container .select-character-container #character-container-2 .character-div {
-    width: 27%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .form-container .select-character-container #character-container-1 .character-div,
-  .form-container .select-character-container #character-container-2 .character-div {
-    width: 25%;
-  }
 }
 
 .form-container .select-character-container #character-container-1 .character-div img,
@@ -269,5 +239,43 @@ body {
   border-radius: 6px;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
+}
+
+@media screen and (min-width: 468px) {
+  .form-container .select-character-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .form-container .select-character-container #character-container-1,
+  .form-container .select-character-container #character-container-2 {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+  .form-container .select-character-container #character-container-1 .character-div,
+  .form-container .select-character-container #character-container-2 .character-div {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form-container .select-character-container #character-container-1,
+  .form-container .select-character-container #character-container-2 {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .form-container {
+    height: 60%;
+  }
+  .form-container .select-character-container #character-container-1 .character-div,
+  .form-container .select-character-container #character-container-2 .character-div {
+    width: 27%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
