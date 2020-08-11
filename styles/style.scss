@@ -6,12 +6,12 @@
 
 $tablet: 768px;
 $medium: 992px;
-$large:  1200px;
+$large:  1024px;
 
 $breakpoints: (
   'small':  767px,
   'medium': 992px,
-  'large':  1200px
+  'large':  1024px
 );
 
 /// Mixin to manage responsive breakpoints
@@ -89,9 +89,6 @@ body {
         margin-bottom: 6px;
       }
     }
-    @include respond-to(large) {
-      
-    }
   }
 
   .select-character-container {
@@ -121,6 +118,11 @@ body {
         background: rgba(1, 1, 1, 0.3);
         margin: 10px;
         border-radius: 6px;
+        @media  screen and(min-width: 1024px) {
+          & {
+            width: 12%;
+          }
+        }
         img {
           max-height: auto;
           width:  100%;
@@ -186,3 +188,7 @@ body {
   transition-duration: 0.2s;
   
 }
+
+
+
+

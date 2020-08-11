@@ -142,6 +142,13 @@ body {
   border-radius: 6px;
 }
 
+@media screen and (min-width: 1024px) {
+  .form-container .select-character-container #character-container-1 .character-div,
+  .form-container .select-character-container #character-container-2 .character-div {
+    width: 12%;
+  }
+}
+
 .form-container .select-character-container #character-container-1 .character-div img,
 .form-container .select-character-container #character-container-2 .character-div img {
   max-height: auto;
