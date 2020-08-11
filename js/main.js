@@ -117,7 +117,7 @@ const game = (() => {
         const aa = document.getElementById(`c${winCondition[0]}`);
         const bb = document.getElementById(`c${winCondition[1]}`);
         const cc = document.getElementById(`c${winCondition[2]}`);
-        if (a === symbol && b == symbol && c === symbol) {
+        if (a === symbol && b === symbol && c === symbol) {
           const style = [aa, bb, cc];
           console.log('INSIDE LOOP');
           roundWon = true;
@@ -203,6 +203,14 @@ const game = (() => {
 
   return { gameInit, gameBoard };
 })();
+
+const styles = (() => {
+  const startButton = document.getElementById('start-game');
+  const formContainer = document.getElementById('form-container');
+  const removeForm = () => formContainer.style.display = 'none';
+  startButton.addEventListener('click', removeForm, false);
+})();
+
 
 /*
 TO DO LIST
