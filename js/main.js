@@ -71,29 +71,17 @@ const game = (() => {
     const boardContainer = document.getElementById('gameboard');
     const cells = document.querySelectorAll('.cell');
 
-    const reset = (array) => {
-      array.forEach((element) => {
+    const reset = () => {
+      cells.forEach((element) => {
         element.innerHTML = '';
         element.dataset.datasymbol = '';
+        styles.initialBackground(element);
         count = 1;
         allIcons.forEach((element) => {
           element.addEventListener('click', choosePlayerIcon, false);
         });
         styles.addForm();
       });
-    };
-
-    const resetButton = () => {
-      cells.forEach((cells) => {
-        cells.innerHTML = '';
-        cells.dataset.datasymbol = '';
-        count = 1;
-        allIcons.forEach((element) => {
-          element.addEventListener('click', choosePlayerIcon, false);
-        });
-        styles.addForm();
-      });
-      alert('LETS NOT PLAY MURDERBALL!!!!!!');
     };
 
     const winningValidation = (array, symbol) => {
@@ -198,7 +186,7 @@ const game = (() => {
     };
 
     cells.forEach((cell) => cell.addEventListener('click', clickCell, false));
-    return { clickCell, reset, resetButton };
+    return { clickCell, reset};
   })();
 
   return { gameInit, gameBoard };
@@ -209,9 +197,10 @@ const styles = (() => {
   const formContainer = document.getElementById('form-container');
   const removeForm = () => formContainer.style.display = 'none';
   const addForm = () => formContainer.style.display = 'flex';
+  const initialBackground = (element) => element.style.background = 'violet'
   startButton.addEventListener('click', removeForm, false);
 
-  return { addForm }
+  return { addForm, initialBackground }
 })();
 
 
