@@ -106,3 +106,17 @@ body {
 .cell-win {
   background-color: green;
 }
+
+#avoid-clicks {
+  pointer-events: none;
+  cursor: no-drop;
+  background-color: mediumaquamarine;
+  
+}
+
+#avoid-clicks-p2 {
+  pointer-events: none;
+  cursor: no-drop;
+  background-color: cyan;
+  
+}
