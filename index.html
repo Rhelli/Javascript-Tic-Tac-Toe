@@ -10,6 +10,7 @@
 
 <body>
     <div class="main-container">
+        <button onclick="game.gameBoard.resetButton()">Reset modafucka!</button>
         <div class="gameboard-container">
             <div id="gameboard">
                 <div datasymbol="A" class="cell" id="c0"></div>
@@ -24,6 +25,7 @@
             </div>
         </div>
         <div class="form-container">
+            <h2>New Game</h2>
             <div class="name-container">
                 <div class="row">
                     <label for="player-one">Player 1</label><input placeholder="Player one, please enter your name..."
@@ -35,17 +37,18 @@
                 </div>
             </div>
             <div class="select-character-container">
-                <div id="character-container">
+                <div id="character-container-1">
                     <div class="character-div"><img class="character-item" id="cersei" src="assets/got/cersei.png" alt=""></div>
                     <div class="character-div"><img class="character-item" id="jon" src="assets/got/jon.png" alt=""></div>
                     <div class="character-div"><img class="character-item" id="dragon" src="assets/got/dragon.png" alt=""></div>
+                </div>
+                <div id="character-container-2">
                     <div class="character-div"><img class="character-item" id="gandalf" src="assets/lotr/gandalf.png" alt=""></div>
                     <div class="character-div"><img class="character-item" id="golum" src="assets/lotr/golum.png" alt=""></div>
                     <div class="character-div"><img class="character-item" id="legolas" src="assets/lotr/legolas.png" alt=""></div>
                 </div>
                 <div class="button-container">
                     <button onclick="game.gameInit()" id="submit-player">Play modafuka!</button>
-                    <button onclick="game.gameBoard.resetButton()">Reset modafucka!</button>
                 </div>
             </div>
         </div>

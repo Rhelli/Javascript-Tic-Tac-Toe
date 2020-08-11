@@ -1,3 +1,9 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 html,
 body {
     width: 100%;
@@ -26,16 +32,23 @@ body {
 }
 
 .form-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-flow: column nowrap;
-  width: 30%;
-  height: 100%;
-  margin: 40px 40px 0 0;
+  width: 60%;
+  height: auto;
+  margin: 0 auto;
   background: yellow;
+
+  h2 {
+    text-align: center;
+  }
 
   .name-container {
     background-color: pink;
-    height: 50%;
+    height: 40%;
     .row {
       display: flex;
       flex-flow: column nowrap;
@@ -49,23 +62,36 @@ body {
   }
 
   .select-character-container {
-    height: 50%;
+    height: 60%;
     background-color: plum;
-    #character-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+
+    #character-container-1,
+    #character-container-2 {
       display: flex;
       flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
       height: 80%;
+      width: 100%;
       .character-div {
         display: flex;
         justify-content: center;
-        width: 50%;
-        height: 100%;
-
+        align-items: center;
+        width: 30%;
+        height: auto;
+        background: rgba(1, 1, 1, 0.3);
+        margin: 10px;
+        border-radius: 6px;
         img {
-          min-width: 50px;
-          min-width: 50px;
-          width: 50%;
-          height: 50%;
+          max-height: auto;
+          width:  100%;
+          transition-duration: 0.2s;
         }
       }
     }
@@ -73,6 +99,10 @@ body {
       margin: 0;
       display: flex;
       height: 20%;
+      
+      button {
+        margin: 0 auto;
+      }
     }
   }
 
@@ -111,12 +141,15 @@ body {
   pointer-events: none;
   cursor: no-drop;
   background-color: mediumaquamarine;
-  
+  border-radius: 6px;
+  transition-duration: 0.2s;
 }
 
 #avoid-clicks-p2 {
   pointer-events: none;
   cursor: no-drop;
   background-color: cyan;
+  border-radius: 6px;
+  transition-duration: 0.2s;
   
 }

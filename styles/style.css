@@ -1,3 +1,10 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html,
 body {
   width: 100%;
@@ -36,6 +43,10 @@ body {
 }
 
 .form-container {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,15 +54,19 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  width: 30%;
-  height: 100%;
-  margin: 40px 40px 0 0;
+  width: 60%;
+  height: auto;
+  margin: 0 auto;
   background: yellow;
+}
+
+.form-container h2 {
+  text-align: center;
 }
 
 .form-container .name-container {
   background-color: pink;
-  height: 50%;
+  height: 40%;
 }
 
 .form-container .name-container .row {
@@ -71,11 +86,27 @@ body {
 }
 
 .form-container .select-character-container {
-  height: 50%;
+  height: 60%;
   background-color: plum;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  width: 100%;
 }
 
-.form-container .select-character-container #character-container {
+.form-container .select-character-container #character-container-1,
+.form-container .select-character-container #character-container-2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,25 +114,40 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 80%;
+  width: 100%;
 }
 
-.form-container .select-character-container #character-container .character-div {
+.form-container .select-character-container #character-container-1 .character-div,
+.form-container .select-character-container #character-container-2 .character-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 50%;
-  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+  height: auto;
+  background: rgba(1, 1, 1, 0.3);
+  margin: 10px;
+  border-radius: 6px;
 }
 
-.form-container .select-character-container #character-container .character-div img {
-  min-width: 50px;
-  min-width: 50px;
-  width: 50%;
-  height: 50%;
+.form-container .select-character-container #character-container-1 .character-div img,
+.form-container .select-character-container #character-container-2 .character-div img {
+  max-height: auto;
+  width: 100%;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 
 .form-container .select-character-container .button-container {
@@ -110,6 +156,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   height: 20%;
+}
+
+.form-container .select-character-container .button-container button {
+  margin: 0 auto;
 }
 
 #gameboard {
@@ -161,11 +211,17 @@ body {
   pointer-events: none;
   cursor: no-drop;
   background-color: mediumaquamarine;
+  border-radius: 6px;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 
 #avoid-clicks-p2 {
   pointer-events: none;
   cursor: no-drop;
   background-color: cyan;
+  border-radius: 6px;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 /*# sourceMappingURL=style.css.map */
