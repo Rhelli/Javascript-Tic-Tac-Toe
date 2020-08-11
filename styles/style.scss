@@ -69,7 +69,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   width: 60%;
-  height: 80%;
+  height: auto;
   margin: 0 auto;
   background: yellow;
   h2 {
@@ -92,23 +92,35 @@ body {
   }
 
   .select-character-container {
-    height: 60%;
+    height: auto;
     background-color: plum;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     padding: 10px 20px;
     width: 100%;
+    @media  screen and(min-width: 768px) {
+      & {
+        flex-flow: column nowrap;
+      }
+    }
+
+    @media  screen and(min-width: 1024px) {
+      & {
+        flex-flow: row nowrap;
+      }
+    }
 
     #character-container-1,
     #character-container-2 {
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
-      height: 80%;
-      width: 100%;
+      height: auto;
+      width: 50%;
+
       .character-div {
         display: flex;
         justify-content: center;
@@ -118,9 +130,24 @@ body {
         background: rgba(1, 1, 1, 0.3);
         margin: 10px;
         border-radius: 6px;
-        @media  screen and(min-width: 1024px) {
+        @media  screen and (min-width: 320px) {
           & {
-            width: 12%;
+            width: 60%;
+          }
+        }
+        @media  screen and (min-width: 468px) {
+          & {
+            width: 100%;
+          }
+        }
+        @media  screen and (min-width: 768px) {
+          & {
+            width: 27%;
+          }
+        }
+        @media  screen and (min-width: 1024px) {
+          & {
+            width: 25%;
           }
         }
         img {

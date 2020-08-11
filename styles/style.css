@@ -55,7 +55,7 @@ body {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   width: 60%;
-  height: 80%;
+  height: auto;
   margin: 0 auto;
   background: yellow;
 }
@@ -86,15 +86,15 @@ body {
 }
 
 .form-container .select-character-container {
-  height: 60%;
+  height: auto;
   background-color: plum;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -105,6 +105,24 @@ body {
   width: 100%;
 }
 
+@media screen and (min-width: 768px) {
+  .form-container .select-character-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .form-container .select-character-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+}
+
 .form-container .select-character-container #character-container-1,
 .form-container .select-character-container #character-container-2 {
   display: -webkit-box;
@@ -112,16 +130,16 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 80%;
-  width: 100%;
+  height: auto;
+  width: 50%;
 }
 
 .form-container .select-character-container #character-container-1 .character-div,
@@ -142,10 +160,31 @@ body {
   border-radius: 6px;
 }
 
+@media screen and (min-width: 320px) {
+  .form-container .select-character-container #character-container-1 .character-div,
+  .form-container .select-character-container #character-container-2 .character-div {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 468px) {
+  .form-container .select-character-container #character-container-1 .character-div,
+  .form-container .select-character-container #character-container-2 .character-div {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form-container .select-character-container #character-container-1 .character-div,
+  .form-container .select-character-container #character-container-2 .character-div {
+    width: 27%;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .form-container .select-character-container #character-container-1 .character-div,
   .form-container .select-character-container #character-container-2 .character-div {
-    width: 12%;
+    width: 25%;
   }
 }
 
