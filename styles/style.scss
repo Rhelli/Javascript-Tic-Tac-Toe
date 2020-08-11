@@ -1,37 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
-}
-
-$tablet: 768px;
-$medium: 992px;
-$large:  1024px;
-
-$breakpoints: (
-  'small':  767px,
-  'medium': 992px,
-  'large':  1024px
-);
-
-/// Mixin to manage responsive breakpoints
-/// @author Hugo Giraudel
-/// @param {String} $breakpoint - Breakpoint name
-/// @require $breakpoints
-@mixin respond-to($breakpoint) {
-  // If the key exists in the map
-  @if map-has-key($breakpoints, $breakpoint) {
-    // Prints a media query based on the value
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
-      @content;
-    }
-  }
- 
-  // If the key doesn't exist in the map
-  @else {
-    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Available breakpoints are: #{map-keys($breakpoints)}.";
-  }
 }
 
 html,
@@ -39,6 +11,7 @@ body {
     width: 100%;
     height: 100vh;
     background: red;
+    font: 400 16px/16px 'Ubuntu', sans-serif, monospace;
 }
 
 .main-container {
@@ -62,37 +35,71 @@ body {
 }
 
 .form-container {
-
+  background-image: url("../assets/backgrounds/ice.jpg");
+  background-size: 100%;
   position: absolute;
-  margin-top: 50px;
+  color: #F7F9F9;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-flow: column nowrap;
   width: 60%;
   height: auto;
   margin: 0 auto;
-  background: yellow;
+  border-radius: 12px;
+  border: 3px solid #29438F;
+  -webkit-box-shadow: 0px 2px 15px 3px rgba(30,41,79,1);
+  -moz-box-shadow: 0px 2px 15px 3px rgba(30,41,79,1);
+  box-shadow: 0px 2px 15px 3px rgba(30,41,79,1);
   h2 {
+    font-size: 26px;
+    margin-bottom: 0;
     text-align: center;
+    color: #F7F9F9;
+    text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
   }
 
   .name-container {
-    background-color: pink;
     height: 40%;
+    padding: 12px 0;
     .row {
       display: flex;
       flex-flow: column nowrap;
+      width: 50%;
       margin-bottom: 20px;
       padding: 12px 20px;
+      margin: 0 auto;
   
       label {
+        font: 500 18px/18px 'Ubuntu', sans-serif;
+        color: #F7F9F9;
+        text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
         margin-bottom: 6px;
+        width: auto;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        height: 30px;
+        outline: none;
+        background: transparent;
+        border: none;
+        border-bottom: 4px solid #dcdcdc;
+        transition-duration: 0.15s;
+        &:focus {
+          border-bottom: 4px solid red;
+          transition-duration: 0.2s;
+        }
+        &::-webkit-input-placeholder {
+          color: #F7F9F9;
+          text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
+        }
       }
     }
   }
 
   .select-character-container {
     height: auto;
-    background-color: plum;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -126,13 +133,20 @@ body {
         align-items: center;
         width: 70%;
         height: auto;
-        background: rgba(1, 1, 1, 0.3);
+        background: rgba(256, 256, 256, 0.5);
         margin: 10px;
         border-radius: 6px;
+        transition-duration: 0.15s;
+        border: 1px solid #eee;
         img {
           max-height: auto;
           width:  100%;
           transition-duration: 0.2s;
+        }
+        &:hover {
+          background-color: rgba(128, 222, 234, 0.9);
+          transition-duration: 0.25s;
+          border: 1px solid rgba(128, 222, 234, 1);
         }
       }
     }
@@ -228,7 +242,6 @@ body {
 
 @media  screen and (min-width: 1024px) {
   .form-container {
-    height: 60%;
     .select-character-container {
       #character-container-1,
       #character-container-2 {

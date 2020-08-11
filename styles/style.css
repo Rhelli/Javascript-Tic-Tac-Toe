@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);
 *,
 *:before,
 *:after {
@@ -10,6 +11,7 @@ body {
   width: 100%;
   height: 100vh;
   background: red;
+  font: 400 16px/16px 'Ubuntu', sans-serif, monospace;
 }
 
 .main-container {
@@ -43,8 +45,13 @@ body {
 }
 
 .form-container {
+  background-image: url("../assets/backgrounds/ice.jpg");
+  background-size: 100%;
   position: absolute;
-  margin-top: 50px;
+  color: #F7F9F9;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,16 +62,23 @@ body {
   width: 60%;
   height: auto;
   margin: 0 auto;
-  background: yellow;
+  border-radius: 12px;
+  border: 3px solid #29438F;
+  -webkit-box-shadow: 0px 2px 15px 3px #1e294f;
+  box-shadow: 0px 2px 15px 3px #1e294f;
 }
 
 .form-container h2 {
+  font-size: 26px;
+  margin-bottom: 0;
   text-align: center;
+  color: #F7F9F9;
+  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
 }
 
 .form-container .name-container {
-  background-color: pink;
   height: 40%;
+  padding: 12px 0;
 }
 
 .form-container .name-container .row {
@@ -75,17 +89,44 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
+  width: 50%;
   margin-bottom: 20px;
   padding: 12px 20px;
+  margin: 0 auto;
 }
 
 .form-container .name-container .row label {
+  font: 500 18px/18px 'Ubuntu', sans-serif;
+  color: #F7F9F9;
+  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
   margin-bottom: 6px;
+  width: auto;
+}
+
+.form-container .name-container .row input[type="text"] {
+  width: 100%;
+  height: 30px;
+  outline: none;
+  background: transparent;
+  border: none;
+  border-bottom: 4px solid #dcdcdc;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+}
+
+.form-container .name-container .row input[type="text"]:focus {
+  border-bottom: 4px solid red;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.form-container .name-container .row input[type="text"]::-webkit-input-placeholder {
+  color: #F7F9F9;
+  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
 }
 
 .form-container .select-character-container {
   height: auto;
-  background-color: plum;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -153,9 +194,12 @@ body {
           align-items: center;
   width: 70%;
   height: auto;
-  background: rgba(1, 1, 1, 0.3);
+  background: rgba(255, 255, 255, 0.5);
   margin: 10px;
   border-radius: 6px;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  border: 1px solid #eee;
 }
 
 .form-container .select-character-container #character-container-1 .character-div img,
@@ -164,6 +208,14 @@ body {
   width: 100%;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
+}
+
+.form-container .select-character-container #character-container-1 .character-div:hover,
+.form-container .select-character-container #character-container-2 .character-div:hover {
+  background-color: rgba(128, 222, 234, 0.9);
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  border: 1px solid #80deea;
 }
 
 .form-container .select-character-container .button-container {
@@ -270,9 +322,6 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-  .form-container {
-    height: 60%;
-  }
   .form-container .select-character-container #character-container-1 .character-div,
   .form-container .select-character-container #character-container-2 .character-div {
     width: 27%;
