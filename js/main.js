@@ -6,7 +6,7 @@ const game = (() => {
   const namePlayerTwo = document.getElementById('player-two');
   const allIcons = document.querySelectorAll('.character-item');
   let currentPlayer = '';
-  const Icons = [];
+  let Icons = [];
 
   const Player = (name, symbol, playerNumber, img) => {
     getName = () => name;
@@ -29,11 +29,7 @@ const game = (() => {
         Icons.push(chosenIcon.src);
       }
       chosenIcon.id = 'avoid-clicks';
-
-      console.log(`player one ${[Icons[0]]}`);
-      console.log(chosenIcon.id);
       numberOfPlayer = 2;
-      console.log(Icons.length);
     } else {
       if (Icons[1]) {
         document.getElementById('avoid-clicks-p2').id = '';
@@ -43,10 +39,7 @@ const game = (() => {
       }
 
       chosenIcon.id = 'avoid-clicks-p2';
-      console.log(`player two: ${Icons[1]}`);
-      console.log(event.target.classList);
       numberOfPlayer = 1;
-      console.log(Icons.length);
     }
 
     // currentPlayer.setPlayerSymbol(chosenSymbol);
@@ -61,7 +54,6 @@ const game = (() => {
     ) {
       playerOne = Player(namePlayerOne.value, 'X', 1, Icons[0]);
       playerTwo = Player(namePlayerTwo.value, 'O', 2, Icons[1]);
-      console.log(`player one: ${playerOne} player two: ${playerTwo}`);
       currentPlayer = playerOne;
     }
     allIcons.forEach((element) => {
@@ -84,6 +76,10 @@ const game = (() => {
         element.innerHTML = '';
         element.dataset.datasymbol = '';
         count = 1;
+        allIcons.forEach((element) => {
+          element.addEventListener('click', choosePlayerIcon, false);
+        });
+        styles.addForm();
       });
     };
 
@@ -92,6 +88,10 @@ const game = (() => {
         cells.innerHTML = '';
         cells.dataset.datasymbol = '';
         count = 1;
+        allIcons.forEach((element) => {
+          element.addEventListener('click', choosePlayerIcon, false);
+        });
+        styles.addForm();
       });
       alert('LETS NOT PLAY MURDERBALL!!!!!!');
     };
@@ -208,7 +208,10 @@ const styles = (() => {
   const startButton = document.getElementById('start-game');
   const formContainer = document.getElementById('form-container');
   const removeForm = () => formContainer.style.display = 'none';
+  const addForm = () => formContainer.style.display = 'flex';
   startButton.addEventListener('click', removeForm, false);
+
+  return { addForm }
 })();
 
 
