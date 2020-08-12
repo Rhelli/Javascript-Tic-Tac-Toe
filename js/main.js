@@ -10,21 +10,24 @@ const game = (() => {
   let oppositePlayer = '';
   const Icons = [];
   const roundCounter = document.getElementById('turn-counter');
-  const playerOneIcon = document.getElementById('activePlayerOne')
-  const playerTwoIcon = document.getElementById('activePlayerTwo')
+  const playerOneIcon = document.getElementById('activePlayerOne');
+  const playerTwoIcon = document.getElementById('activePlayerTwo');
 
   const styles = (() => {
     const formContainer = document.getElementById('form-container');
     const removeForm = () => formContainer.style.display = 'none';
     const addForm = () => formContainer.style.display = 'flex';
-    const displayIcon = (icon, container) => { 
-      const imgElement = document.createElement('img')
-      imgElement.src = icon
-      container.appendChild(imgElement)
-    }
-    const paintBackground = (color,element) => {
-      element.style.background = color
-    }
+    const displayIcon = (icon, container) => {
+      const imgElement = document.createElement('img');
+      imgElement.src = icon;
+      container.appendChild(imgElement);
+    };
+    const paintBackground = (color, element) => {
+      element.style.background = color;
+    };
+    const disableBackground = (color, element) => {
+      element.style.background = '';
+    };
     const initialBackground = (element) => element.style.background = 'violet';
     const displayRounds = (element) => {
       if (roundCounter.innerHTML === '') {
@@ -33,11 +36,17 @@ const game = (() => {
         roundCounter.innerHTML = `Turn ${element}.`;
       }
       playerTurnIndicator.innerHTML = `It is ${oppositePlayer.getName()}'s turn.`;
-
     };
 
     return {
-      addForm, initialBackground, removeForm, displayRounds, playerTurnIndicator, displayIcon, paintBackground
+      addForm,
+      initialBackground,
+      removeForm,
+      displayRounds,
+      playerTurnIndicator,
+      displayIcon,
+      paintBackground,
+      disableBackground,
     };
   })();
 
@@ -52,7 +61,7 @@ const game = (() => {
       getSymbol,
       getNumber,
       getImg,
-      getBackground
+      getBackground,
     };
   };
 
@@ -96,8 +105,8 @@ const game = (() => {
       playerTwo = Player(namePlayerTwo.value, 'O', 2, Icons[1], 'cyan');
       currentPlayer = playerOne;
       oppositePlayer = playerTwo;
-      styles.displayIcon(playerOne.getImg(),playerOneIcon)
-      styles.displayIcon(playerTwo.getImg(),playerTwoIcon)
+      styles.displayIcon(playerOne.getImg(), playerOneIcon);
+      styles.displayIcon(playerTwo.getImg(), playerTwoIcon);
       styles.removeForm();
       return true;
     }
@@ -122,6 +131,8 @@ const game = (() => {
         playerTurnIndicator.innerHTML = '';
         playerOneIcon.innerHTML = '';
         playerTwoIcon.innerHTML = '';
+        styles.disableBackground(currentPlayer.getBackground(), playerOneIcon);
+        styles.disableBackground(currentPlayer.getBackground(), playerTwoIcon);
         allIcons.forEach((element) => {
           element.addEventListener('click', choosePlayerIcon, false);
         });
@@ -194,14 +205,15 @@ const game = (() => {
           }
         }, 450);
       } else if (currentPlayer.getNumber() === 1) {
+        styles.disableBackground(currentPlayer.getBackground(), playerTwoIcon);
         currentPlayer = playerTwo;
-        
         oppositePlayer = playerOne;
-        styles.paintBackground(oppositePlayer.getBackground,playerOneIcon)
+        styles.paintBackground(currentPlayer.getBackground(), playerOneIcon);
       } else {
+        styles.disableBackground(currentPlayer.getBackground(), playerOneIcon);
         currentPlayer = playerOne;
         oppositePlayer = playerTwo;
-        styles.paintBackground(oppositePlayer.getBackground,playerOneIcon)
+        styles.paintBackground(currentPlayer.getBackground(), playerTwoIcon);
       }
 
       count++;
@@ -218,7 +230,6 @@ const game = (() => {
         playerSwitch();
       }
     };
-
 
 
     const clickCell = (event) => {
