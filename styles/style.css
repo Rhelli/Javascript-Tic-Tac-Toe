@@ -14,9 +14,26 @@ body {
   font: 400 16px/16px 'Ubuntu', sans-serif, monospace;
 }
 
+.roun-counter-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.roun-counter-container #round {
+  font-size: 40px;
+}
+
 .main-container {
   width: 100%;
-  height: auto;
+  height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,11 +78,37 @@ body {
           flex-flow: column nowrap;
   width: 60%;
   height: auto;
+  padding-bottom: 20px;
   margin: 0 auto;
   border-radius: 12px;
   border: 3px solid #29438F;
   -webkit-box-shadow: 0px 2px 15px 3px #1e294f;
   box-shadow: 0px 2px 15px 3px #1e294f;
+}
+
+.form-container .button-container {
+  margin: 0 auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 20%;
+}
+
+.form-container .button-container button {
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 8px 2px #000a4a;
+  box-shadow: 0px 0px 8px 2px #000a4a;
+  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
+  background-color: #1b6dd8;
+  margin: 0 auto;
 }
 
 .form-container h2 {
@@ -216,18 +259,6 @@ body {
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
   border: 1px solid #80deea;
-}
-
-.form-container .select-character-container .button-container {
-  margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 20%;
-}
-
-.form-container .select-character-container .button-container button {
-  margin: 0 auto;
 }
 
 #gameboard {
