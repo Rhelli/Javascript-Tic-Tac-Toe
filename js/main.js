@@ -9,14 +9,22 @@ const game = (() => {
   let currentPlayer = '';
   let oppositePlayer = '';
   const Icons = [];
-  const startButton = document.getElementById('start-game');
   const roundCounter = document.getElementById('turn-counter');
+  const playerOneIcon = document.getElementById('activePlayerOne')
+  const playerTwoIcon = document.getElementById('activePlayerTwo')
 
   const styles = (() => {
-    const startButton = document.getElementById('start-game');
     const formContainer = document.getElementById('form-container');
     const removeForm = () => formContainer.style.display = 'none';
     const addForm = () => formContainer.style.display = 'flex';
+    const displayIcon = (icon, container) => { 
+      const imgElement = document.createElement('img')
+      imgElement.src = icon
+      container.appendChild(imgElement)
+    }
+    const paintBackground = (color,element) => {
+      element.style.background = color
+    }
     const initialBackground = (element) => element.style.background = 'violet';
     const displayRounds = (element) => {
       if (roundCounter.innerHTML === '') {
@@ -25,25 +33,26 @@ const game = (() => {
         roundCounter.innerHTML = `Turn ${element}.`;
       }
       playerTurnIndicator.innerHTML = `It is ${oppositePlayer.getName()}'s turn.`;
+
     };
 
     return {
-      addForm, initialBackground, removeForm, displayRounds, playerTurnIndicator,
+      addForm, initialBackground, removeForm, displayRounds, playerTurnIndicator, displayIcon, paintBackground
     };
   })();
 
-  const Player = (name, symbol, playerNumber, img) => {
+  const Player = (name, symbol, playerNumber, img, background) => {
     getName = () => name;
     getSymbol = () => symbol;
-    setPlayerSymbol = (symbol) => (img = symbol);
     getImg = () => img;
     getNumber = () => playerNumber;
+    getBackground = () => background;
     return {
       getName,
       getSymbol,
       getNumber,
       getImg,
-      setPlayerSymbol,
+      getBackground
     };
   };
 
@@ -70,7 +79,6 @@ const game = (() => {
       numberOfPlayer = 1;
     }
 
-    // currentPlayer.setPlayerSymbol(chosenSymbol);
     return { Icons };
   };
 
@@ -84,10 +92,12 @@ const game = (() => {
       return false;
     }
     if (namePlayerOne.value !== '' && namePlayerTwo.value !== '' && Icons.length === 2) {
-      playerOne = Player(namePlayerOne.value, 'X', 1, Icons[0]);
-      playerTwo = Player(namePlayerTwo.value, 'O', 2, Icons[1]);
+      playerOne = Player(namePlayerOne.value, 'X', 1, Icons[0], 'mediumaquamarine');
+      playerTwo = Player(namePlayerTwo.value, 'O', 2, Icons[1], 'cyan');
       currentPlayer = playerOne;
       oppositePlayer = playerTwo;
+      styles.displayIcon(playerOne.getImg(),playerOneIcon)
+      styles.displayIcon(playerTwo.getImg(),playerTwoIcon)
       styles.removeForm();
       return true;
     }
@@ -100,8 +110,6 @@ const game = (() => {
 
   // GAMEBOARD
   const gameBoard = (() => {
-    const board = ['', '', '', '', '', '', '', '', ''];
-    const boardContainer = document.getElementById('gameboard');
     const cells = document.querySelectorAll('.cell');
 
     const reset = () => {
@@ -112,6 +120,8 @@ const game = (() => {
         count = 1;
         roundCounter.innerHTML = 'No Turns Yet.';
         playerTurnIndicator.innerHTML = '';
+        playerOneIcon.innerHTML = '';
+        playerTwoIcon.innerHTML = '';
         allIcons.forEach((element) => {
           element.addEventListener('click', choosePlayerIcon, false);
         });
@@ -185,10 +195,13 @@ const game = (() => {
         }, 450);
       } else if (currentPlayer.getNumber() === 1) {
         currentPlayer = playerTwo;
+        
         oppositePlayer = playerOne;
+        styles.paintBackground(oppositePlayer.getBackground,playerOneIcon)
       } else {
         currentPlayer = playerOne;
         oppositePlayer = playerTwo;
+        styles.paintBackground(oppositePlayer.getBackground,playerOneIcon)
       }
 
       count++;
@@ -205,6 +218,8 @@ const game = (() => {
         playerSwitch();
       }
     };
+
+
 
     const clickCell = (event) => {
       if (namePlayerOne.value === '' && namePlayerTwo.value === '') {

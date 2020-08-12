@@ -352,12 +352,17 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
   background-color: peru;
   height: 40%;
   padding: 10px;
@@ -369,6 +374,12 @@ body {
 
 .game-info .active-player-icons .active-player-two {
   background-color: gainsboro;
+}
+
+.game-info .active-player-icons .active-player-one img,
+.game-info .active-player-icons .active-player-two img {
+  width: 50px;
+  height: 50px;
 }
 
 .game-info .music-box {
