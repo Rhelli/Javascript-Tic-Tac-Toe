@@ -47,7 +47,7 @@ body {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 70%;
+  width: 75%;
   height: auto;
   background: green;
 }
@@ -322,7 +322,7 @@ body {
           align-items: start;
   background-color: red;
   height: 100%;
-  width: 40%;
+  width: 25%;
   text-align: left;
 }
 
