@@ -53,12 +53,11 @@ const game = (() => {
   };
 
   const gameInit = () => {
-    startButton.disabled = true
-    if (namePlayerOne.value !== "" && namePlayerTwo.value !== "" && Icons.length == 2) {
+    if ( namePlayerOne.value !== "" && namePlayerTwo.value !== "" && Icons.length == 2) {
       playerOne = Player(namePlayerOne.value, "X", 1, Icons[0]);
       playerTwo = Player(namePlayerTwo.value, "O", 2, Icons[1]);
-      startButton.disabled = false
       currentPlayer = playerOne;
+      startButton.addEventListener("click", styles.removeForm, false);
     }
     allIcons.forEach((element) => {
       element.removeEventListener("click", choosePlayerIcon, false);
