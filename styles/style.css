@@ -71,11 +71,37 @@ body {
           flex-flow: column nowrap;
   width: 60%;
   height: auto;
+  padding-bottom: 20px;
   margin: 0 auto;
   border-radius: 12px;
   border: 3px solid #29438F;
   -webkit-box-shadow: 0px 2px 15px 3px #1e294f;
   box-shadow: 0px 2px 15px 3px #1e294f;
+}
+
+.form-container .button-container {
+  margin: 0 auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 20%;
+}
+
+.form-container .button-container button {
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 8px 2px #000a4a;
+  box-shadow: 0px 0px 8px 2px #000a4a;
+  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
+  background-color: #1b6dd8;
+  margin: 0 auto;
 }
 
 .form-container h2 {
