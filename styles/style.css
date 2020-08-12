@@ -4,6 +4,7 @@
 *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: 1px solid black;
 }
 
 html,
@@ -14,9 +15,14 @@ body {
   font: 400 16px/16px 'Ubuntu', sans-serif, monospace;
 }
 
+.page-container {
+  height: 100%;
+  width: 100%;
+}
+
 .main-container {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,15 +38,19 @@ body {
           align-items: start;
   background: slateblue;
   position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+}
+
+.game-controls {
+  height: auto;
 }
 
 .gameboard-container {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 70%;
-  height: 100%;
-  margin: 40px auto 0 40px;
+  height: auto;
   background: green;
 }
 
@@ -231,7 +241,8 @@ body {
 }
 
 #gameboard {
-  width: 100%;
+  width: auto;
+  height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -269,6 +280,75 @@ body {
   min-width: 50px;
   width: 80%;
   height: auto;
+}
+
+.game-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  background-color: red;
+  height: 100%;
+  width: 40%;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.game-info .round-info,
+.game-info .message-box,
+.game-info .active-player-icons,
+.game-info .music-box {
+  display: block;
+  width: 100%;
+}
+
+.game-info .round-info {
+  display: block;
+  height: 15%;
+  background-color: yellowgreen;
+}
+
+.game-info .message-box {
+  height: 35%;
+  background-color: blueviolet;
+}
+
+.game-info .active-player-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: peru;
+  height: 40%;
+  padding: 10px;
+}
+
+.game-info .active-player-icons .active-player-one {
+  background-color: rebeccapurple;
+}
+
+.game-info .active-player-icons .active-player-two {
+  background-color: gainsboro;
+}
+
+.game-info .music-box {
+  display: block;
+  height: 10%;
+  background-color: firebrick;
 }
 
 .cell-win {

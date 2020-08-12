@@ -4,6 +4,7 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  border: 1px solid black;
 }
 
 html,
@@ -14,23 +15,33 @@ body {
     font: 400 16px/16px 'Ubuntu', sans-serif, monospace;
 }
 
+.page-container {
+  height: 100%;
+  width: 100%;
+}
+
 .main-container {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: start;
   background: slateblue;
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
+.game-controls {
+  height: auto;
+}
+
+// GAMEBOARD CONTAINER ---------------------//
 .gameboard-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   width: 70%;
-  height: 100%;
-  margin: 40px auto 0 40px;
+  height: auto;
   background: green;
 }
 
@@ -155,20 +166,21 @@ body {
       display: flex;
       height: 20%;
       
+      
       button {
         margin: 0 auto;
       }
     }
   }
-
 }
 
 #gameboard {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: row wrap;
+  width: auto;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
 }
 
 .cell {
@@ -186,6 +198,60 @@ body {
         width: 80%;
         height: auto;
     }
+}
+
+// GAMEINFO ---------------------------------//
+.game-info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+  background-color: red;
+  height: 100%;
+  width: 40%;
+  margin-top: 40px;
+  text-align: left;
+
+  .round-info,
+  .message-box,
+  .active-player-icons,
+  .music-box {
+    display: block;
+    width: 100%;
+  }
+
+  .round-info {
+    display: block;
+    height: 15%;
+    background-color: yellowgreen;
+  }
+
+  .message-box {
+    height: 35%;
+    background-color: blueviolet;
+  }
+
+  .active-player-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: peru;
+    height: 40%;
+    padding: 10px;
+    .active-player-one {
+      background-color: rebeccapurple;
+    }
+
+    .active-player-two {
+      background-color: gainsboro;
+    }
+  }
+
+  .music-box {
+    display: block;
+    height: 10%;
+    background-color: firebrick;
+  }
 }
 
 .cell-win {

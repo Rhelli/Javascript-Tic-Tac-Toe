@@ -8,6 +8,16 @@ const game = (() => {
   let currentPlayer = '';
   let Icons = [];
 
+  const styles = (() => {
+    const startButton = document.getElementById('start-game');
+    const formContainer = document.getElementById('form-container');
+    const removeForm = () => formContainer.style.display = 'none';
+    const addForm = () => formContainer.style.display = 'flex';
+    const initialBackground = (element) => element.style.background = 'violet'
+
+    return { addForm, initialBackground, removeForm };
+  })();
+
   const Player = (name, symbol, playerNumber, img) => {
     getName = () => name;
     getSymbol = () => symbol;
@@ -46,19 +56,35 @@ const game = (() => {
     return { Icons };
   };
 
+  //const gameInit = () => {
+  //  if (
+  //    namePlayerOne.value !== ''
+  //    && namePlayerTwo.value !== ''
+  //    && Icons.length == 2
+  //  ) {
+  //    playerOne = Player(namePlayerOne.value, 'X', 1, Icons[0]);
+  //    playerTwo = Player(namePlayerTwo.value, 'O', 2, Icons[1]);
+  //    currentPlayer = playerOne;
+  //  }
+  //};
+
   const gameInit = () => {
-    if (
-      namePlayerOne.value !== ''
-      && namePlayerTwo.value !== ''
-      && Icons.length == 2
-    ) {
+    if (namePlayerOne.value === '' || namePlayerTwo.value === '') {
+      alert("Please add both players' names to continue.");
+      return false;
+    }
+    if (Icons.length < 2) {
+      alert('Please select a character for both players to continue.');
+      return false;
+    }
+    if (namePlayerOne.value !== '' && namePlayerTwo.value !== '' && Icons.length == 2) {
       playerOne = Player(namePlayerOne.value, 'X', 1, Icons[0]);
       playerTwo = Player(namePlayerTwo.value, 'O', 2, Icons[1]);
       currentPlayer = playerOne;
+      styles.removeForm();
+      return true;
     }
-    allIcons.forEach((element) => {
-      element.removeEventListener('click', choosePlayerIcon, false);
-    });
+    return false;
   };
 
   allIcons.forEach((element) => {
@@ -190,17 +216,6 @@ const game = (() => {
   })();
 
   return { gameInit, gameBoard };
-})();
-
-const styles = (() => {
-  const startButton = document.getElementById('start-game');
-  const formContainer = document.getElementById('form-container');
-  const removeForm = () => formContainer.style.display = 'none';
-  const addForm = () => formContainer.style.display = 'flex';
-  const initialBackground = (element) => element.style.background = 'violet'
-  startButton.addEventListener('click', removeForm, false);
-
-  return { addForm, initialBackground }
 })();
 
 

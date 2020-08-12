@@ -9,9 +9,12 @@
 </head>
 
 <body>
-  <div class="main-container">
-    <button onclick="game.gameBoard.reset()">Reset modafucka!</button>
-    <div class="gameboard-container">
+  <div class="page-container">
+    <div class="game-controls">
+      <button onclick="game.gameBoard.reset()">Reset modafucka!</button>
+    </div>
+    <div class="main-container">
+      <div class="gameboard-container">
       <div id="gameboard">
         <div datasymbol="A" class="cell" id="c0"></div>
         <div datasymbol="B" class="cell" id="c1"></div>
@@ -23,8 +26,30 @@
         <div datasymbol="b" class="cell" id="c7"></div>
         <div datasymbol="a" class="cell" id="c8"></div>
       </div>
-    </div>
-    <div class="form-container" id="form-container">
+      </div>
+      <div class="game-info">
+      <div class="round-indicator">
+        <h3>Round Goes Here</h3>
+      </div>
+      <div class="message-box">
+        
+      </div>
+      <div class="active-player-icons" id="activePlayerIcons">
+        <div>
+          <div class="active-player-one" id="activePlayerOne">
+
+          </div>
+          <div class="active-player-two" id="activePlayerTwo">
+            
+          </div>
+        </div>
+      </div>
+      <div class="music-box" id="music-box">
+
+      </div>
+      </div>
+
+      <!-- <div class="form-container" id="form-container">
       <h2>New Game</h2>
       <div class="name-container">
         <div class="row">
@@ -51,9 +76,13 @@
       <div class="button-container">
         <button onclick="game.gameInit()" id="start-game">Play modafuka!</button>
       </div>
+    </div> -->
     </div>
+    <footer>
+      <h3>Made by Alexis Sanchez and Rory Hellier with very little love.</h3>
+    </footer>
+    <script src="./js/main.js"></script>
   </div>
-  <script src="./js/main.js"></script>
 </body>
 
 </html>
