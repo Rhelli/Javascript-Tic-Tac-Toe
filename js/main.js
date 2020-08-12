@@ -35,7 +35,7 @@ const game = (() => {
       } else {
         roundCounter.innerHTML = `Turn ${element}.`;
       }
-      playerTurnIndicator.innerHTML = `It is ${oppositePlayer.getName()}'s turn.`;
+      playerTurnIndicator.innerHTML = `It is ${oppositePlayer.getName()}'s turn`;
     };
 
     return {
@@ -165,7 +165,9 @@ const game = (() => {
           const style = [aa, bb, cc];
           roundWon = true;
           style.forEach((element) => {
-            element.style.background = 'green ';
+            (currentPlayer === playerOne) ?
+            element.style.background = playerOne.getBackground() : 
+              element.style.background = playerTwo.getBackground();
           });
           return roundWon;
         }
@@ -208,12 +210,12 @@ const game = (() => {
         styles.disableBackground(currentPlayer.getBackground(), playerTwoIcon);
         currentPlayer = playerTwo;
         oppositePlayer = playerOne;
-        styles.paintBackground(currentPlayer.getBackground(), playerOneIcon);
+        styles.paintBackground(playerOne.getBackground(), playerOneIcon);
       } else {
         styles.disableBackground(currentPlayer.getBackground(), playerOneIcon);
         currentPlayer = playerOne;
         oppositePlayer = playerTwo;
-        styles.paintBackground(currentPlayer.getBackground(), playerTwoIcon);
+        styles.paintBackground(playerTwo.getBackground(), playerTwoIcon);
       }
 
       count++;
