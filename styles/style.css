@@ -1,15 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);
-*,
-*:before,
-*:after {
+* {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px solid black;
 }
 
-html,
 body {
   width: 100%;
+  margin: 0;
+  padding: 0;
   height: 100vh;
   background: red;
   font: 400 16px/16px 'Ubuntu', sans-serif, monospace;
@@ -18,6 +16,10 @@ body {
 .page-container {
   height: 100%;
   width: 100%;
+}
+
+.page-container .game-controls button {
+  height: 40px;
 }
 
 .main-container {
@@ -38,10 +40,6 @@ body {
           align-items: start;
   background: slateblue;
   position: relative;
-}
-
-.game-controls {
-  height: auto;
 }
 
 .gameboard-container {
@@ -325,20 +323,22 @@ body {
   background-color: red;
   height: 100%;
   width: 40%;
-  margin-top: 40px;
   text-align: left;
 }
 
-.game-info .round-info,
+.game-info .round-indicator,
 .game-info .message-box,
 .game-info .active-player-icons,
 .game-info .music-box {
-  display: block;
   width: 100%;
 }
 
-.game-info .round-info {
-  display: block;
+.game-info .round-indicator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   height: 15%;
   background-color: yellowgreen;
 }
@@ -372,7 +372,6 @@ body {
 }
 
 .game-info .music-box {
-  display: block;
   height: 10%;
   background-color: firebrick;
 }
