@@ -32,7 +32,7 @@ body {
   flex-flow: column nowrap;
   justify-content: start;
   align-items: center;
-  background-image: url('../assets/backgrounds/stone-floor.jpg');
+  background-image: url('../assets/backgrounds/wood-table-new.png');
   background-size: cover;
   position: relative;
 }
@@ -42,8 +42,8 @@ body {
 // GAMEBOARD CONTAINER ---------------------//
 .gameboard-background {
 margin-top: 10vh; 
- width: 40%;
- height: 50vh;
+ width: 75%;
+ height: 65vh;
  .gameboard-container {
   position: relative;
   top: 50%;
@@ -51,7 +51,7 @@ margin-top: 10vh;
   width: 100%;
   height: 100%;
    .gameboard-fixer {
-     position: absolute;
+     position: relative;
      top: 50%;
      z-index: 2;
      background: url('../assets/backgrounds/kisspng-parchment-information-paper-document-pergamen-5b22e7f095f5a3.8831698115290142566142.png');
@@ -267,6 +267,9 @@ margin-top: 10vh;
 
 #gameboard {
   width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   height: auto;
   z-index: 3;
   display: flex;
