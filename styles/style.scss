@@ -32,7 +32,8 @@ body {
   flex-flow: column nowrap;
   justify-content: start;
   align-items: center;
-  background: slateblue;
+  background-image: url('../assets/backgrounds/stone-floor.jpg');
+  background-size: cover;
   position: relative;
 }
 
@@ -40,17 +41,15 @@ body {
 
 // GAMEBOARD CONTAINER ---------------------//
 .gameboard-background {
-margin-top: 10vh;
-background-color: red;
+margin-top: 10vh; 
  width: 40%;
- height: 45vh;
+ height: 50vh;
  .gameboard-container {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
-  height: auto;
-  background: green;
+  height: 100%;
    .gameboard-fixer {
      position: absolute;
      top: 50%;
@@ -60,7 +59,7 @@ background-color: red;
      background-position: center;
      background-repeat: no-repeat;
      transform: translateY(-50%);
-     height: 40vh;
+     height: 100%;
      padding: 20px;
      width: 100%;
    }
@@ -268,7 +267,7 @@ background-color: red;
 
 #gameboard {
   width: 100%;
-  height: 200px;
+  height: auto;
   z-index: 3;
   display: flex;
   justify-content: center;
@@ -345,7 +344,8 @@ background-color: red;
     justify-content: space-evenly;
     flex-flow: row nowrap;
     align-items: center;
-    background-color: peru;
+    background-image: url('../assets/backgrounds/wood-table.jpg');
+    background-size: 100%;
     padding: 10px;
     width: 50%;
     .active-player-one {

@@ -26,9 +26,9 @@ const game = (() => {
       element.style.background = color;
     };
     const disableBackground = (color, element) => {
-      element.style.background = '';
+      element.style.background = 'rgba(256, 256, 256, 0.5)';
     };
-    const initialBackground = (element) => element.style.background = 'violet';
+    const initialBackground = (element) => element.style.background = 'transparent';
     const displayRounds = (element) => {
       if (roundCounter.innerHTML === 'No Turns Yet') {
         roundCounter.innerHTML = 'Turn 1';
@@ -47,7 +47,7 @@ const game = (() => {
       displayIcon,
       paintBackground,
       disableBackground,
-    };
+    };rgba(256, 256, 256, 0.5)
   })();
 
   const Player = (name, symbol, playerNumber, img, background) => {
@@ -208,16 +208,16 @@ const game = (() => {
             alert('Loser.');
           }
         }, 450);
-      } else if (currentPlayer.getNumber() === 1) {
+      } else if (oppositePlayer.getNumber() === 1) {
         styles.disableBackground(currentPlayer.getBackground(), playerTwoIcon);
-        currentPlayer = playerTwo;
-        oppositePlayer = playerOne;
-        styles.paintBackground(playerOne.getBackground(), playerOneIcon);
-      } else {
-        styles.disableBackground(currentPlayer.getBackground(), playerOneIcon);
         currentPlayer = playerOne;
         oppositePlayer = playerTwo;
-        styles.paintBackground(playerTwo.getBackground(), playerTwoIcon);
+        styles.paintBackground(currentPlayer.getBackground(), playerOneIcon);
+      } else {
+        styles.disableBackground(currentPlayer.getBackground(), playerOneIcon);
+        currentPlayer = playerTwo;
+        oppositePlayer = playerOne;
+        styles.paintBackground(currentPlayer.getBackground(), playerTwoIcon);
       }
 
       count++;
