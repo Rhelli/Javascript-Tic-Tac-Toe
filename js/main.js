@@ -101,8 +101,8 @@ const game = (() => {
       return false;
     }
     if (namePlayerOne.value !== '' && namePlayerTwo.value !== '' && Icons.length === 2) {
-      playerOne = Player(namePlayerOne.value, 'X', 1, Icons[0], 'mediumaquamarine');
-      playerTwo = Player(namePlayerTwo.value, 'O', 2, Icons[1], 'cyan');
+      playerOne = Player(namePlayerOne.value, 'X', 1, Icons[0], 'rgba(144, 164, 174, 0.8');
+      playerTwo = Player(namePlayerTwo.value, 'O', 2, Icons[1], 'rgba(241, 196, 15, 0.8');
       currentPlayer = playerOne;
       oppositePlayer = playerTwo;
       styles.displayIcon(playerOne.getImg(), playerOneIcon);

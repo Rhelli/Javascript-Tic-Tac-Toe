@@ -32,9 +32,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -75,7 +75,7 @@ body {
 }
 
 .form-container {
-  background-image: url("../assets/backgrounds/ice.jpg");
+  background-image: url("../assets/backgrounds/wood-table.jpg");
   background-size: 100%;
   position: absolute;
   color: #F7F9F9;
@@ -95,7 +95,7 @@ body {
   padding-bottom: 20px;
   margin: 0 auto;
   border-radius: 12px;
-  border: 3px solid #29438F;
+  border: 2px solid #5D4037;
   -webkit-box-shadow: 0px 2px 15px 3px #1e294f;
   box-shadow: 0px 2px 15px 3px #1e294f;
 }
@@ -115,16 +115,29 @@ body {
 .form-container .button-container button {
   position: relative;
   top: 20px;
-  color: white;
+  color: #dcdcdc;
+  background-image: url("../assets/backgrounds/ice.jpg");
+  background-size: 100%;
   border: none;
-  padding: 6px 12px;
+  padding: 10px 16px;
   font-size: 14px;
+  width: 250px;
+  height: 50px;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 8px 2px #000a4a;
   box-shadow: 0px 0px 8px 2px #000a4a;
   text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
   background-color: #1b6dd8;
   margin: 0 auto 40px auto;
+}
+
+.form-container .button-container button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-box-shadow: 0px 0px 4px 1px #000a4a;
+  box-shadow: 0px 0px 4px 1px #000a4a;
 }
 
 .form-container h2 {
@@ -141,23 +154,21 @@ body {
 }
 
 .form-container .name-container .p1 input[type="text"] {
-  color: mediumaquamarine;
-  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
+  color: #283747;
 }
 
 .form-container .name-container .p1 input[type="text"]:focus {
-  border-bottom: 10px solid mediumaquamarine;
+  border-bottom: 10px solid #90A4AE;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
 }
 
 .form-container .name-container .p2 input[type="text"] {
-  color: cyan;
-  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
+  color: #7D6608;
 }
 
 .form-container .name-container .p2 input[type="text"]:focus {
-  border-bottom: 10px solid cyan;
+  border-bottom: 10px solid #F1C40F;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
 }
@@ -171,7 +182,7 @@ body {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   width: 90%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 12px 20px;
   margin: 0 auto 15px auto;
 }
@@ -186,17 +197,18 @@ body {
 
 .form-container .name-container .row input[type="text"] {
   width: 100%;
-  height: 30px;
+  height: 50px;
   outline: none;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.6);
   border: none;
   border-bottom: 4px solid #dcdcdc;
   -webkit-transition-duration: 0.15s;
           transition-duration: 0.15s;
   padding-bottom: 5px;
+  border-radius: 12px .form-container .name-container .row input[type="text"];
 }
 
-.form-container .name-container .row input[type="text"]::-webkit-input-placeholder {
+.form-container .name-container .row input[type="text"] ::-webkit-input-placeholder {
   color: #ffffff;
   font-weight: 600;
   font-size: 18px;
@@ -278,7 +290,9 @@ body {
   border-radius: 6px;
   -webkit-transition-duration: 0.15s;
           transition-duration: 0.15s;
-  border: 1px solid #eee;
+  border: 1px solid rgba(1, 1, 1, 0.4);
+  -webkit-box-shadow: 0px 0px 12px -2px #262608;
+  box-shadow: 0px 0px 12px -2px #262608;
 }
 
 .form-container .select-character-container #character-container-1 .character-div img,
@@ -291,10 +305,10 @@ body {
 
 .form-container .select-character-container #character-container-1 .character-div:hover,
 .form-container .select-character-container #character-container-2 .character-div:hover {
-  background-color: rgba(128, 222, 234, 0.9);
+  background-color: rgba(249, 235, 234, 0.9);
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
-  border: 1px solid #80deea;
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .form-container .select-character-container .button-container {
@@ -379,18 +393,18 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background-color: red;
-  height: 20%;
-  width: 25%;
+  height: 120px;
+  width: 100%;
   text-align: left;
 }
 
@@ -398,7 +412,7 @@ body {
 .game-info .message-box,
 .game-info .active-player-icons,
 .game-info .music-box {
-  width: 100%;
+  height: 100%;
 }
 
 .game-info .round-indicator {
@@ -415,19 +429,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 15%;
   background-color: yellowgreen;
+  width: 25%;
 }
 
 .game-info .round-indicator #turn-counter,
 .game-info .round-indicator #player-turn {
   margin: 0;
   padding: 0;
-}
-
-.game-info .message-box {
-  height: 35%;
-  background-color: blueviolet;
 }
 
 .game-info .active-player-icons {
@@ -437,17 +446,16 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
   background-color: peru;
-  height: 40%;
   padding: 10px;
+  width: 50%;
 }
 
 .game-info .active-player-icons .active-player-one {
@@ -458,15 +466,32 @@ body {
   background-color: gainsboro;
 }
 
+.game-info .active-player-icons .active-player-one,
+.game-info .active-player-icons .active-player-two {
+  border-radius: 4px;
+}
+
 .game-info .active-player-icons .active-player-one img,
 .game-info .active-player-icons .active-player-two img {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
+}
+
+.game-info .active-player-icons .active-player-one {
+  border: 1px solid #4DA67F;
+  -webkit-box-shadow: 0px 0px 16px -3px #132a20;
+  box-shadow: 0px 0px 16px -3px #132a20;
+}
+
+.game-info .active-player-icons .active-player-two {
+  border: 1px solid #F7F9F9;
+  -webkit-box-shadow: 0px 0px 16px -1px #004040;
+  box-shadow: 0px 0px 16px -1px #004040;
 }
 
 .game-info .music-box {
-  height: 10%;
   background-color: firebrick;
+  width: 25%;
 }
 
 .cell-win {
@@ -476,7 +501,7 @@ body {
 #avoid-clicks {
   pointer-events: none;
   cursor: no-drop;
-  background-color: mediumaquamarine;
+  background-color: #90A4AE;
   border-radius: 6px;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
@@ -485,7 +510,7 @@ body {
 #avoid-clicks-p2 {
   pointer-events: none;
   cursor: no-drop;
-  background-color: cyan;
+  background-color: #F1C40F;
   border-radius: 6px;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
@@ -494,7 +519,7 @@ body {
 @media only screen and (min-width: 468px) {
   .form-container h2 {
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .form-container .button-container button {
     font-size: 18px;
@@ -546,7 +571,7 @@ body {
   }
   .form-container .name-container .row label {
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .form-container .name-container .row input[type="text"] {
     font-size: 22px;
