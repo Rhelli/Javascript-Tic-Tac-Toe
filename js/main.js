@@ -106,6 +106,7 @@ const game = (() => {
       currentPlayer = playerOne;
       oppositePlayer = playerTwo;
       styles.displayIcon(playerOne.getImg(), playerOneIcon);
+      styles.paintBackground(playerOne.getBackground(),playerOneIcon)
       styles.displayIcon(playerTwo.getImg(), playerTwoIcon);
       styles.removeForm();
       return true;
