@@ -28,28 +28,50 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: slateblue;
   position: relative;
 }
 
-.gameboard-container {
+.gameboard-background {
+  margin-top: 10vh;
+  background-color: red;
+  width: 40%;
+  height: 45vh;
+}
+
+.gameboard-background .gameboard-container {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 75%;
+  width: 100%;
   height: auto;
   background: green;
+}
+
+.gameboard-background .gameboard-container .gameboard-fixer {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  background: url("../assets/backgrounds/kisspng-parchment-information-paper-document-pergamen-5b22e7f095f5a3.8831698115290142566142.png");
+  background-size: 116% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 40vh;
+  padding: 20px;
+  width: 100%;
 }
 
 .form-container {
@@ -120,6 +142,7 @@ body {
 
 .form-container .name-container .p1 input[type="text"] {
   color: mediumaquamarine;
+  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
 }
 
 .form-container .name-container .p1 input[type="text"]:focus {
@@ -130,6 +153,7 @@ body {
 
 .form-container .name-container .p2 input[type="text"] {
   color: cyan;
+  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
 }
 
 .form-container .name-container .p2 input[type="text"]:focus {
@@ -173,9 +197,9 @@ body {
 }
 
 .form-container .name-container .row input[type="text"]::-webkit-input-placeholder {
-  color: #0000FF;
+  color: #ffffff;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .form-container .select-character-container {
@@ -288,6 +312,7 @@ body {
 #gameboard {
   width: 100%;
   height: 200px;
+  z-index: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -332,8 +357,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
   border: 1px black solid;
-  background-color: violet;
+  background-color: transparent;
   width: 33.333%;
+  z-index: 5;
 }
 
 .cell:after {
@@ -357,14 +383,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: red;
-  height: 100%;
+  height: 20%;
   width: 25%;
   text-align: left;
 }
@@ -380,10 +405,24 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 15%;
   background-color: yellowgreen;
+}
+
+.game-info .round-indicator #turn-counter,
+.game-info .round-indicator #player-turn {
+  margin: 0;
+  padding: 0;
 }
 
 .game-info .message-box {
@@ -514,6 +553,9 @@ body {
   }
   .form-container .name-container .row input[type="text"]::-webkit-input-placeholder {
     font-size: 16px;
+  }
+  .form-container .gameboard-fixer {
+    background-size: 116%;
   }
   .cell {
     max-width: 220px;

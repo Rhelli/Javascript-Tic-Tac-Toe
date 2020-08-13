@@ -30,7 +30,7 @@ const game = (() => {
     };
     const initialBackground = (element) => element.style.background = 'violet';
     const displayRounds = (element) => {
-      if (roundCounter.innerHTML === '') {
+      if (roundCounter.innerHTML === 'No Turns Yet') {
         roundCounter.innerHTML = 'Turn 1';
       } else {
         roundCounter.innerHTML = `Turn ${element}.`;
@@ -108,6 +108,7 @@ const game = (() => {
       styles.displayIcon(playerOne.getImg(), playerOneIcon);
       styles.paintBackground(playerOne.getBackground(),playerOneIcon)
       styles.displayIcon(playerTwo.getImg(), playerTwoIcon);
+      playerTurnIndicator.innerHTML = `It's ${currentPlayer.getName()}'s turn`
       styles.removeForm();
       return true;
     }
@@ -128,7 +129,7 @@ const game = (() => {
         element.dataset.datasymbol = '';
         styles.initialBackground(element);
         count = 1;
-        roundCounter.innerHTML = 'No Turns Yet.';
+        roundCounter.innerHTML = 'Round 1.';
         playerTurnIndicator.innerHTML = '';
         playerOneIcon.innerHTML = '';
         playerTwoIcon.innerHTML = '';
@@ -185,7 +186,7 @@ const game = (() => {
     };
 
     const playerSwitch = () => {
-      styles.displayRounds(count);
+      styles.displayRounds(count+1);
 
       if (winningValidation(updateBoardArray(), currentPlayer.getSymbol()) === false && count === 9) {
         setTimeout(() => {
