@@ -55,7 +55,26 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 100%;
-  height: 100%;
+  height: 80%;
+}
+
+.gameboard-background .gameboard-container .wood-table {
+  display: block;
+  width: 100vw;
+  height: 70vh;
+  min-height: 65vh;
+  position: absolute;
+  top: 50%;
+  left: -16%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: url("../assets/backgrounds/wood-table.jpg");
+  background-size: auto 100%;
+  background-position: contain;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0px 0px 91px -19px #261c18;
+  box-shadow: 0px 0px 91px -19px #261c18;
+  border: 1px solid #404040;
 }
 
 .gameboard-background .gameboard-container .gameboard-fixer {
@@ -69,6 +88,7 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   height: 100%;
+  min-height: 65vh;
   padding: 20px;
   width: 100%;
 }
@@ -204,10 +224,10 @@ body {
   -webkit-transition-duration: 0.15s;
           transition-duration: 0.15s;
   padding-bottom: 5px;
-  border-radius: 12px .form-container .name-container .row input[type="text"];
+  border-radius: 12px;
 }
 
-.form-container .name-container .row input[type="text"] ::-webkit-input-placeholder {
+.form-container .name-container .row input[type="text"]::-webkit-input-placeholder {
   color: #ffffff;
   font-weight: 600;
   font-size: 18px;
@@ -323,11 +343,12 @@ body {
 }
 
 #gameboard {
-  width: 100%;
+  width: 80%;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  left: 10%;
   height: auto;
   z-index: 3;
   display: -webkit-box;
@@ -363,6 +384,16 @@ body {
           flex-flow: row nowrap;
 }
 
+#gameboard .border-horizontal {
+  border-top: 4px solid #4E342E;
+  border-bottom: 4px solid #4E342E;
+}
+
+#gameboard .border-vert {
+  border-right: 4px solid #4E342E;
+  border-left: 4px solid #4E342E;
+}
+
 .cell {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -373,7 +404,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px black solid;
   background-color: transparent;
   width: 33.333%;
   z-index: 5;
@@ -405,7 +435,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: red;
   height: 120px;
   width: 100%;
   text-align: left;
@@ -432,8 +461,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: yellowgreen;
+  background: url("../assets/backgrounds/ice.jpg");
+  background-size: 100% auto;
   width: 25%;
+  color: #F7F9F9;
 }
 
 .game-info .round-indicator #turn-counter,
@@ -460,6 +491,8 @@ body {
   background-size: 100%;
   padding: 10px;
   width: 50%;
+  border-right: 1px solid #404040;
+  border-left: 1px solid #404040;
 }
 
 .game-info .active-player-icons .active-player-one {
@@ -494,7 +527,8 @@ body {
 }
 
 .game-info .music-box {
-  background-color: firebrick;
+  background: url("../assets/backgrounds/ice.jpg");
+  background-size: 100% auto;
   width: 25%;
 }
 

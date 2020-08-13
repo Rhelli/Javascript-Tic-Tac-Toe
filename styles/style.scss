@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);
 
-*
- {
+* {
   box-sizing: border-box;
 }
 
@@ -41,29 +40,48 @@ body {
 
 // GAMEBOARD CONTAINER ---------------------//
 .gameboard-background {
-margin-top: 10vh; 
- width: 75%;
- height: 65vh;
- .gameboard-container {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  height: 100%;
-   .gameboard-fixer {
-     position: relative;
-     top: 50%;
-     z-index: 2;
-     background: url('../assets/backgrounds/kisspng-parchment-information-paper-document-pergamen-5b22e7f095f5a3.8831698115290142566142.png');
-     background-size: 116% 100%;
-     background-position: center;
-     background-repeat: no-repeat;
-     transform: translateY(-50%);
-     height: 100%;
-     padding: 20px;
-     width: 100%;
-   }
-}
+  margin-top: 10vh; 
+  width: 75%;
+  height: 65vh;
+  .gameboard-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 80%;
+    .wood-table {
+      display: block;
+      width: 100vw;
+      height: 70vh;
+      min-height: 65vh;
+      position: absolute;
+      top: 50%;
+      left: -16%;
+      transform: translateY(-50%);
+      background: url('../assets/backgrounds/wood-table.jpg');
+      background-size: auto 100%;
+      background-position: contain;
+      background-repeat: no-repeat;
+      -webkit-box-shadow: 0px 0px 91px -19px rgba(38,28,24,1);
+      -moz-box-shadow: 0px 0px 91px -19px rgba(38,28,24,1);
+      box-shadow: 0px 0px 91px -19px rgba(38,28,24,1);
+      border: 1px solid #404040;
+    }
+    .gameboard-fixer {
+      position: relative;
+      top: 50%;
+      z-index: 2;
+      background: url('../assets/backgrounds/kisspng-parchment-information-paper-document-pergamen-5b22e7f095f5a3.8831698115290142566142.png');
+      background-size: 116% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+      height: 100%;
+      min-height: 65vh;
+      padding: 20px;
+      width: 100%;
+    }
+  } 
 }
 
 
@@ -183,7 +201,7 @@ margin-top: 10vh;
         border-bottom: 4px solid #dcdcdc;
         transition-duration: 0.15s;
         padding-bottom: 5px;
-        border-radius: 12px
+        border-radius: 12px;
         &::-webkit-input-placeholder {
           color: #ffffff;
           font-weight: 600;
@@ -257,7 +275,6 @@ margin-top: 10vh;
       display: flex;
       height: 20%;
       
-      
       button {
         margin: 0 auto;
       }
@@ -266,10 +283,11 @@ margin-top: 10vh;
 }
 
 #gameboard {
-  width: 100%;
+  width: 80%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  left: 10%;
   height: auto;
   z-index: 3;
   display: flex;
@@ -285,13 +303,22 @@ margin-top: 10vh;
     align-items: center;
     flex-flow: row nowrap;
   }
+
+  .border-horizontal {
+    border-top: 4px solid #4E342E;
+    border-bottom: 4px solid #4E342E;
+  }
+
+  .border-vert {
+    border-right: 4px solid #4E342E;
+    border-left: 4px solid #4E342E;
+  }
 }
 
 .cell {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px black solid;
     background-color: transparent;
     width: 33.333%;
     z-index: 5;
@@ -314,7 +341,6 @@ margin-top: 10vh;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
-  background-color: red;
   height: 120px;
   width: 100%;
   text-align: left;
@@ -333,8 +359,10 @@ margin-top: 10vh;
     flex-flow: column nowrap;
     justify-content: space-evenly;
     align-items: center;
-    background-color: yellowgreen;
+    background: url('../assets/backgrounds/ice.jpg');
+    background-size: 100% auto;
     width: 25%;
+    color: #F7F9F9;
     #turn-counter,
     #player-turn {
       margin: 0;
@@ -351,6 +379,8 @@ margin-top: 10vh;
     background-size: 100%;
     padding: 10px;
     width: 50%;
+    border-right: 1px solid #404040;
+    border-left: 1px solid #404040;
     .active-player-one {
       background-color: rebeccapurple;
     }
@@ -383,7 +413,8 @@ margin-top: 10vh;
   }
 
   .music-box {
-    background-color: firebrick;
+    background: url('../assets/backgrounds/ice.jpg');
+    background-size: 100% auto;
     width: 25%;
   }
 }
