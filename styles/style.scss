@@ -19,7 +19,15 @@ body {
   .game-controls {
     
     button {
-      height: 40px;
+      color: #F7F9F9;
+      outline: none;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 2px;
+      background-color: #1baafd;
+      -webkit-box-shadow: 0px 0px 10px 2px rgba(3,30,46,.6);
+-moz-box-shadow: 0px 0px 10px 2px rgba(3,30,46,.6);
+box-shadow: 0px 0px 10px 2px rgba(3,30,46,.6);
     }
   }
 }
@@ -49,24 +57,7 @@ body {
     transform: translateY(-50%);
     width: 100%;
     height: 80%;
-    .wood-table {
-      display: block;
-      width: 100vw;
-      height: 70vh;
-      min-height: 65vh;
-      position: absolute;
-      top: 50%;
-      left: -16%;
-      transform: translateY(-50%);
-      background: url('../assets/backgrounds/wood-table.jpg');
-      background-size: auto 100%;
-      background-position: contain;
-      background-repeat: no-repeat;
-      -webkit-box-shadow: 0px 0px 91px -19px rgba(38,28,24,1);
-      -moz-box-shadow: 0px 0px 91px -19px rgba(38,28,24,1);
-      box-shadow: 0px 0px 91px -19px rgba(38,28,24,1);
-      border: 1px solid #404040;
-    }
+
     .gameboard-fixer {
       position: relative;
       top: 50%;
@@ -161,6 +152,13 @@ body {
           border-bottom: 10px solid #90A4AE;
           transition-duration: 0.2s;
         }
+      }
+    }
+
+    .p1, .p2 {
+      input[type="text"] {
+        text-align: center;
+        font-size: 20px;
       }
     }
 
@@ -365,6 +363,12 @@ body {
     color: #F7F9F9;
     #turn-counter,
     #player-turn {
+      text-align: center;
+      font-weight: 600;
+      overflow: hidden;
+      width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       margin: 0;
       padding: 0;
     }
@@ -392,8 +396,8 @@ body {
     .active-player-two {
       border-radius: 4px;
       img {
-        width: 90px;
-        height: 90px;
+        width:  60px;
+        height: 60px;
       }
     }
 
