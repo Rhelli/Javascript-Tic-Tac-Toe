@@ -15,50 +15,54 @@ body {
 .page-container {
   height: 100%;
   width: 100%;
-  .game-controls {
-    button {
-      color: #F7F9F9;
-      outline: none;
-      border: none;
-      padding: 6px 14px;
-      border-radius: 4px;
-      background-color: #C70039;
+}
+
+.game-controls {
+  position: absolute;
+  top: 135px;
+  right: 5px;
+  button {
+    color: #F7F9F9;
+    outline: none;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    background-color: #C70039;
+    border: 1px solid #95002B;
+    border-left: 2px solid #95002B;
+    border-right: 2px solid #95002B;
+    border-bottom: 4px solid #95002B;
+    transition-duration: 0.15s;
+    -webkit-box-shadow: 0px 0px 16px -2px rgba(33,9,12,1);
+    -moz-box-shadow: 0px 0px 16px -2px rgba(33,9,12,1);
+    box-shadow: 0px 0px 16px -2px rgba(33,9,12,1);
+
+    &:hover {
+      background-color: #CE2052;
+      transition-duration: 0.2s;
       border: 1px solid #95002B;
       border-left: 2px solid #95002B;
       border-right: 2px solid #95002B;
-      border-bottom: 4px solid #95002B;
-      transition-duration: 0.15s;
-      -webkit-box-shadow: 0px 0px 16px -2px rgba(33,9,12,1);
-      -moz-box-shadow: 0px 0px 16px -2px rgba(33,9,12,1);
-      box-shadow: 0px 0px 16px -2px rgba(33,9,12,1);
+      border-bottom: 5px solid #95002B;
+    }
 
-      &:hover {
-        background-color: #CE2052;
-        transition-duration: 0.2s;
-        border: 1px solid #95002B;
-        border-left: 2px solid #95002B;
-        border-right: 2px solid #95002B;
-        border-bottom: 5px solid #95002B;
-      }
-
-      &:active {
-        border: 1px solid #95002B;
-        border-left: 1px solid #95002B;
-        border-right: 1px solid #95002B;
-        border-bottom: 3px solid #95002B;
-        -webkit-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
-        -moz-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
-        box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
-      }
-      p {
-        margin: 0 0 3px 0;
-      }
-      i {
-        height: 10px;
-        width: auto;
-        margin-left: 5px;
-        margin-top: -5px;
-      }
+    &:active {
+      border: 1px solid #95002B;
+      border-left: 1px solid #95002B;
+      border-right: 1px solid #95002B;
+      border-bottom: 3px solid #95002B;
+      -webkit-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+      -moz-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+      box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+    }
+    p {
+      margin: 0 0 3px 0;
+    }
+    i {
+      height: 10px;
+      width: auto;
+      margin-left: 5px;
+      margin-top: -5px;
     }
   }
 }
@@ -74,6 +78,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  
 }
 
 
@@ -99,8 +104,8 @@ body {
       background-position: center;
       background-repeat: no-repeat;
       transform: translateY(-50%);
-      height: 100%;
-      min-height: 65vh;
+      min-height: 78vh;
+      max-height: 80vh;
       padding: 20px;
       width: 100%;
     }
@@ -447,13 +452,15 @@ body {
   .music-box {
     background: url('../assets/backgrounds/ice.jpg');
     background-size: 100% auto;
-    width: 25%;
+    min-width: auto;
     display: flex;
+    margin-left: auto;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
 
     .controls {
+      padding: 0 5px;
       display: flex;
       justify-content: center;
       flex-flow: row wrap;
@@ -477,6 +484,26 @@ body {
         border-left: 3px solid #4E342E;
         border-bottom: 5px solid #4E342E;
         text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
+      
+        &:hover {
+          background-color: #4E342E;
+          transition-duration: 0.2s;
+          border: 1px solid #4E342E;
+          border-left: 2px solid #4E342E;
+          border-right: 2px solid #4E342E;
+          border-bottom: 5px solid #4E342E;
+        }
+  
+        &:active {
+          border: 1px solid #4E342E;
+          border-left: 1px solid #4E342E;
+          border-right: 1px solid #4E342E;
+          border-bottom: 3px solid #4E342E;
+          -webkit-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+          -moz-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+          box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+        }
+
       }
     }
   }
@@ -546,6 +573,32 @@ body {
 
 
 @media only screen and (min-width: 768px) {
+  .gameboard-background {
+    width: 75%;
+    height: 62vh;
+    .gameboard-container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 100%;
+  
+      .gameboard-fixer {
+        position: relative;
+        top: 50%;
+        z-index: 2;
+        background: url('../assets/backgrounds/kisspng-parchment-information-paper-document-pergamen-5b22e7f095f5a3.8831698115290142566142.png');
+        background-size: 116% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: translateY(-50%);
+        height: 100%;
+        min-height: 90vh;
+        padding: 20px;
+        width: 100%;
+      }
+    } 
+  }
   .form-container {
     h2 {
       font-size: 32px;
@@ -571,10 +624,11 @@ body {
         }
       }
     }
-    .gameboard-fixer {
-      background-size: 116%;
-    }
+  }
 
+  .gameboard-row {
+    max-height: 450px;
+    max-width: 70%;
   }
 
   .cell {
@@ -586,6 +640,12 @@ body {
 
 
 @media  screen and (min-width: 1024px) {
+
+  .gameboard-row {
+    max-height: 280px;
+    max-width: 50%;
+  }
+
   .form-container {
     max-width: 70%;
     .select-character-container {

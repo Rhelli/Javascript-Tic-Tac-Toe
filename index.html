@@ -11,14 +11,15 @@
 
 <body>
   <div class="page-container">
+    <div class="game-controls">
+      <button onclick="game.gameBoard.reset()"><p>Reset<i class="fas fa-undo"></i></p></button>
+    </div>
     <div class="main-container">
       <div class="game-info">
         <div class="round-indicator">
           <h3 id="turn-counter">Turn 1.</h3>
           <h4 id="player-turn"></h4>
-          <div class="game-controls">
-            <button onclick="game.gameBoard.reset()"><p>Reset<i class="fas fa-undo"></i></p></button>
-          </div>
+
         </div>
         <div class="active-player-icons" id="activePlayerIcons">
           <div class="active-player-one" id="activePlayerOne">
@@ -62,7 +63,7 @@
         </div>
       </div>
 
-    <!-- <div class="form-container" id="form-container">
+<div class="form-container" id="form-container">
       <h2>New Game</h2>
       <div class="name-container">
         <div class="row p1">
@@ -90,7 +91,7 @@
       <div class="button-container">
         <button type="submit" onclick="game.gameInit(), event.preventDefault()" id="start-game"  >Start Game</button>
       </div>
-    </div> -->
+    </div> 
     </div>
     <script src="./js/main.js"></script>
   </div>
