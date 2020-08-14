@@ -31,6 +31,7 @@ body {
   padding: 6px 14px;
   border-radius: 4px;
   background-color: #c70039;
+  border: 1px solid #95002b;
   border-left: 2px solid #95002b;
   border-right: 2px solid #95002b;
   border-bottom: 4px solid #95002b;
