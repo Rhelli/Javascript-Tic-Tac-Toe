@@ -22,42 +22,46 @@ body {
   top: 135px;
   right: 5px;
   z-index: 3;
+
   button {
-    color: #F7F9F9;
+    color: #f7f9f9;
     outline: none;
     border: none;
     padding: 6px 14px;
     border-radius: 4px;
-    background-color: #C70039;
-    border: 1px solid #95002B;
-    border-left: 2px solid #95002B;
-    border-right: 2px solid #95002B;
-    border-bottom: 4px solid #95002B;
+    background-color: #c70039;
+    border: 1px solid #95002b;
+    border-left: 2px solid #95002b;
+    border-right: 2px solid #95002b;
+    border-bottom: 4px solid #95002b;
     transition-duration: 0.15s;
-    -webkit-box-shadow: 0px 0px 16px -2px rgba(33,9,12,1);
-    -moz-box-shadow: 0px 0px 16px -2px rgba(33,9,12,1);
-    box-shadow: 0px 0px 16px -2px rgba(33,9,12,1);
+    -webkit-box-shadow: 0 0 16px -2px rgba(33, 9, 12, 1);
+    -moz-box-shadow: 0 0 16px -2px rgba(33, 9, 12, 1);
+    box-shadow: 0 0 16px -2px rgba(33, 9, 12, 1);
+
     &:hover {
-      background-color: #CE2052;
+      background-color: #ce2052;
       transition-duration: 0.2s;
-      border: 1px solid #95002B;
-      border-left: 2px solid #95002B;
-      border-right: 2px solid #95002B;
-      border-bottom: 5px solid #95002B;
+      border: 1px solid #95002b;
+      border-left: 2px solid #95002b;
+      border-right: 2px solid #95002b;
+      border-bottom: 5px solid #95002b;
     }
 
     &:active {
-      border: 1px solid #95002B;
-      border-left: 1px solid #95002B;
-      border-right: 1px solid #95002B;
-      border-bottom: 3px solid #95002B;
-      -webkit-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
-      -moz-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
-      box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+      border: 1px solid #95002b;
+      border-left: 1px solid #95002b;
+      border-right: 1px solid #95002b;
+      border-bottom: 3px solid #95002b;
+      -webkit-box-shadow: 0 0 7px 2px rgba(33, 9, 12, 1);
+      -moz-box-shadow: 0 0 7px 2px rgba(33, 9, 12, 1);
+      box-shadow: 0 0 7px 2px rgba(33, 9, 12, 1);
     }
+
     p {
       margin: 0 0 3px 0;
     }
+
     i {
       height: 10px;
       width: auto;
@@ -78,7 +82,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  
 }
 
 // GAMEINFO ---------------------------------//
@@ -94,9 +97,9 @@ body {
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   border-bottom: 2px solid #404040;
-  -webkit-box-shadow: 0px 5px 16px -1px rgba(3,2,10,1);
-  -moz-box-shadow: 0px 5px 16px -1px rgba(3,2,10,1);
-  box-shadow: 0px 5px 16px -1px rgba(3,2,10,1);
+  -webkit-box-shadow: 0 5px 16px -1px rgba(3, 2, 10, 1);
+  -moz-box-shadow: 0 5px 16px -1px rgba(3, 2, 10, 1);
+  box-shadow: 0 5px 16px -1px rgba(3, 2, 10, 1);
 
   .round-indicator,
   .message-box,
@@ -111,8 +114,9 @@ body {
     align-items: start;
     justify-content: center;
     width: 40%;
-    color: #F7F9F9;
+    color: #f7f9f9;
     text-align: left;
+
     #turn-counter,
     #player-turn {
       font-weight: 600;
@@ -124,11 +128,13 @@ body {
       padding: 0;
       text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
     }
+
     #turn-counter {
       font-size: 28px;
       padding: 8px 4px 8px 20px;
       margin-bottom: 5px;
     }
+
     #player-turn {
       font-size: 22px;
       padding: 8px 4px 8px 20px;
@@ -147,6 +153,7 @@ body {
       background-color: rebeccapurple;
       margin-right: 5px;
     }
+
     .active-player-two {
       background-color: gainsboro;
     }
@@ -154,24 +161,25 @@ body {
     .active-player-one,
     .active-player-two {
       border-radius: 4px;
+
       img {
-        width:  60px;
+        width: 60px;
         height: 60px;
       }
     }
 
     .active-player-one {
-      border: 1px solid #4DA67F;
-      -webkit-box-shadow: 0px 0px 16px -3px rgba(19,42,32,1);
-      -moz-box-shadow: 0px 0px 16px -3px rgba(19,42,32,1);
-      box-shadow: 0px 0px 16px -3px rgba(19,42,32,1);
+      border: 1px solid #4da67f;
+      -webkit-box-shadow: 0 0 16px -3px rgba(19, 42, 32, 1);
+      -moz-box-shadow: 0 0 16px -3px rgba(19, 42, 32, 1);
+      box-shadow: 0 0 16px -3px rgba(19, 42, 32, 1);
     }
 
     .active-player-two {
-      border: 1px solid #F7F9F9;
-      -webkit-box-shadow: 0px 0px 16px -1px rgba(0,64,64,1);
-      -moz-box-shadow: 0px 0px 16px -1px rgba(0,64,64,1);
-      box-shadow: 0px 0px 16px -1px rgba(0,64,64,1);
+      border: 1px solid #f7f9f9;
+      -webkit-box-shadow: 0 0 16px -1px rgba(0, 64, 64, 1);
+      -moz-box-shadow: 0 0 16px -1px rgba(0, 64, 64, 1);
+      box-shadow: 0 0 16px -1px rgba(0, 64, 64, 1);
     }
   }
 
@@ -188,55 +196,56 @@ body {
     border-top-left-radius: 8px;
     border-left: 2px solid #283747;
     border-bottom: 2px solid #283747;
-    -webkit-box-shadow: 0px 2px 9px 2px rgba(17,10,61,1);
-    -moz-box-shadow: 0px 2px 9px 2px rgba(17,10,61,1);
-    box-shadow: 0px 2px 9px 2px rgba(17,10,61,1);
+    -webkit-box-shadow: 0 2px 9px 2px rgba(17, 10, 61, 1);
+    -moz-box-shadow: 0 2px 9px 2px rgba(17, 10, 61, 1);
+    box-shadow: 0 2px 9px 2px rgba(17, 10, 61, 1);
 
     .controls {
       padding: 0 5px;
       display: flex;
       justify-content: center;
       flex-flow: row wrap;
+
       .m {
         margin-right: 5px;
         margin-bottom: 1px;
       }
+
       button {
         height: 40px;
         width: auto;
         background: url('../assets/backgrounds/wood-table.jpg');
         background-size: 100%;
-        color: #F7F9F9;
+        color: #f7f9f9;
         outline: none;
         border: none;
         font-size: 20px;
         border-radius: 4px;
         padding: 8px;
-        border-top: 1px solid #5D4037;
-        border-right: 3px solid #4E342E;
-        border-left: 3px solid #4E342E;
-        border-bottom: 5px solid #4E342E;
+        border-top: 1px solid #5d4037;
+        border-right: 3px solid #4e342e;
+        border-left: 3px solid #4e342e;
+        border-bottom: 5px solid #4e342e;
         text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
-      
+
         &:hover {
-          background-color: #4E342E;
+          background-color: #4e342e;
           transition-duration: 0.2s;
-          border: 1px solid #4E342E;
-          border-left: 2px solid #4E342E;
-          border-right: 2px solid #4E342E;
-          border-bottom: 5px solid #4E342E;
-        }
-  
-        &:active {
-          border: 1px solid #4E342E;
-          border-left: 1px solid #4E342E;
-          border-right: 1px solid #4E342E;
-          border-bottom: 3px solid #4E342E;
-          -webkit-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
-          -moz-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
-          box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+          border: 1px solid #4e342e;
+          border-left: 2px solid #4e342e;
+          border-right: 2px solid #4e342e;
+          border-bottom: 5px solid #4e342e;
         }
 
+        &:active {
+          border: 1px solid #4e342e;
+          border-left: 1px solid #4e342e;
+          border-right: 1px solid #4e342e;
+          border-bottom: 3px solid #4e342e;
+          -webkit-box-shadow: 0 0 7px 2px rgba(33, 9, 12, 1);
+          -moz-box-shadow: 0 0 7px 2px rgba(33, 9, 12, 1);
+          box-shadow: 0 0 7px 2px rgba(33, 9, 12, 1);
+        }
       }
     }
   }
@@ -249,7 +258,7 @@ body {
   background-image: url("../assets/backgrounds/wood-table.jpg");
   background-size: 100%;
   position: absolute;
-  color: #F7F9F9;
+  color: #f7f9f9;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -261,9 +270,9 @@ body {
   margin: 0 auto;
   border-radius: 12px;
   border: 4px solid #404040;
-  -webkit-box-shadow: 0px 2px 15px 3px rgba(30,41,79,1);
-  -moz-box-shadow: 0px 2px 15px 3px rgba(30,41,79,1);
-  box-shadow: 0px 2px 15px 3px rgba(30,41,79,1);
+  -webkit-box-shadow: 0 2px 15px 3px rgba(30, 41, 79, 1);
+  -moz-box-shadow: 0 2px 15px 3px rgba(30, 41, 79, 1);
+  box-shadow: 0 2px 15px 3px rgba(30, 41, 79, 1);
   z-index: 4;
 
   .button-container {
@@ -272,7 +281,7 @@ body {
     display: flex;
     justify-content: center;
     height: 20%;
-    
+
     button {
       position: relative;
       top: 20px;
@@ -285,26 +294,27 @@ body {
       width: 70%;
       height: 50px;
       border-radius: 5px;
-      -webkit-box-shadow: 0px 0px 8px 2px rgba(0,10,74,1);
-      -moz-box-shadow: 0px 0px 8px 2px rgba(0,10,74,1);
-      box-shadow: 0px 0px 8px 2px rgba(0,10,74,1);
+      -webkit-box-shadow: 0 0 8px 2px rgba(0, 10, 74, 1);
+      -moz-box-shadow: 0 0 8px 2px rgba(0, 10, 74, 1);
+      box-shadow: 0 0 8px 2px rgba(0, 10, 74, 1);
       text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
       margin: 0 auto 40px auto;
 
       &:hover {
         transform: scale(1.02);
         transition-duration: 0.2s;
-        -webkit-box-shadow: 0px 0px 4px 1px rgba(0,10,74,1);
-        -moz-box-shadow: 0px 0px 4px 1px rgba(0,10,74,1);
-        box-shadow: 0px 0px 4px 1px rgba(0,10,74,1);
+        -webkit-box-shadow: 0 0 4px 1px rgba(0, 10, 74, 1);
+        -moz-box-shadow: 0 0 4px 1px rgba(0, 10, 74, 1);
+        box-shadow: 0 0 4px 1px rgba(0, 10, 74, 1);
       }
     }
   }
+
   h2 {
     font-size: 26px;
     margin-bottom: 0;
     text-align: center;
-    color: #F7F9F9;
+    color: #f7f9f9;
     text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
   }
 
@@ -315,14 +325,16 @@ body {
     .p1 {
       input[type="text"] {
         color: #283747;
+
         &:focus {
-          border-bottom: 10px solid #90A4AE;
+          border-bottom: 10px solid #90a4ae;
           transition-duration: 0.2s;
         }
       }
     }
 
-    .p1, .p2 {
+    .p1,
+ .p2 {
       input[type="text"] {
         text-align: center;
         font-size: 20px;
@@ -331,10 +343,10 @@ body {
 
     .p2 {
       input[type="text"] {
-        color: #7D6608;
+        color: #7d6608;
         //text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
         &:focus {
-          border-bottom: 10px solid #F1C40F;
+          border-bottom: 10px solid #f1c40f;
           transition-duration: 0.2s;
         }
       }
@@ -348,10 +360,9 @@ body {
       padding: 12px 20px;
       margin: 0 auto 15px auto;
 
-  
       label {
         font: 500 16px/16px 'Ubuntu', sans-serif;
-        color: #F7F9F9;
+        color: #f7f9f9;
         text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
         margin-bottom: 6px;
         width: auto;
@@ -368,17 +379,16 @@ body {
         padding-bottom: 5px;
         border-top-right-radius: 4px;
         border-top-left-radius: 4px;
-        border: 1px solid #4E342E;
+        border: 1px solid #4e342e;
 
         &::-webkit-input-placeholder {
-          color: #ffffff;
+          color: #fff;
           font-weight: 600;
           font-size: 18px;
           text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
         }
       }
     }
-
   }
 
   .select-character-container {
@@ -389,13 +399,14 @@ body {
     align-items: center;
     padding: 10px 20px;
     width: 100%;
-    @media  screen and(min-width: 768px) {
+
+    @media screen and(min-width: 768px) {
       & {
         flex-flow: column nowrap;
       }
     }
 
-    @media  screen and(min-width: 1024px) {
+    @media screen and(min-width: 1024px) {
       & {
         flex-flow: row nowrap;
       }
@@ -423,14 +434,16 @@ body {
         border-radius: 6px;
         transition-duration: 0.15s;
         border: 1px solid rgba(1, 1, 1, 0.4);
-        -webkit-box-shadow: 0px 0px 12px -2px rgba(38,38,8,1);
-        -moz-box-shadow: 0px 0px 12px -2px rgba(38,38,8,1);
-        box-shadow: 0px 0px 12px -2px rgba(38,38,8,1);
+        -webkit-box-shadow: 0 0 12px -2px rgba(38, 38, 8, 1);
+        -moz-box-shadow: 0 0 12px -2px rgba(38, 38, 8, 1);
+        box-shadow: 0 0 12px -2px rgba(38, 38, 8, 1);
+
         img {
           max-height: auto;
-          width:  100%;
+          width: 100%;
           transition-duration: 0.2s;
         }
+
         &:hover {
           background-color: rgba(249, 235, 234, 0.9);
           transition-duration: 0.25s;
@@ -438,11 +451,12 @@ body {
         }
       }
     }
+
     .button-container {
       margin: 0;
       display: flex;
       height: 20%;
-      
+
       button {
         margin: 0 auto;
       }
@@ -450,13 +464,12 @@ body {
   }
 }
 
-
-
 // GAMEBOARD CONTAINER ---------------------//
 .gameboard-background {
-  margin-top: 10vh; 
+  margin-top: 10vh;
   width: 75%;
   height: 65vh;
+
   .gameboard-container {
     position: relative;
     top: 50%;
@@ -478,7 +491,7 @@ body {
       padding: 20px;
       width: 100%;
     }
-  } 
+  }
 }
 
 #gameboard {
@@ -504,13 +517,13 @@ body {
   }
 
   .border-horizontal {
-    border-top: 4px solid #4E342E;
-    border-bottom: 4px solid #4E342E;
+    border-top: 4px solid #4e342e;
+    border-bottom: 4px solid #4e342e;
   }
 
   .border-vert {
-    border-right: 4px solid #4E342E;
-    border-left: 4px solid #4E342E;
+    border-right: 4px solid #4e342e;
+    border-left: 4px solid #4e342e;
   }
 }
 
@@ -521,11 +534,13 @@ body {
     background-color: transparent;
     width: 33.333%;
     z-index: 5;
-    &:after {
+
+    &::after {
       content: '';
       display: block;
       margin-top: 100%;
     }
+
       img {
         min-width: 50px;
         min-width: 50px;
@@ -541,7 +556,7 @@ body {
 #avoid-clicks {
   pointer-events: none;
   cursor: no-drop;
-  background-color: #90A4AE;
+  background-color: #90a4ae;
   border-radius: 6px;
   transition-duration: 0.2s;
 }
@@ -549,11 +564,10 @@ body {
 #avoid-clicks-p2 {
   pointer-events: none;
   cursor: no-drop;
-  background-color: #F1C40F;
+  background-color: #f1c40f;
   border-radius: 6px;
   transition-duration: 0.2s;
 }
-
 
 @media only screen and (min-width: 468px) {
   .game-info {
@@ -562,6 +576,7 @@ body {
       .active-player-two {
         height: 80px;
         width: 80px;
+
         img {
           height: 100%;
           width: 100%;
@@ -575,33 +590,41 @@ body {
       font-size: 28px;
       margin-bottom: 10px;
     }
+
     .button-container {
       button {
         font-size: 18px;
         padding: 12px 16px;
       }
     }
+
     .name-container {
       .row {
         width: 80%;
+
         label {
           font-size: 24px;
           margin-bottom: 15px;
         }
+
         input[type="text"] {
           font-size: 20px;
+
           &::-webkit-input-placeholder {
             font-size: 14px;
           }
         }
       }
     }
+
     .select-character-container {
       flex-flow: column nowrap;
+
       #character-container-1,
       #character-container-2 {
         width: 100%;
         flex-flow: row nowrap;
+
         .character-div {
           width: 100%;
         }
@@ -610,7 +633,6 @@ body {
   }
 }
 
-
 @media only screen and (min-width: 768px) {
   .game-info {
     .active-player-icons {
@@ -618,6 +640,7 @@ body {
       .active-player-two {
         height: 100px;
         width: 100px;
+
         img {
           height: 100%;
           width: 100%;
@@ -629,13 +652,14 @@ body {
   .gameboard-background {
     width: 75%;
     height: 62vh;
+
     .gameboard-container {
       position: relative;
       top: 50%;
       transform: translateY(-50%);
       width: 100%;
       height: 100%;
-  
+
       .gameboard-fixer {
         position: relative;
         top: 50%;
@@ -650,27 +674,33 @@ body {
         padding: 20px;
         width: 100%;
       }
-    } 
+    }
   }
+
   .form-container {
     h2 {
       font-size: 32px;
     }
+
     .select-character-container {
       #character-container-1,
       #character-container-2 {
         width: 80%;
       }
     }
+
     .name-container {
       .row {
         width: 70%;
+
         label {
           font-size: 28px;
           margin-bottom: 10px;
         }
+
         input[type="text"] {
           font-size: 22px;
+
           &::-webkit-input-placeholder {
             font-size: 16px;
           }
@@ -690,10 +720,7 @@ body {
   }
 }
 
-
-
-@media  screen and (min-width: 1024px) {
-
+@media screen and (min-width: 1024px) {
   .gameboard-row {
     max-height: 280px;
     max-width: 50%;
@@ -701,6 +728,7 @@ body {
 
   .form-container {
     max-width: 70%;
+
     .select-character-container {
       #character-container-1,
       #character-container-2 {
@@ -711,6 +739,3 @@ body {
     }
   }
 }
-
-
-
