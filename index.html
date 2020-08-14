@@ -1,100 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
-  <title>Document</title>
-</head>
+  <body>
+    <div class="page-container">
+      <div class="game-controls">
+        <button onclick="game.gameBoard.reset()">
+          <p>Reset<i class="fas fa-undo"></i></p>
+        </button>
+      </div>
+      <div class="main-container">
+        <div class="game-info">
+          <div class="round-indicator">
+            <h3 id="turn-counter">Turn 1.</h3>
+            <h4 id="player-turn"></h4>
+          </div>
+          <div class="active-player-icons" id="activePlayerIcons">
+            <div class="active-player-one" id="activePlayerOne"></div>
+            <div class="active-player-two" id="activePlayerTwo"></div>
+          </div>
+          <div class="music-box" id="music-box">
+            <audio id="player">
+              <source src="../assets/audio/TTFAT.mp3" type="audio/mpeg" />
+              <source src="../assets/audio/Flute Song.mp3" type="audio/mpeg" />
+            </audio>
+            <div class="controls">
+              <button
+                class="m"
+                onclick="document.getElementById('player').play()"
+              >
+                <i class="fas fa-play"></i>
+              </button>
+              <button
+                class="m"
+                onclick="document.getElementById('player').pause()"
+              >
+                <i class="fas fa-pause"></i>
+              </button>
+              <button
+                onclick="document.getElementById('player').muted=!document.getElementById('player').muted"
+              >
+                <i class="fas fa-volume-mute"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="gameboard-background">
+          <div class="gameboard-container">
+            <div class="gameboard-fixer"></div>
+            <div id="gameboard">
+              <div class="gameboard-row">
+                <div datasymbol="A" class="cell" id="c0"></div>
+                <div datasymbol="B" class="cell border-vert" id="c1"></div>
+                <div datasymbol="A" class="cell" id="c2"></div>
+              </div>
+              <div class="gameboard-row border-horizontal">
+                <div datasymbol="B" class="cell" id="c3"></div>
+                <div datasymbol="A" class="cell border-vert" id="c4"></div>
+                <div datasymbol="B" class="cell" id="c5"></div>
+              </div>
+              <div class="gameboard-row">
+                <div datasymbol="a" class="cell" id="c6"></div>
+                <div datasymbol="b" class="cell border-vert" id="c7"></div>
+                <div datasymbol="a" class="cell" id="c8"></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<body>
-  <div class="page-container">
-    <div class="game-controls">
-      <button onclick="game.gameBoard.reset()"><p>Reset<i class="fas fa-undo"></i></p></button>
+        <div class="form-container" id="form-container">
+          <h2>New Game</h2>
+          <div class="name-container">
+            <div class="row p1">
+              <label for="player-one">Player 1</label>
+              <input
+                placeholder="Enter your name"
+                required="required"
+                type="text"
+                id="player-one"
+              />
+            </div>
+            <div class="row p2">
+              <label for="player-two">Player 2</label
+              ><input
+                placeholder="Enter your name"
+                required="required"
+                type="text"
+                id="player-two"
+              />
+            </div>
+          </div>
+          <div class="select-character-container">
+            <div id="character-container-1">
+              <div class="character-div">
+                <img
+                  class="character-item"
+                  id="cersei"
+                  src="assets/got/cersei.png"
+                  alt=""
+                />
+              </div>
+              <div class="character-div">
+                <img
+                  class="character-item"
+                  id="jon"
+                  src="assets/got/jon.png"
+                  alt=""
+                />
+              </div>
+              <div class="character-div">
+                <img
+                  class="character-item"
+                  id="dragon"
+                  src="assets/got/dragon.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div id="character-container-2">
+              <div class="character-div">
+                <img
+                  class="character-item"
+                  id="gandalf"
+                  src="assets/lotr/gandalf.png"
+                  alt=""
+                />
+              </div>
+              <div class="character-div">
+                <img
+                  class="character-item"
+                  id="golum"
+                  src="assets/lotr/golum.png"
+                  alt=""
+                />
+              </div>
+              <div class="character-div">
+                <img
+                  class="character-item"
+                  id="legolas"
+                  src="assets/lotr/legolas.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="button-container">
+            <button
+              type="submit"
+              onclick="game.gameInit(), event.preventDefault()"
+              id="start-game"
+            >
+              Start Game
+            </button>
+          </div>
+        </div>
+      </div>
+      <script src="./js/main.js"></script>
     </div>
-    <div class="main-container">
-      <div class="game-info">
-        <div class="round-indicator">
-          <h3 id="turn-counter">Turn 1.</h3>
-          <h4 id="player-turn"></h4>
-
-        </div>
-        <div class="active-player-icons" id="activePlayerIcons">
-          <div class="active-player-one" id="activePlayerOne">
-          </div>
-          <div class="active-player-two" id="activePlayerTwo">
-          </div>
-        </div>
-        <div class="music-box" id="music-box">
-          <audio id="player">
-            <source src="../assets/audio/TTFAT.mp3" type="audio/mpeg">
-            <source src="../assets/audio/Flute Song.mp3" type="audio/mpeg">
-          </audio>
-          <div class="controls">
-            <button class="m" onclick="document.getElementById('player').play()"><i class="fas fa-play"></i></button>
-            <button class="m" onclick="document.getElementById('player').pause()"><i class="fas fa-pause"></i></button>
-            <button onclick="document.getElementById('player').muted=!document.getElementById('player').muted"><i class="fas fa-volume-mute"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="gameboard-background">
-        <div class="gameboard-container">
-          <div class="gameboard-fixer">
-          </div>
-          <div id="gameboard">
-            <div class="gameboard-row">
-              <div datasymbol="A" class="cell" id="c0"></div>
-              <div datasymbol="B" class="cell border-vert" id="c1"></div>
-              <div datasymbol="A" class="cell" id="c2"></div>
-            </div>
-            <div class="gameboard-row border-horizontal">
-              <div datasymbol="B" class="cell" id="c3"></div>
-              <div datasymbol="A" class="cell border-vert" id="c4"></div>
-              <div datasymbol="B" class="cell" id="c5"></div>
-            </div>
-            <div class="gameboard-row">
-              <div datasymbol="a" class="cell" id="c6"></div>
-              <div datasymbol="b" class="cell border-vert" id="c7"></div>
-              <div datasymbol="a" class="cell" id="c8"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <div class="form-container" id="form-container">
-      <h2>New Game</h2>
-      <div class="name-container">
-        <div class="row p1">
-          <label for="player-one">Player 1</label>
-          <input placeholder="Enter your name"
-            required='required' type="text" id="player-one">
-        </div>
-        <div class="row p2">
-          <label for="player-two">Player 2</label><input placeholder='Enter your name'
-            required='required' type="text" id="player-two">
-        </div>
-      </div>
-      <div class="select-character-container">
-        <div id="character-container-1">
-          <div class="character-div"><img class="character-item" id="cersei" src="assets/got/cersei.png" alt=""></div>
-          <div class="character-div"><img class="character-item" id="jon" src="assets/got/jon.png" alt=""></div>
-          <div class="character-div"><img class="character-item" id="dragon" src="assets/got/dragon.png" alt=""></div>
-        </div>
-        <div id="character-container-2">
-          <div class="character-div"><img class="character-item" id="gandalf" src="assets/lotr/gandalf.png" alt=""></div>
-          <div class="character-div"><img class="character-item" id="golum" src="assets/lotr/golum.png" alt=""></div>
-          <div class="character-div"><img class="character-item" id="legolas" src="assets/lotr/legolas.png" alt=""></div>
-        </div>
-      </div>
-      <div class="button-container">
-        <button type="submit" onclick="game.gameInit(), event.preventDefault()" id="start-game"  >Start Game</button>
-      </div>
-    </div> 
-    </div>
-    <script src="./js/main.js"></script>
-  </div>
-</body>
-
+  </body>
 </html>

@@ -1,8 +1,3 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-restricted-globals */
-/* eslint-disable max-len */
-/* eslint-disable no-use-before-define */
-// eslint-disable-next-line no-unused-vars
 const game = (() => {
   let count = 1;
   let playerOne;
