@@ -9,7 +9,6 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: red;
   font: 400 16px/16px 'Ubuntu', sans-serif, monospace;
 }
 
@@ -22,11 +21,47 @@ body {
   color: #F7F9F9;
   outline: none;
   border: none;
-  padding: 8px 14px;
-  border-radius: 2px;
-  background-color: #1baafd;
-  -webkit-box-shadow: 0px 0px 10px 2px rgba(3, 30, 46, 0.6);
-  box-shadow: 0px 0px 10px 2px rgba(3, 30, 46, 0.6);
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: #C70039;
+  border: 1px solid #95002B;
+  border-left: 2px solid #95002B;
+  border-right: 2px solid #95002B;
+  border-bottom: 4px solid #95002B;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-box-shadow: 0px 0px 16px -2px #21090c;
+  box-shadow: 0px 0px 16px -2px #21090c;
+}
+
+.page-container .game-controls button:hover {
+  background-color: #CE2052;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  border: 1px solid #95002B;
+  border-left: 2px solid #95002B;
+  border-right: 2px solid #95002B;
+  border-bottom: 5px solid #95002B;
+}
+
+.page-container .game-controls button:active {
+  border: 1px solid #95002B;
+  border-left: 1px solid #95002B;
+  border-right: 1px solid #95002B;
+  border-bottom: 3px solid #95002B;
+  -webkit-box-shadow: 0px 0px 7px 2px #21090c;
+  box-shadow: 0px 0px 7px 2px #21090c;
+}
+
+.page-container .game-controls button p {
+  margin: 0 0 3px 0;
+}
+
+.page-container .game-controls button i {
+  height: 10px;
+  width: auto;
+  margin-left: 5px;
+  margin-top: -5px;
 }
 
 .main-container {
@@ -47,6 +82,7 @@ body {
           align-items: center;
   background-image: url("../assets/backgrounds/wood-table-new.png");
   background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
 }
 
@@ -136,7 +172,6 @@ body {
   -webkit-box-shadow: 0px 0px 8px 2px #000a4a;
   box-shadow: 0px 0px 8px 2px #000a4a;
   text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
-  background-color: #1b6dd8;
   margin: 0 auto 40px auto;
 }
 
@@ -219,7 +254,7 @@ body {
   -webkit-transition-duration: 0.15s;
           transition-duration: 0.15s;
   padding-bottom: 5px;
-  border-radius: 12px;
+  border-radius: 4px;
 }
 
 .form-container .name-container .row input[type="text"]::-webkit-input-placeholder {
@@ -426,12 +461,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 120px;
+  height: 130px;
   width: 100%;
   text-align: left;
 }
@@ -527,6 +563,55 @@ body {
   background: url("../assets/backgrounds/ice.jpg");
   background-size: 100% auto;
   width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.game-info .music-box .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.game-info .music-box .controls .m {
+  margin-right: 5px;
+  margin-bottom: 1px;
+}
+
+.game-info .music-box .controls button {
+  height: 40px;
+  width: auto;
+  background: url("../assets/backgrounds/wood-table.jpg");
+  background-size: 100%;
+  color: #F7F9F9;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  border-radius: 4px;
+  padding: 8px;
+  border-top: 1px solid #5D4037;
+  border-right: 3px solid #4E342E;
+  border-left: 3px solid #4E342E;
+  border-bottom: 5px solid #4E342E;
+  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
 }
 
 .cell-win {

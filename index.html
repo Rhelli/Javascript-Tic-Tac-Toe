@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
   <title>Document</title>
 </head>
 
@@ -16,7 +17,7 @@
           <h3 id="turn-counter">Turn 1.</h3>
           <h4 id="player-turn"></h4>
           <div class="game-controls">
-            <button onclick="game.gameBoard.reset()">Reset</button>
+            <button onclick="game.gameBoard.reset()"><p>Reset<i class="fas fa-undo"></i></p></button>
           </div>
         </div>
         <div class="active-player-icons" id="activePlayerIcons">
@@ -26,6 +27,15 @@
           </div>
         </div>
         <div class="music-box" id="music-box">
+          <audio id="player">
+            <source src="../assets/audio/TTFAT.mp3" type="audio/mpeg">
+            <source src="../assets/audio/Flute Song.mp3" type="audio/mpeg">
+          </audio>
+          <div class="controls">
+            <button class="m" onclick="document.getElementById('player').play()"><i class="fas fa-play"></i></button>
+            <button class="m" onclick="document.getElementById('player').pause()"><i class="fas fa-pause"></i></button>
+            <button onclick="document.getElementById('player').muted=!document.getElementById('player').muted"><i class="fas fa-volume-mute"></i></button>
+          </div>
         </div>
       </div>
       <div class="gameboard-background">
@@ -52,7 +62,7 @@
         </div>
       </div>
 
-         <div class="form-container" id="form-container">
+    <!-- <div class="form-container" id="form-container">
       <h2>New Game</h2>
       <div class="name-container">
         <div class="row p1">
@@ -80,7 +90,7 @@
       <div class="button-container">
         <button type="submit" onclick="game.gameInit(), event.preventDefault()" id="start-game"  >Start Game</button>
       </div>
-    </div>
+    </div> -->
     </div>
     <script src="./js/main.js"></script>
   </div>

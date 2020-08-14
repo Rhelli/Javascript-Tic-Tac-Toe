@@ -9,7 +9,6 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: red;
     font: 400 16px/16px 'Ubuntu', sans-serif, monospace;
 }
 
@@ -17,17 +16,49 @@ body {
   height: 100%;
   width: 100%;
   .game-controls {
-    
     button {
       color: #F7F9F9;
       outline: none;
       border: none;
-      padding: 8px 14px;
-      border-radius: 2px;
-      background-color: #1baafd;
-      -webkit-box-shadow: 0px 0px 10px 2px rgba(3,30,46,.6);
--moz-box-shadow: 0px 0px 10px 2px rgba(3,30,46,.6);
-box-shadow: 0px 0px 10px 2px rgba(3,30,46,.6);
+      padding: 6px 14px;
+      border-radius: 4px;
+      background-color: #C70039;
+      border: 1px solid #95002B;
+      border-left: 2px solid #95002B;
+      border-right: 2px solid #95002B;
+      border-bottom: 4px solid #95002B;
+      transition-duration: 0.15s;
+      -webkit-box-shadow: 0px 0px 16px -2px rgba(33,9,12,1);
+      -moz-box-shadow: 0px 0px 16px -2px rgba(33,9,12,1);
+      box-shadow: 0px 0px 16px -2px rgba(33,9,12,1);
+
+      &:hover {
+        background-color: #CE2052;
+        transition-duration: 0.2s;
+        border: 1px solid #95002B;
+        border-left: 2px solid #95002B;
+        border-right: 2px solid #95002B;
+        border-bottom: 5px solid #95002B;
+      }
+
+      &:active {
+        border: 1px solid #95002B;
+        border-left: 1px solid #95002B;
+        border-right: 1px solid #95002B;
+        border-bottom: 3px solid #95002B;
+        -webkit-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+        -moz-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+        box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+      }
+      p {
+        margin: 0 0 3px 0;
+      }
+      i {
+        height: 10px;
+        width: auto;
+        margin-left: 5px;
+        margin-top: -5px;
+      }
     }
   }
 }
@@ -41,6 +72,7 @@ box-shadow: 0px 0px 10px 2px rgba(3,30,46,.6);
   align-items: center;
   background-image: url('../assets/backgrounds/wood-table-new.png');
   background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
 }
 
@@ -122,7 +154,6 @@ box-shadow: 0px 0px 10px 2px rgba(3,30,46,.6);
       -moz-box-shadow: 0px 0px 8px 2px rgba(0,10,74,1);
       box-shadow: 0px 0px 8px 2px rgba(0,10,74,1);
       text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
-      background-color: #1b6dd8;
       margin: 0 auto 40px auto;
 
       &:hover {
@@ -201,7 +232,7 @@ box-shadow: 0px 0px 10px 2px rgba(3,30,46,.6);
         border-bottom: 4px solid #dcdcdc;
         transition-duration: 0.15s;
         padding-bottom: 5px;
-        border-radius: 12px;
+        border-radius: 4px;
         &::-webkit-input-placeholder {
           color: #ffffff;
           font-weight: 600;
@@ -340,9 +371,9 @@ box-shadow: 0px 0px 10px 2px rgba(3,30,46,.6);
   background-image: url('../assets/backgrounds/wood-table.jpg');
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  height: 120px;
+  height: 130px;
   width: 100%;
   text-align: left;
 
@@ -352,8 +383,6 @@ box-shadow: 0px 0px 10px 2px rgba(3,30,46,.6);
   .music-box {
     height: 100%;
   }
-
-  
 
   .round-indicator {
     display: flex;
@@ -383,7 +412,7 @@ box-shadow: 0px 0px 10px 2px rgba(3,30,46,.6);
     padding: 10px;
     width: 50%;
     border-right: 1px solid #404040;
-   
+
     .active-player-one {
       background-color: rebeccapurple;
     }
@@ -419,6 +448,37 @@ box-shadow: 0px 0px 10px 2px rgba(3,30,46,.6);
     background: url('../assets/backgrounds/ice.jpg');
     background-size: 100% auto;
     width: 25%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      .m {
+        margin-right: 5px;
+        margin-bottom: 1px;
+      }
+      button {
+        height: 40px;
+        width: auto;
+        background: url('../assets/backgrounds/wood-table.jpg');
+        background-size: 100%;
+        color: #F7F9F9;
+        outline: none;
+        border: none;
+        font-size: 20px;
+        border-radius: 4px;
+        padding: 8px;
+        border-top: 1px solid #5D4037;
+        border-right: 3px solid #4E342E;
+        border-left: 3px solid #4E342E;
+        border-bottom: 5px solid #4E342E;
+        text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
+      }
+    }
   }
 }
 
