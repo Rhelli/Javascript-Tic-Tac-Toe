@@ -21,6 +21,7 @@ body {
   position: absolute;
   top: 135px;
   right: 5px;
+  z-index: 3;
 }
 
 .game-controls button {
@@ -92,35 +93,210 @@ body {
   position: relative;
 }
 
-.gameboard-background {
-  margin-top: 10vh;
-  width: 75%;
-  height: 65vh;
+.game-info {
+  background-image: url("../assets/backgrounds/wood-table.jpg");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 130px;
+  width: 100%;
+  text-align: left;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom: 2px solid #404040;
+  -webkit-box-shadow: 0px 5px 16px -1px #03020a;
+  box-shadow: 0px 5px 16px -1px #03020a;
 }
 
-.gameboard-background .gameboard-container {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 100%;
-  height: 80%;
+.game-info .round-indicator,
+.game-info .message-box,
+.game-info .active-player-icons,
+.game-info .music-box {
+  height: 100%;
 }
 
-.gameboard-background .gameboard-container .gameboard-fixer {
-  position: relative;
-  top: 50%;
-  z-index: 2;
-  background: url("../assets/backgrounds/kisspng-parchment-information-paper-document-pergamen-5b22e7f095f5a3.8831698115290142566142.png");
-  background-size: 116% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  min-height: 78vh;
-  max-height: 80vh;
-  padding: 20px;
+.game-info .round-indicator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40%;
+  color: #F7F9F9;
+  text-align: left;
+}
+
+.game-info .round-indicator #turn-counter,
+.game-info .round-indicator #player-turn {
+  font-weight: 600;
+  overflow: hidden;
   width: 100%;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  margin: 0;
+  padding: 0;
+  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
+}
+
+.game-info .round-indicator #turn-counter {
+  font-size: 28px;
+  padding: 8px 4px 8px 20px;
+  margin-bottom: 5px;
+}
+
+.game-info .round-indicator #player-turn {
+  font-size: 22px;
+  padding: 8px 4px 8px 20px;
+}
+
+.game-info .active-player-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  width: 40%;
+}
+
+.game-info .active-player-icons .active-player-one {
+  background-color: rebeccapurple;
+  margin-right: 5px;
+}
+
+.game-info .active-player-icons .active-player-two {
+  background-color: gainsboro;
+}
+
+.game-info .active-player-icons .active-player-one,
+.game-info .active-player-icons .active-player-two {
+  border-radius: 4px;
+}
+
+.game-info .active-player-icons .active-player-one img,
+.game-info .active-player-icons .active-player-two img {
+  width: 60px;
+  height: 60px;
+}
+
+.game-info .active-player-icons .active-player-one {
+  border: 1px solid #4DA67F;
+  -webkit-box-shadow: 0px 0px 16px -3px #132a20;
+  box-shadow: 0px 0px 16px -3px #132a20;
+}
+
+.game-info .active-player-icons .active-player-two {
+  border: 1px solid #F7F9F9;
+  -webkit-box-shadow: 0px 0px 16px -1px #004040;
+  box-shadow: 0px 0px 16px -1px #004040;
+}
+
+.game-info .music-box {
+  background: url("../assets/backgrounds/ice.jpg");
+  background-size: 100% auto;
+  min-width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  border-left: 2px solid #283747;
+  border-bottom: 2px solid #283747;
+  -webkit-box-shadow: 0px 2px 9px 2px #110a3d;
+  box-shadow: 0px 2px 9px 2px #110a3d;
+}
+
+.game-info .music-box .controls {
+  padding: 0 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.game-info .music-box .controls .m {
+  margin-right: 5px;
+  margin-bottom: 1px;
+}
+
+.game-info .music-box .controls button {
+  height: 40px;
+  width: auto;
+  background: url("../assets/backgrounds/wood-table.jpg");
+  background-size: 100%;
+  color: #F7F9F9;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  border-radius: 4px;
+  padding: 8px;
+  border-top: 1px solid #5D4037;
+  border-right: 3px solid #4E342E;
+  border-left: 3px solid #4E342E;
+  border-bottom: 5px solid #4E342E;
+  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
+}
+
+.game-info .music-box .controls button:hover {
+  background-color: #4E342E;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  border: 1px solid #4E342E;
+  border-left: 2px solid #4E342E;
+  border-right: 2px solid #4E342E;
+  border-bottom: 5px solid #4E342E;
+}
+
+.game-info .music-box .controls button:active {
+  border: 1px solid #4E342E;
+  border-left: 1px solid #4E342E;
+  border-right: 1px solid #4E342E;
+  border-bottom: 3px solid #4E342E;
+  -webkit-box-shadow: 0px 0px 7px 2px #21090c;
+  box-shadow: 0px 0px 7px 2px #21090c;
 }
 
 .form-container {
@@ -146,9 +322,10 @@ body {
   padding-bottom: 20px;
   margin: 0 auto;
   border-radius: 12px;
-  border: 2px solid #5D4037;
+  border: 4px solid #404040;
   -webkit-box-shadow: 0px 2px 15px 3px #1e294f;
   box-shadow: 0px 2px 15px 3px #1e294f;
+  z-index: 4;
 }
 
 .form-container .button-container {
@@ -260,13 +437,16 @@ body {
   -webkit-transition-duration: 0.15s;
           transition-duration: 0.15s;
   padding-bottom: 5px;
-  border-radius: 4px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 1px solid #4E342E;
 }
 
 .form-container .name-container .row input[type="text"]::-webkit-input-placeholder {
   color: #ffffff;
   font-weight: 600;
   font-size: 18px;
+  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
 }
 
 .form-container .select-character-container {
@@ -378,6 +558,37 @@ body {
   margin: 0 auto;
 }
 
+.gameboard-background {
+  margin-top: 10vh;
+  width: 75%;
+  height: 65vh;
+}
+
+.gameboard-background .gameboard-container {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  height: 80%;
+}
+
+.gameboard-background .gameboard-container .gameboard-fixer {
+  position: relative;
+  top: 50%;
+  z-index: 2;
+  background: url("../assets/backgrounds/kisspng-parchment-information-paper-document-pergamen-5b22e7f095f5a3.8831698115290142566142.png");
+  background-size: 116% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  min-height: 78vh;
+  max-height: 80vh;
+  padding: 20px;
+  width: 100%;
+}
+
 #gameboard {
   width: 80%;
   position: absolute;
@@ -458,189 +669,6 @@ body {
   height: auto;
 }
 
-.game-info {
-  background-image: url("../assets/backgrounds/wood-table.jpg");
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 130px;
-  width: 100%;
-  text-align: left;
-}
-
-.game-info .round-indicator,
-.game-info .message-box,
-.game-info .active-player-icons,
-.game-info .music-box {
-  height: 100%;
-}
-
-.game-info .round-indicator {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 25%;
-  color: #F7F9F9;
-}
-
-.game-info .round-indicator #turn-counter,
-.game-info .round-indicator #player-turn {
-  text-align: center;
-  font-weight: 600;
-  overflow: hidden;
-  width: 100%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  margin: 0;
-  padding: 0;
-}
-
-.game-info .active-player-icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 10px;
-  width: 50%;
-  border-right: 1px solid #404040;
-}
-
-.game-info .active-player-icons .active-player-one {
-  background-color: rebeccapurple;
-}
-
-.game-info .active-player-icons .active-player-two {
-  background-color: gainsboro;
-}
-
-.game-info .active-player-icons .active-player-one,
-.game-info .active-player-icons .active-player-two {
-  border-radius: 4px;
-}
-
-.game-info .active-player-icons .active-player-one img,
-.game-info .active-player-icons .active-player-two img {
-  width: 60px;
-  height: 60px;
-}
-
-.game-info .active-player-icons .active-player-one {
-  border: 1px solid #4DA67F;
-  -webkit-box-shadow: 0px 0px 16px -3px #132a20;
-  box-shadow: 0px 0px 16px -3px #132a20;
-}
-
-.game-info .active-player-icons .active-player-two {
-  border: 1px solid #F7F9F9;
-  -webkit-box-shadow: 0px 0px 16px -1px #004040;
-  box-shadow: 0px 0px 16px -1px #004040;
-}
-
-.game-info .music-box {
-  background: url("../assets/backgrounds/ice.jpg");
-  background-size: 100% auto;
-  min-width: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: auto;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.game-info .music-box .controls {
-  padding: 0 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-}
-
-.game-info .music-box .controls .m {
-  margin-right: 5px;
-  margin-bottom: 1px;
-}
-
-.game-info .music-box .controls button {
-  height: 40px;
-  width: auto;
-  background: url("../assets/backgrounds/wood-table.jpg");
-  background-size: 100%;
-  color: #F7F9F9;
-  outline: none;
-  border: none;
-  font-size: 20px;
-  border-radius: 4px;
-  padding: 8px;
-  border-top: 1px solid #5D4037;
-  border-right: 3px solid #4E342E;
-  border-left: 3px solid #4E342E;
-  border-bottom: 5px solid #4E342E;
-  text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
-}
-
-.game-info .music-box .controls button:hover {
-  background-color: #4E342E;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  border: 1px solid #4E342E;
-  border-left: 2px solid #4E342E;
-  border-right: 2px solid #4E342E;
-  border-bottom: 5px solid #4E342E;
-}
-
-.game-info .music-box .controls button:active {
-  border: 1px solid #4E342E;
-  border-left: 1px solid #4E342E;
-  border-right: 1px solid #4E342E;
-  border-bottom: 3px solid #4E342E;
-  -webkit-box-shadow: 0px 0px 7px 2px #21090c;
-  box-shadow: 0px 0px 7px 2px #21090c;
-}
-
 .cell-win {
   background-color: green;
 }
@@ -664,6 +692,16 @@ body {
 }
 
 @media only screen and (min-width: 468px) {
+  .game-info .active-player-icons .active-player-one,
+  .game-info .active-player-icons .active-player-two {
+    height: 80px;
+    width: 80px;
+  }
+  .game-info .active-player-icons .active-player-one img,
+  .game-info .active-player-icons .active-player-two img {
+    height: 100%;
+    width: 100%;
+  }
   .form-container h2 {
     font-size: 28px;
     margin-bottom: 10px;
@@ -706,6 +744,16 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+  .game-info .active-player-icons .active-player-one,
+  .game-info .active-player-icons .active-player-two {
+    height: 100px;
+    width: 100px;
+  }
+  .game-info .active-player-icons .active-player-one img,
+  .game-info .active-player-icons .active-player-two img {
+    height: 100%;
+    width: 100%;
+  }
   .gameboard-background {
     width: 75%;
     height: 62vh;

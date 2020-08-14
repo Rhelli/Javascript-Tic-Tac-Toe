@@ -21,6 +21,7 @@ body {
   position: absolute;
   top: 135px;
   right: 5px;
+  z-index: 3;
   button {
     color: #F7F9F9;
     outline: none;
@@ -81,39 +82,168 @@ body {
   
 }
 
+// GAMEINFO ---------------------------------//
+.game-info {
+  background-image: url('../assets/backgrounds/wood-table.jpg');
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 130px;
+  width: 100%;
+  text-align: left;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom: 2px solid #404040;
+  -webkit-box-shadow: 0px 5px 16px -1px rgba(3,2,10,1);
+  -moz-box-shadow: 0px 5px 16px -1px rgba(3,2,10,1);
+  box-shadow: 0px 5px 16px -1px rgba(3,2,10,1);
 
+  .round-indicator,
+  .message-box,
+  .active-player-icons,
+  .music-box {
+    height: 100%;
+  }
 
-// GAMEBOARD CONTAINER ---------------------//
-.gameboard-background {
-  margin-top: 10vh; 
-  width: 75%;
-  height: 65vh;
-  .gameboard-container {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    height: 80%;
-
-    .gameboard-fixer {
-      position: relative;
-      top: 50%;
-      z-index: 2;
-      background: url('../assets/backgrounds/kisspng-parchment-information-paper-document-pergamen-5b22e7f095f5a3.8831698115290142566142.png');
-      background-size: 116% 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      transform: translateY(-50%);
-      min-height: 78vh;
-      max-height: 80vh;
-      padding: 20px;
+  .round-indicator {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    justify-content: center;
+    width: 40%;
+    color: #F7F9F9;
+    text-align: left;
+    #turn-counter,
+    #player-turn {
+      font-weight: 600;
+      overflow: hidden;
       width: 100%;
+      white-space: wrap;
+      text-overflow: ellipsis;
+      margin: 0;
+      padding: 0;
+      text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
     }
-  } 
+    #turn-counter {
+      font-size: 28px;
+      padding: 8px 4px 8px 20px;
+      margin-bottom: 5px;
+    }
+    #player-turn {
+      font-size: 22px;
+      padding: 8px 4px 8px 20px;
+    }
+  }
+
+  .active-player-icons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 10px;
+    width: 40%;
+
+    .active-player-one {
+      background-color: rebeccapurple;
+      margin-right: 5px;
+    }
+    .active-player-two {
+      background-color: gainsboro;
+    }
+
+    .active-player-one,
+    .active-player-two {
+      border-radius: 4px;
+      img {
+        width:  60px;
+        height: 60px;
+      }
+    }
+
+    .active-player-one {
+      border: 1px solid #4DA67F;
+      -webkit-box-shadow: 0px 0px 16px -3px rgba(19,42,32,1);
+      -moz-box-shadow: 0px 0px 16px -3px rgba(19,42,32,1);
+      box-shadow: 0px 0px 16px -3px rgba(19,42,32,1);
+    }
+
+    .active-player-two {
+      border: 1px solid #F7F9F9;
+      -webkit-box-shadow: 0px 0px 16px -1px rgba(0,64,64,1);
+      -moz-box-shadow: 0px 0px 16px -1px rgba(0,64,64,1);
+      box-shadow: 0px 0px 16px -1px rgba(0,64,64,1);
+    }
+  }
+
+  .music-box {
+    background: url('../assets/backgrounds/ice.jpg');
+    background-size: 100% auto;
+    min-width: auto;
+    display: flex;
+    margin-left: auto;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    border-left: 2px solid #283747;
+    border-bottom: 2px solid #283747;
+    -webkit-box-shadow: 0px 2px 9px 2px rgba(17,10,61,1);
+    -moz-box-shadow: 0px 2px 9px 2px rgba(17,10,61,1);
+    box-shadow: 0px 2px 9px 2px rgba(17,10,61,1);
+
+    .controls {
+      padding: 0 5px;
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      .m {
+        margin-right: 5px;
+        margin-bottom: 1px;
+      }
+      button {
+        height: 40px;
+        width: auto;
+        background: url('../assets/backgrounds/wood-table.jpg');
+        background-size: 100%;
+        color: #F7F9F9;
+        outline: none;
+        border: none;
+        font-size: 20px;
+        border-radius: 4px;
+        padding: 8px;
+        border-top: 1px solid #5D4037;
+        border-right: 3px solid #4E342E;
+        border-left: 3px solid #4E342E;
+        border-bottom: 5px solid #4E342E;
+        text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
+      
+        &:hover {
+          background-color: #4E342E;
+          transition-duration: 0.2s;
+          border: 1px solid #4E342E;
+          border-left: 2px solid #4E342E;
+          border-right: 2px solid #4E342E;
+          border-bottom: 5px solid #4E342E;
+        }
+  
+        &:active {
+          border: 1px solid #4E342E;
+          border-left: 1px solid #4E342E;
+          border-right: 1px solid #4E342E;
+          border-bottom: 3px solid #4E342E;
+          -webkit-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+          -moz-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+          box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
+        }
+
+      }
+    }
+  }
 }
 
-
-
+// FORM CONTAINER ------------------------//
 .form-container {
   overflow: hidden;
   overflow-y: auto;
@@ -131,10 +261,11 @@ body {
   padding-bottom: 20px;
   margin: 0 auto;
   border-radius: 12px;
-  border: 2px solid #5D4037;
+  border: 4px solid #404040;
   -webkit-box-shadow: 0px 2px 15px 3px rgba(30,41,79,1);
   -moz-box-shadow: 0px 2px 15px 3px rgba(30,41,79,1);
   box-shadow: 0px 2px 15px 3px rgba(30,41,79,1);
+  z-index: 4;
 
   .button-container {
     margin: 0 auto;
@@ -185,7 +316,6 @@ body {
     .p1 {
       input[type="text"] {
         color: #283747;
-        //text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
         &:focus {
           border-bottom: 10px solid #90A4AE;
           transition-duration: 0.2s;
@@ -237,12 +367,15 @@ body {
         border-bottom: 4px solid #dcdcdc;
         transition-duration: 0.15s;
         padding-bottom: 5px;
-        border-radius: 4px;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        border: 1px solid #4E342E;
+
         &::-webkit-input-placeholder {
           color: #ffffff;
           font-weight: 600;
           font-size: 18px;
-          //text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
+          text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
         }
       }
     }
@@ -318,6 +451,37 @@ body {
   }
 }
 
+
+
+// GAMEBOARD CONTAINER ---------------------//
+.gameboard-background {
+  margin-top: 10vh; 
+  width: 75%;
+  height: 65vh;
+  .gameboard-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 80%;
+
+    .gameboard-fixer {
+      position: relative;
+      top: 50%;
+      z-index: 2;
+      background: url('../assets/backgrounds/kisspng-parchment-information-paper-document-pergamen-5b22e7f095f5a3.8831698115290142566142.png');
+      background-size: 116% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+      min-height: 78vh;
+      max-height: 80vh;
+      padding: 20px;
+      width: 100%;
+    }
+  } 
+}
+
 #gameboard {
   width: 80%;
   position: absolute;
@@ -371,144 +535,6 @@ body {
     }
 }
 
-// GAMEINFO ---------------------------------//
-.game-info {
-  background-image: url('../assets/backgrounds/wood-table.jpg');
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 130px;
-  width: 100%;
-  text-align: left;
-
-  .round-indicator,
-  .message-box,
-  .active-player-icons,
-  .music-box {
-    height: 100%;
-  }
-
-  .round-indicator {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 25%;
-    color: #F7F9F9;
-    #turn-counter,
-    #player-turn {
-      text-align: center;
-      font-weight: 600;
-      overflow: hidden;
-      width: 100%;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  .active-player-icons {
-    display: flex;
-    justify-content: space-evenly;
-    flex-flow: row nowrap;
-    align-items: center;
-    padding: 10px;
-    width: 50%;
-    border-right: 1px solid #404040;
-
-    .active-player-one {
-      background-color: rebeccapurple;
-    }
-    .active-player-two {
-      background-color: gainsboro;
-    }
-
-    .active-player-one,
-    .active-player-two {
-      border-radius: 4px;
-      img {
-        width:  60px;
-        height: 60px;
-      }
-    }
-
-    .active-player-one {
-      border: 1px solid #4DA67F;
-      -webkit-box-shadow: 0px 0px 16px -3px rgba(19,42,32,1);
-      -moz-box-shadow: 0px 0px 16px -3px rgba(19,42,32,1);
-      box-shadow: 0px 0px 16px -3px rgba(19,42,32,1);
-    }
-
-    .active-player-two {
-      border: 1px solid #F7F9F9;
-      -webkit-box-shadow: 0px 0px 16px -1px rgba(0,64,64,1);
-      -moz-box-shadow: 0px 0px 16px -1px rgba(0,64,64,1);
-      box-shadow: 0px 0px 16px -1px rgba(0,64,64,1);
-    }
-  }
-
-  .music-box {
-    background: url('../assets/backgrounds/ice.jpg');
-    background-size: 100% auto;
-    min-width: auto;
-    display: flex;
-    margin-left: auto;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-
-    .controls {
-      padding: 0 5px;
-      display: flex;
-      justify-content: center;
-      flex-flow: row wrap;
-      .m {
-        margin-right: 5px;
-        margin-bottom: 1px;
-      }
-      button {
-        height: 40px;
-        width: auto;
-        background: url('../assets/backgrounds/wood-table.jpg');
-        background-size: 100%;
-        color: #F7F9F9;
-        outline: none;
-        border: none;
-        font-size: 20px;
-        border-radius: 4px;
-        padding: 8px;
-        border-top: 1px solid #5D4037;
-        border-right: 3px solid #4E342E;
-        border-left: 3px solid #4E342E;
-        border-bottom: 5px solid #4E342E;
-        text-shadow: -1px -1px 0 #404040, 1px -1px 0 #404040, -1px 1px 0 #404040, 1px 1px 0 #404040;
-      
-        &:hover {
-          background-color: #4E342E;
-          transition-duration: 0.2s;
-          border: 1px solid #4E342E;
-          border-left: 2px solid #4E342E;
-          border-right: 2px solid #4E342E;
-          border-bottom: 5px solid #4E342E;
-        }
-  
-        &:active {
-          border: 1px solid #4E342E;
-          border-left: 1px solid #4E342E;
-          border-right: 1px solid #4E342E;
-          border-bottom: 3px solid #4E342E;
-          -webkit-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
-          -moz-box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
-          box-shadow: 0px 0px 7px 2px rgba(33,9,12,1);
-        }
-
-      }
-    }
-  }
-}
-
 .cell-win {
   background-color: green;
 }
@@ -531,6 +557,20 @@ body {
 
 
 @media only screen and (min-width: 468px) {
+  .game-info {
+    .active-player-icons {
+      .active-player-one,
+      .active-player-two {
+        height: 80px;
+        width: 80px;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
   .form-container {
     h2 {
       font-size: 28px;
@@ -573,6 +613,20 @@ body {
 
 
 @media only screen and (min-width: 768px) {
+  .game-info {
+    .active-player-icons {
+      .active-player-one,
+      .active-player-two {
+        height: 100px;
+        width: 100px;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
   .gameboard-background {
     width: 75%;
     height: 62vh;
