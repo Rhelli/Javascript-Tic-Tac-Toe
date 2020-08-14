@@ -82,6 +82,8 @@ body {
 }
 
 .form-container {
+  overflow: hidden;
+  overflow-y: auto;
   background-image: url("../assets/backgrounds/wood-table.jpg");
   background-size: 100%;
   position: absolute;
@@ -127,8 +129,8 @@ body {
   background-size: 100%;
   border: none;
   padding: 10px 16px;
-  font-size: 14px;
-  width: 250px;
+  font-size: 20px;
+  width: 70%;
   height: 50px;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 8px 2px #000a4a;
@@ -416,6 +418,7 @@ body {
 }
 
 .game-info {
+  background-image: url("../assets/backgrounds/wood-table.jpg");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -454,8 +457,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: url("../assets/backgrounds/ice.jpg");
-  background-size: 100% auto;
   width: 25%;
   color: #F7F9F9;
 }
@@ -486,12 +487,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("../assets/backgrounds/wood-table.jpg");
-  background-size: 100%;
   padding: 10px;
   width: 50%;
   border-right: 1px solid #404040;
-  border-left: 1px solid #404040;
 }
 
 .game-info .active-player-icons .active-player-one {
