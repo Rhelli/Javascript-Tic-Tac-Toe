@@ -10,6 +10,32 @@ The specifications and the guide to the project can be found The Odin Project's 
 
 The premise of this project is to use  javascript modules and factories  to create a TicTacToe app. Here the user will be able to create 2 players, select their names, choose a character, and play the game!
 
+## 📽️ Previews
+
+<p align="center>
+
+<a href="previews/mobile-screen.gif"><img src="previews/mobile-screen.gif" alt="Mobile" width="auto" height="auto"></a>
+
+> Responsive Screen Sizes - Mobile
+
+********
+
+<p align="center>
+
+<a href="previews/tablet.gif"><img src="previews/tablet.gif" alt="Tablet" width="auto" height="auto"></a>
+
+> Responsive Screen Sizes - Tablet
+
+********
+
+<p align="center>
+
+<a href="previews/laptop.gif"><img src="previews/laptop.gif" alt="Laptop" width="800" height="auto"></a>
+
+> Responsive Screen Sizes - Laptop
+
+*********
+
 ## 🧬 Technologies & Languages Used
 
 - Javascript
