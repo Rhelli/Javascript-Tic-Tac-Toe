@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);
+
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -36,7 +37,7 @@ body {
   border-right: 2px solid #95002b;
   border-bottom: 4px solid #95002b;
   -webkit-transition-duration: 0.15s;
-          transition-duration: 0.15s;
+  transition-duration: 0.15s;
   -webkit-box-shadow: 0 0 16px -2px #21090c;
   box-shadow: 0 0 16px -2px #21090c;
 }
@@ -44,7 +45,7 @@ body {
 .game-controls button:hover {
   background-color: #ce2052;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
   border: 1px solid #95002b;
   border-left: 2px solid #95002b;
   border-right: 2px solid #95002b;
@@ -79,14 +80,14 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-image: url("../assets/backgrounds/wood-table-new.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -100,14 +101,14 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 130px;
   width: 100%;
   text-align: left;
@@ -131,14 +132,14 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  -ms-flex-align: start;
+  align-items: start;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 40%;
   color: #f7f9f9;
   text-align: left;
@@ -172,15 +173,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 10px;
   width: 40%;
 }
@@ -227,14 +228,14 @@ body {
   margin-left: auto;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border-bottom-left-radius: 8px;
   border-top-left-radius: 8px;
   border-left: 2px solid #283747;
@@ -249,12 +250,12 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 .game-info .music-box .controls .m {
@@ -283,7 +284,7 @@ body {
 .game-info .music-box .controls button:hover {
   background-color: #4e342e;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
   border: 1px solid #4e342e;
   border-left: 2px solid #4e342e;
   border-right: 2px solid #4e342e;
@@ -308,14 +309,14 @@ body {
   color: #f7f9f9;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
   width: 80%;
   height: auto;
   max-height: 90vh;
@@ -335,8 +336,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   height: 20%;
 }
 
@@ -360,9 +361,9 @@ body {
 
 .form-container .button-container button:hover {
   -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  transform: scale(1.02);
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
   -webkit-box-shadow: 0 0 4px 1px #000a4a;
   box-shadow: 0 0 4px 1px #000a4a;
 }
@@ -387,7 +388,7 @@ body {
 .form-container .name-container .p1 input[type="text"]:focus {
   border-bottom: 10px solid #90a4ae;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 .form-container .name-container .p1 input[type="text"],
@@ -403,7 +404,7 @@ body {
 .form-container .name-container .p2 input[type="text"]:focus {
   border-bottom: 10px solid #f1c40f;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 .form-container .name-container .row {
@@ -412,8 +413,8 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
   width: 90%;
   margin-bottom: 10px;
   padding: 12px 20px;
@@ -436,7 +437,7 @@ body {
   border: none;
   border-bottom: 4px solid #dcdcdc;
   -webkit-transition-duration: 0.15s;
-          transition-duration: 0.15s;
+  transition-duration: 0.15s;
   padding-bottom: 5px;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
@@ -457,14 +458,14 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 10px 20px;
   width: 100%;
 }
@@ -473,8 +474,8 @@ body {
   .form-container .select-character-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
   }
 }
 
@@ -482,8 +483,8 @@ body {
   .form-container .select-character-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
   }
 }
 
@@ -494,14 +495,14 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: auto;
   width: 50%;
 }
@@ -512,11 +513,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 70%;
   height: auto;
   max-height: 150px;
@@ -525,7 +526,7 @@ body {
   margin: 10px;
   border-radius: 6px;
   -webkit-transition-duration: 0.15s;
-          transition-duration: 0.15s;
+  transition-duration: 0.15s;
   border: 1px solid rgba(1, 1, 1, 0.4);
   -webkit-box-shadow: 0 0 12px -2px #262608;
   box-shadow: 0 0 12px -2px #262608;
@@ -536,14 +537,14 @@ body {
   max-height: auto;
   width: 100%;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 .form-container .select-character-container #character-container-1 .character-div:hover,
 .form-container .select-character-container #character-container-2 .character-div:hover {
   background-color: rgba(249, 235, 234, 0.9);
   -webkit-transition-duration: 0.25s;
-          transition-duration: 0.25s;
+  transition-duration: 0.25s;
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -569,7 +570,7 @@ body {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   width: 100%;
   height: 80%;
 }
@@ -583,7 +584,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   min-height: 78vh;
   max-height: 80vh;
   padding: 20px;
@@ -595,7 +596,7 @@ body {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 10%;
   height: auto;
   z-index: 3;
@@ -603,15 +604,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
 }
 
 #gameboard .gameboard-row {
@@ -621,15 +622,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
 }
 
 #gameboard .border-horizontal {
@@ -647,11 +648,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: transparent;
   width: 33.333%;
   z-index: 5;
@@ -680,7 +681,7 @@ body {
   background-color: #90a4ae;
   border-radius: 6px;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 #avoid-clicks-p2 {
@@ -689,7 +690,7 @@ body {
   background-color: #f1c40f;
   border-radius: 6px;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 @media only screen and (min-width: 468px) {
@@ -698,46 +699,56 @@ body {
     height: 80px;
     width: 80px;
   }
+
   .game-info .active-player-icons .active-player-one img,
   .game-info .active-player-icons .active-player-two img {
     height: 100%;
     width: 100%;
   }
+
   .form-container h2 {
     font-size: 28px;
     margin-bottom: 10px;
   }
+
   .form-container .button-container button {
     font-size: 18px;
     padding: 12px 16px;
   }
+
   .form-container .name-container .row {
     width: 80%;
   }
+
   .form-container .name-container .row label {
     font-size: 24px;
     margin-bottom: 15px;
   }
+
   .form-container .name-container .row input[type="text"] {
     font-size: 20px;
   }
+
   .form-container .name-container .row input[type="text"]::-webkit-input-placeholder {
     font-size: 14px;
   }
+
   .form-container .select-character-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
   }
+
   .form-container .select-character-container #character-container-1,
   .form-container .select-character-container #character-container-2 {
     width: 100%;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
   }
+
   .form-container .select-character-container #character-container-1 .character-div,
   .form-container .select-character-container #character-container-2 .character-div {
     width: 100%;
@@ -750,23 +761,27 @@ body {
     height: 100px;
     width: 100px;
   }
+
   .game-info .active-player-icons .active-player-one img,
   .game-info .active-player-icons .active-player-two img {
     height: 100%;
     width: 100%;
   }
+
   .gameboard-background {
     width: 75%;
     height: 62vh;
   }
+
   .gameboard-background .gameboard-container {
     position: relative;
     top: 50%;
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     width: 100%;
     height: 100%;
   }
+
   .gameboard-background .gameboard-container .gameboard-fixer {
     position: relative;
     top: 50%;
@@ -776,36 +791,44 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     height: 100%;
     min-height: 90vh;
     padding: 20px;
     width: 100%;
   }
+
   .form-container h2 {
     font-size: 32px;
   }
+
   .form-container .select-character-container #character-container-1,
   .form-container .select-character-container #character-container-2 {
     width: 80%;
   }
+
   .form-container .name-container .row {
     width: 70%;
   }
+
   .form-container .name-container .row label {
     font-size: 28px;
     margin-bottom: 10px;
   }
+
   .form-container .name-container .row input[type="text"] {
     font-size: 22px;
   }
+
   .form-container .name-container .row input[type="text"]::-webkit-input-placeholder {
     font-size: 16px;
   }
+
   .gameboard-row {
     max-height: 450px;
     max-width: 70%;
   }
+
   .cell {
     max-width: 220px;
     max-height: 220px;
@@ -817,12 +840,13 @@ body {
     max-height: 280px;
     max-width: 50%;
   }
+
   .form-container {
     max-width: 70%;
   }
+
   .form-container .select-character-container #character-container-1 .character-div,
   .form-container .select-character-container #character-container-2 .character-div {
     width: 27%;
   }
 }
-/*# sourceMappingURL=style.css.map */
