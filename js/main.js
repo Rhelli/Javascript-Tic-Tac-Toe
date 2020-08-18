@@ -246,30 +246,6 @@ const game = (() => {
       count++;
     };
 
-    const ifCellEmpty = (event, symbol, img) => {
-      if (event.target.innerHTML !== '') {
-        alert('But bro');
-      } else {
-        imgE = document.createElement('img');
-        imgE.src = img;
-        event.target.dataset.datasymbol = symbol;
-        event.target.appendChild(imgE);
-        playerSwitch();
-      }
-    };
-
-
-    const clickCell = (event) => {
-      if (namePlayerOne.value === '' && namePlayerTwo.value === '') {
-        alert("Please Enter All Player's Names.");
-        throw new Error("Please Enter All Player's Names");
-      } else {
-        const symbol = currentPlayer.getSymbol();
-        const img = currentPlayer.getImg();
-        ifCellEmpty(event, symbol, img);
-      }
-    };
-
     cells.forEach((cell) => cell.addEventListener('click', clickCell, false));
     return { clickCell, reset };
   })();
