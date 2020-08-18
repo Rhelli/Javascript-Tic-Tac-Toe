@@ -219,7 +219,7 @@ const game = (() => {
         oppositePlayer = playerOne;
         styles.paintBackground(currentPlayer.getBackground(), playerTwoIcon);
       }
-
+      //comment
       count++;
     };
 
