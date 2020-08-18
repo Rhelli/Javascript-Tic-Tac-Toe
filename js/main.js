@@ -1,6 +1,7 @@
-// PLAYERS - FACTORY FUNCTIONS
 const game = (() => {
   let count = 1;
+  let playerOne;
+  let playerTwo;
   let numberOfPlayer = 1;
   const namePlayerOne = document.getElementById('player-one');
   const namePlayerTwo = document.getElementById('player-two');
@@ -15,8 +16,8 @@ const game = (() => {
 
   const styles = (() => {
     const formContainer = document.getElementById('form-container');
-    const removeForm = () => formContainer.style.display = 'none';
-    const addForm = () => formContainer.style.display = 'flex';
+    const removeForm = () => { formContainer.style.display = 'none'; };
+    const addForm = () => { formContainer.style.display = 'flex'; };
     const displayIcon = (icon, container) => {
       const imgElement = document.createElement('img');
       imgElement.src = icon;
@@ -28,7 +29,7 @@ const game = (() => {
     const disableBackground = (color, element) => {
       element.style.background = 'rgba(256, 256, 256, 0.5)';
     };
-    const initialBackground = (element) => element.style.background = 'transparent';
+    const initialBackground = (element) => { element.style.background = 'transparent'; };
     const displayRounds = (element) => {
       if (roundCounter.innerHTML === 'No Turns Yet') {
         roundCounter.innerHTML = 'Turn 1';
@@ -47,15 +48,15 @@ const game = (() => {
       displayIcon,
       paintBackground,
       disableBackground,
-    };rgba(256, 256, 256, 0.5)
+    };
   })();
 
   const Player = (name, symbol, playerNumber, img, background) => {
-    getName = () => name;
-    getSymbol = () => symbol;
-    getImg = () => img;
-    getNumber = () => playerNumber;
-    getBackground = () => background;
+    const getName = () => name;
+    const getSymbol = () => symbol;
+    const getImg = () => img;
+    const getNumber = () => playerNumber;
+    const getBackground = () => background;
     return {
       getName,
       getSymbol,
@@ -67,7 +68,7 @@ const game = (() => {
 
   const choosePlayerIcon = (event) => {
     const chosenIcon = event.target;
-    if (numberOfPlayer == 1) {
+    if (numberOfPlayer === 1) {
       if (Icons[0]) {
         document.getElementById('avoid-clicks').id = '';
         Icons[0] = chosenIcon.src;
@@ -106,9 +107,9 @@ const game = (() => {
       currentPlayer = playerOne;
       oppositePlayer = playerTwo;
       styles.displayIcon(playerOne.getImg(), playerOneIcon);
-      styles.paintBackground(playerOne.getBackground(),playerOneIcon)
+      styles.paintBackground(playerOne.getBackground(), playerOneIcon);
       styles.displayIcon(playerTwo.getImg(), playerTwoIcon);
-      playerTurnIndicator.innerHTML = `It's ${currentPlayer.getName()}'s turn`
+      playerTurnIndicator.innerHTML = `It's ${currentPlayer.getName()}'s turn`;
       styles.removeForm();
       return true;
     }
@@ -119,17 +120,37 @@ const game = (() => {
     element.addEventListener('click', choosePlayerIcon, false);
   });
 
-  // GAMEBOARD
   const gameBoard = (() => {
     const cells = document.querySelectorAll('.cell');
 
+    const ifCellEmpty = (event, symbol, img) => {
+      const imgE = document.createElement('img');
+      imgE.src = img;
+      event.target.dataset.datasymbol = symbol;
+      event.target.appendChild(imgE);
+      event.target.removeEventListener('click', clickCell, false);
+      playerSwitch();
+    };
+
+    const clickCell = (event) => {
+      if (namePlayerOne.value === '' && namePlayerTwo.value === '') {
+        alert("Please Enter All Player's Names.");
+        throw new Error("Please Enter All Player's Names");
+      } else {
+        const symbol = currentPlayer.getSymbol();
+        const img = currentPlayer.getImg();
+        ifCellEmpty(event, symbol, img);
+      }
+    };
+
     const reset = () => {
       cells.forEach((element) => {
+        element.addEventListener('click', clickCell, false);
         element.innerHTML = '';
         element.dataset.datasymbol = '';
         styles.initialBackground(element);
         count = 1;
-        roundCounter.innerHTML = 'Round 1.';
+        roundCounter.innerHTML = 'Turn 1.';
         playerTurnIndicator.innerHTML = '';
         playerOneIcon.innerHTML = '';
         playerTwoIcon.innerHTML = '';
@@ -155,7 +176,7 @@ const game = (() => {
         [2, 4, 6],
       ];
 
-      for (let i = 0; i <= 7; i++) {
+      for (let i = 0; i <= 7; i += 1) {
         const winCondition = winningConditions[i];
         const a = array[winCondition[0]];
         const b = array[winCondition[1]];
@@ -164,13 +185,16 @@ const game = (() => {
         const bb = document.getElementById(`c${winCondition[1]}`);
         const cc = document.getElementById(`c${winCondition[2]}`);
         if (a === symbol && b === symbol && c === symbol) {
-          const style = [aa, bb, cc];
           roundWon = true;
-          style.forEach((element) => {
-            (currentPlayer === playerOne) ?
-            element.style.background = playerOne.getBackground() : 
-              element.style.background = playerTwo.getBackground();
-          });
+          if (currentPlayer === playerOne) {
+            aa.style.background = playerOne.getBackground();
+            bb.style.background = playerOne.getBackground();
+            cc.style.background = playerOne.getBackground();
+          } else {
+            aa.style.background = playerTwo.getBackground();
+            bb.style.background = playerTwo.getBackground();
+            cc.style.background = playerTwo.getBackground();
+          }
           return roundWon;
         }
       }
@@ -180,22 +204,22 @@ const game = (() => {
     const updateBoardArray = () => {
       const cellsArray = Array.from(cells);
       const renderBoard = cellsArray.map(
-        (cell) => (cell = cell.dataset.datasymbol),
+        (cell => cell.dataset.datasymbol),
       );
       return renderBoard;
     };
 
     const playerSwitch = () => {
-      styles.displayRounds(count+1);
+      styles.displayRounds(count + 1);
 
       if (winningValidation(updateBoardArray(), currentPlayer.getSymbol()) === false && count === 9) {
         setTimeout(() => {
-          alert(
-            "You both suck so hard. Would you like to play again to prove that you dont both suck as much as each other or are you both absolute losers who have no lives and cant even win a simple game of tic tac toe. I mean seriously, how difficult is it to place three symbols in a row. Do you even like Game of Thrones or Lord of The Rings? I bet you're both absolute neckbeards who live in the basement and dont meet the national recommended dietry requirements for vitamin d.",
-          );
-          confirm('Would you like to play again? 🙂 ❤️❤️❤️ 💕💕💕')
-            ? reset(cells)
-            : alert('Knew it.');
+          const reMatch = confirm("It's a draw! Would you like to play again?");
+          if (reMatch) {
+            reset(cells);
+          } else {
+            alert('How sad.');
+          }
         }, 450);
       } else if (winningValidation(updateBoardArray(), currentPlayer.getSymbol())) {
         setTimeout(() => {
@@ -219,6 +243,7 @@ const game = (() => {
         oppositePlayer = playerOne;
         styles.paintBackground(currentPlayer.getBackground(), playerTwoIcon);
       }
+<<<<<<< HEAD
       //comment
       count++;
     };
@@ -245,16 +270,17 @@ const game = (() => {
         const img = currentPlayer.getImg();
         ifCellEmpty(event, symbol, img);
       }
+=======
+      count += 1;
+>>>>>>> babc722b0a2f17a53de2e748de83e2d36bcc7b13
     };
 
     cells.forEach((cell) => cell.addEventListener('click', clickCell, false));
     return { clickCell, reset };
   })();
 
-
   return { gameInit, gameBoard };
 })();
-
 
 /*
 TO DO LIST
