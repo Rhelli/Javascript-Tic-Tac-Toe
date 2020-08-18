@@ -243,8 +243,6 @@ const game = (() => {
         oppositePlayer = playerOne;
         styles.paintBackground(currentPlayer.getBackground(), playerTwoIcon);
       }
-<<<<<<< HEAD
-      //comment
       count++;
     };
 
@@ -270,9 +268,6 @@ const game = (() => {
         const img = currentPlayer.getImg();
         ifCellEmpty(event, symbol, img);
       }
-=======
-      count += 1;
->>>>>>> babc722b0a2f17a53de2e748de83e2d36bcc7b13
     };
 
     cells.forEach((cell) => cell.addEventListener('click', clickCell, false));

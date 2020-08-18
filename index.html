@@ -34,23 +34,9 @@
               <source src="../assets/audio/Flute Song.mp3" type="audio/mpeg" />
             </audio>
             <div class="controls">
-              <button
-                class="m"
-                onclick="document.getElementById('player').play()"
-              >
-                <i class="fas fa-play"></i>
-              </button>
-              <button
-                class="m"
-                onclick="document.getElementById('player').pause()"
-              >
-                <i class="fas fa-pause"></i>
-              </button>
-              <button
-                onclick="document.getElementById('player').muted=!document.getElementById('player').muted"
-              >
-                <i class="fas fa-volume-mute"></i>
-              </button>
+              <button class="m" onclick="document.getElementById('player').play()"><i class="fas fa-play"></i></button>
+              <button class="m" onclick="document.getElementById('player').pause()"><i class="fas fa-pause"></i></button>
+              <button onclick="document.getElementById('player').muted=!document.getElementById('player').muted"><i class="fas fa-volume-mute"></i></button>
             </div>
           </div>
         </div>
@@ -82,40 +68,20 @@
           <div class="name-container">
             <div class="row p1">
               <label for="player-one">Player 1</label>
-              <input
-                placeholder="Enter your name"
-                required="required"
-                type="text"
-                id="player-one"
-              />
+              <input placeholder="Enter your name" required="required" type="text" id="player-one"/>
             </div>
             <div class="row p2">
-              <label for="player-two">Player 2</label
-              ><input
-                placeholder="Enter your name"
-                required="required"
-                type="text"
-                id="player-two"
-              />
+              <label for="player-two">Player 2</label>
+              <input placeholder="Enter your name" required="required" type="text" id="player-two"/>
             </div>
           </div>
           <div class="select-character-container">
             <div id="character-container-1">
               <div class="character-div">
-                <img
-                  class="character-item"
-                  id="cersei"
-                  src="assets/got/cersei.png"
-                  alt=""
-                />
+                <img class="character-item" id="cersei" src="assets/got/cersei.png" alt=""/>
               </div>
               <div class="character-div">
-                <img
-                  class="character-item"
-                  id="jon"
-                  src="assets/got/jon.png"
-                  alt=""
-                />
+                <img class="character-item" id="jon" src="assets/got/jon.png" alt=""/>
               </div>
               <div class="character-div">
                 <img
