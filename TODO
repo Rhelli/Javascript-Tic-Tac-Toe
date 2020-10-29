@@ -1,0 +1,5 @@
+* Install webpack, webpack cli
+* Create a Utilities module
+* Create several modules for any possible module candidate
+* Check for all possible places were we could do a utility function
+* Separate DOM from Logic ( D: )
