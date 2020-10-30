@@ -6,3 +6,5 @@ const ifCellEmpty = (event, symbol, img) => {
   event.target.removeEventListener('click', clickCell, false);
   playerSwitch();
 };
+
+module.exports = ifCellEmpty;

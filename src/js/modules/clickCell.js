@@ -8,3 +8,5 @@ const clickCell = (event) => {
     ifCellEmpty(event, symbol, img);
   }
 };
+
+module.exports = clickCell;

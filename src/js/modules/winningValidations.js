@@ -35,3 +35,5 @@ const winningValidation = (array, symbol) => {
   }
   return roundWon;
 };
+
+module.exports = winningValidation;

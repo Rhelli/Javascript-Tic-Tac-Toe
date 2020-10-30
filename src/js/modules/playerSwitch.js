@@ -34,3 +34,5 @@ const playerSwitch = () => {
   }
   count++;
 };
+
+module.exports = playerSwitch;

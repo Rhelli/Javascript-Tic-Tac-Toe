@@ -3,3 +3,4 @@
 * Create several modules for any possible module candidate
 * Check for all possible places were we could do a utility function
 * Separate DOM from Logic ( D: )
+* Inspect setTimeout functions and see if they can be replaced with async/await

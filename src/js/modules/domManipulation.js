@@ -1,4 +1,6 @@
-const styles = (() => {
+const game = require('./game');
+
+const styles = () => {
   const formContainer = document.getElementById('form-container');
   const removeForm = () => { formContainer.style.display = 'none'; };
   const addForm = () => { formContainer.style.display = 'flex'; };
@@ -33,4 +35,6 @@ const styles = (() => {
     paintBackground,
     disableBackground,
   };
-})();
+};
+
+module.export = styles;

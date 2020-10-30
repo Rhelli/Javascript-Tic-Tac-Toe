@@ -17,3 +17,5 @@ const reset = () => {
     styles.addForm();
   });
 };
+
+module.exports = reset;

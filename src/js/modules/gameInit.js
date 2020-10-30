@@ -21,3 +21,5 @@ const gameInit = () => {
   }
   return false;
 };
+
+module.exports = gameInit;

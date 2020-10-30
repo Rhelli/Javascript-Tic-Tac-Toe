@@ -1,4 +1,4 @@
-const Player = (name, symbol, playerNumber, img, background) => {
+const player = (name, symbol, playerNumber, img, background) => {
   const getName = () => name;
   const getSymbol = () => symbol;
   const getImg = () => img;
@@ -12,3 +12,5 @@ const Player = (name, symbol, playerNumber, img, background) => {
     getBackground,
   };
 };
+
+module.exports = player;

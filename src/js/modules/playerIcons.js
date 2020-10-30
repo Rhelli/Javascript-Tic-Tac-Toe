@@ -23,3 +23,5 @@ const choosePlayerIcon = (event) => {
 
   return { Icons };
 };
+
+module.exports = choosePlayerIcon;
