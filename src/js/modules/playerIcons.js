@@ -1,9 +1,10 @@
-import domElements from './domElements';
+import { Icons, call, allIcons } from './domElements';
 import game from './game';
 
 
 const choosePlayerIcon = (event) => {
-  const arr = domElements.Icons;
+  call();
+  const arr = Icons;
   const chosenIcon = event;
   if (game.numberOfPlayer === 1) {
     if (arr[0]) {
