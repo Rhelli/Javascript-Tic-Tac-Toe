@@ -1,6 +1,15 @@
+const gameboard = require('./gameboard');
+const styles = require('./domManipulation');
+const playerCreator = require('./player');
+const playerIcons = require('./playerIcons');
+const gameInit = require('./gameInit');
+const ifCellEmpty = require('./ifCellEmpty');
+const clickCell = require('./clickCell.js');
+const reset = require('./reset');
+const winningValidation = require('./winningValidations');
+const updateBoard = require('./updateBoard');
+const playerSwitch = require('./playerSwitch');
 const domElements = require('./domElements');
-const choosePlayerIcon = require('./playerIcons');
-
 
 const game = () => {
   const count = 1;
@@ -18,8 +27,11 @@ const game = () => {
   // const playerOneIcon = document.getElementById('activePlayerOne');
   // const playerTwoIcon = document.getElementById('activePlayerTwo');
 
+  styles();
+  gameInit();
+  gameboard();
   domElements.allIcons.forEach((element) => {
-    element.addEventListener('click', choosePlayerIcon, false);
+    element.addEventListener('click', playerIcons, false);
   });
   // return { gameInit, gameBoard };
   return {
@@ -32,4 +44,4 @@ const game = () => {
   };
 };
 
-module.export = game;
+module.exports = game;

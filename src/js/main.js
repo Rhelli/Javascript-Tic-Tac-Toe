@@ -10,3 +10,5 @@ const reset = require('./modules/reset');
 const winningValidation = require('./modules/winningValidations');
 const updateBoard = require('./modules/updateBoard');
 const playerSwitch = require('./modules/playerSwitch');
+
+game();

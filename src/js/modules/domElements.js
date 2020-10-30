@@ -8,4 +8,8 @@ const domElements = () => {
   const playerOneIcon = document.getElementById('activePlayerOne');
   const playerTwoIcon = document.getElementById('activePlayerTwo');
   const cells = document.querySelectorAll('.cell');
+
+  return {
+    cells, playerTwoIcon, playerOneIcon, roundCounter, Icons, playerTurnIndicator, namePlayerTwo, namePlayerOne, allIcons,
+  };
 };

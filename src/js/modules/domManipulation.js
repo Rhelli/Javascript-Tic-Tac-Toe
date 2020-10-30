@@ -38,4 +38,4 @@ const styles = () => {
   };
 };
 
-module.export = styles;
+module.exports = styles;
