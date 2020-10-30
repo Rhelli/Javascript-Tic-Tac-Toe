@@ -27,20 +27,22 @@ const game = () => {
   // const playerOneIcon = document.getElementById('activePlayerOne');
   // const playerTwoIcon = document.getElementById('activePlayerTwo');
 
-  styles();
-  gameInit();
-  gameboard();
+  (function () {
+    styles();
+    gameboard();
+  }());
+
   domElements.allIcons.forEach((element) => {
     element.addEventListener('click', playerIcons, false);
   });
   // return { gameInit, gameBoard };
   return {
-    count,
-    playerOne,
-    playerTwo,
-    numberOfPlayers,
-    currentPlayer,
-    oppositePlayer,
+    count: count,
+    playerOne: playerOne,
+    playerTwo: playerTwo,
+    numberOfPlayers: numberOfPlayers,
+    currentPlayer: currentPlayer,
+    oppositePlayer: oppositePlayer,
   };
 };
 

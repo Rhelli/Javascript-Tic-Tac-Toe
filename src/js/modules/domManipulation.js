@@ -27,14 +27,14 @@ const styles = () => {
   };
 
   return {
-    addForm,
-    initialBackground,
-    removeForm,
-    displayRounds,
+    addForm: addForm,
+    initialBackground: initialBackground,
+    removeForm: removeForm,
+    displayRounds: displayRounds,
     // playerTurnIndicator, why ?
-    displayIcon,
-    paintBackground,
-    disableBackground,
+    displayIcon: displayIcon,
+    paintBackground: paintBackground,
+    disableBackground: disableBackground,
   };
 };
 

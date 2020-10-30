@@ -7,6 +7,7 @@ const choosePlayerIcon = (event) => {
     if (domElements.Icons[0]) {
       document.getElementById('avoid-clicks').id = '';
       domElements.Icons[0] = chosenIcon.src;
+
     } else {
       domElements.Icons.push(chosenIcon.src);
     }
@@ -24,7 +25,7 @@ const choosePlayerIcon = (event) => {
     game.numberOfPlayer = 1;
   }
 
-  // return { domElements.Icons }; why? x2
+  // return { domElements.Icons };
 };
 
 module.exports = choosePlayerIcon;

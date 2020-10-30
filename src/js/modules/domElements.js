@@ -10,6 +10,16 @@ const domElements = () => {
   const cells = document.querySelectorAll('.cell');
 
   return {
-    cells, playerTwoIcon, playerOneIcon, roundCounter, Icons, playerTurnIndicator, namePlayerTwo, namePlayerOne, allIcons,
-  };
+    cells: cells,
+    playerTwoIcon: playerTwoIcon,
+    playerOneIcon: playerOneIcon,
+    roundCounter: roundCounter,
+    Icons: Icons,
+    playerTurnIndicator: playerTurnIndicator,
+    namePlayerTwo: namePlayerTwo,
+    namePlayerOne: namePlayerOne,
+    allIcons: allIcons,
+  }
 };
+
+module.exports = domElements;
