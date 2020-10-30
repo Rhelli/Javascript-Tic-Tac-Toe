@@ -1,5 +1,5 @@
-const clickCell = require('./clickCell');
-const playerSwitch = require('./playerSwitch');
+import clickCell from './clickCell';
+import playerSwitch from './playerSwitch';
 
 const ifCellEmpty = (event, symbol, img) => {
   const imgE = document.createElement('img');
@@ -10,4 +10,4 @@ const ifCellEmpty = (event, symbol, img) => {
   playerSwitch();
 };
 
-module.exports = ifCellEmpty;
+export default ifCellEmpty;

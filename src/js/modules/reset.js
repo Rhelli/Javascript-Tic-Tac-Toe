@@ -1,8 +1,8 @@
-const domElements = require('./domElements');
-const game = require('./game');
-const clickCell = require('./clickCell');
-const domManipulation = require('./domManipulation');
-const choosePlayerIcon = require('./playerIcons');
+import domElements from './domElements';
+import game from './game';
+import clickCell from './clickCell';
+import domManipulation from './domManipulation';
+import choosePlayerIcon from './playerIcons';
 
 const reset = () => {
   domElements.cells.forEach((element) => {
@@ -24,4 +24,4 @@ const reset = () => {
   });
 };
 
-module.exports = reset;
+export default reset;

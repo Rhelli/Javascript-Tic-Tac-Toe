@@ -20,6 +20,7 @@ const domElements = () => {
     namePlayerOne: namePlayerOne,
     allIcons: allIcons,
   }
+
 };
 
-module.exports = domElements;
+export default domElements;

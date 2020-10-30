@@ -1,15 +1,9 @@
-const gameboard = require('./gameboard');
-const styles = require('./domManipulation');
-const playerCreator = require('./player');
-const playerIcons = require('./playerIcons');
-const gameInit = require('./gameInit');
-const ifCellEmpty = require('./ifCellEmpty');
-const clickCell = require('./clickCell.js');
-const reset = require('./reset');
-const winningValidation = require('./winningValidations');
-const updateBoard = require('./updateBoard');
-const playerSwitch = require('./playerSwitch');
-const domElements = require('./domElements');
+import gameboard from './gameboard';
+import styles from './domManipulation';
+import playerCreator from './player';
+import playerIcons from './playerIcons';
+import gameInit from './gameInit';
+import domElements from './domElements';
 
 const game = () => {
   const count = 1;
@@ -22,28 +16,28 @@ const game = () => {
   // const playerTurnIndicator = document.getElementById('player-turn');
   const currentPlayer = '';
   const oppositePlayer = '';
+  styles();
   // const Icons = [];
   // const roundCounter = document.getElementById('turn-counter');
   // const playerOneIcon = document.getElementById('activePlayerOne');
   // const playerTwoIcon = document.getElementById('activePlayerTwo');
 
-  (function () {
-    styles();
-    gameboard();
-  }());
-
+  playerCreator();
+  playerIcons();
+  gameInit();
   domElements.allIcons.forEach((element) => {
     element.addEventListener('click', playerIcons, false);
   });
+  gameboard();
   // return { gameInit, gameBoard };
   return {
-    count: count,
-    playerOne: playerOne,
-    playerTwo: playerTwo,
-    numberOfPlayers: numberOfPlayers,
-    currentPlayer: currentPlayer,
-    oppositePlayer: oppositePlayer,
+    count,
+    playerOne,
+    playerTwo,
+    numberOfPlayers,
+    currentPlayer,
+    oppositePlayer,
   };
 };
 
-module.exports = game;
+export default game;

@@ -13,4 +13,4 @@ const player = (name, symbol, playerNumber, img, background) => {
   };
 };
 
-module.exports = player;
+export default player;

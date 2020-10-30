@@ -1,4 +1,4 @@
-const game = require('./game');
+import game from './game';
 
 const winningValidation = (array, symbol) => {
   let roundWon = false;
@@ -38,4 +38,4 @@ const winningValidation = (array, symbol) => {
   return roundWon;
 };
 
-module.exports = winningValidation;
+export default winningValidation;

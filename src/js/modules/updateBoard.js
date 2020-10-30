@@ -6,4 +6,4 @@ const updateBoardArray = () => {
   return renderBoard;
 };
 
-module.exports = updateBoardArray;
+export default updateBoardArray;

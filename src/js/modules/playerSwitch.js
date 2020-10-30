@@ -42,4 +42,4 @@ const playerSwitch = () => {
   game.count++;
 };
 
-module.exports = playerSwitch;
+export default playerSwitch;

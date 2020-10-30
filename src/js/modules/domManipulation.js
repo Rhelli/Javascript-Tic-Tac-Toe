@@ -1,5 +1,5 @@
-const game = require('./game');
-const domElements = require('./domElements');
+import game from './game';
+import domElements from './domElements';
 
 const styles = () => {
   const formContainer = document.getElementById('form-container');
@@ -27,15 +27,15 @@ const styles = () => {
   };
 
   return {
-    addForm: addForm,
-    initialBackground: initialBackground,
-    removeForm: removeForm,
-    displayRounds: displayRounds,
+    addForm,
+    initialBackground,
+    removeForm,
+    displayRounds,
     // playerTurnIndicator, why ?
-    displayIcon: displayIcon,
-    paintBackground: paintBackground,
-    disableBackground: disableBackground,
+    displayIcon,
+    paintBackground,
+    disableBackground,
   };
 };
 
-module.exports = styles;
+export default styles;

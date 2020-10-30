@@ -1,6 +1,6 @@
-const domElements = require('./domElements');
-const game = require('./game');
-const ifCellEmpty = require('./ifCellEmpty');
+import domElements from './domElements';
+import game from './game';
+import ifCellEmpty from './ifCellEmpty';
 
 const clickCell = (event) => {
   if (domElements.namePlayerOne.value === '' && domElements.namePlayerTwo.value === '') {
@@ -13,4 +13,4 @@ const clickCell = (event) => {
   }
 };
 
-module.exports = clickCell;
+export default clickCell;

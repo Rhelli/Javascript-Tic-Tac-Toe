@@ -1,9 +1,11 @@
-const domElements = require('./domElements');
-const game = require('./game');
-const domManipulation = require('./domManipulation');
-const player = require('./player');
+import domElements from './domElements';
+import game from './game';
+import domManipulation from './domManipulation';
+import player from './player';
+
 
 const gameInit = () => {
+  console.log('sup perro');
   if (domElements.namePlayerOne.value === '' || domElements.namePlayerTwo.value === '') {
     alert("Please add both players' names to continue.");
     return false;
@@ -27,4 +29,4 @@ const gameInit = () => {
   return false;
 };
 
-module.exports = gameInit;
+export default gameInit;
