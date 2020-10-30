@@ -1,3 +1,5 @@
+const game = require('./game');
+
 const winningValidation = (array, symbol) => {
   let roundWon = false;
   const winningConditions = [
@@ -21,14 +23,14 @@ const winningValidation = (array, symbol) => {
     const cc = document.getElementById(`c${winCondition[2]}`);
     if (a === symbol && b === symbol && c === symbol) {
       roundWon = true;
-      if (currentPlayer === playerOne) {
-        aa.style.background = playerOne.getBackground();
-        bb.style.background = playerOne.getBackground();
-        cc.style.background = playerOne.getBackground();
+      if (game.currentPlayer === game.playerOne) {
+        aa.style.background = game.playerOne.getBackground();
+        bb.style.background = game.playerOne.getBackground();
+        cc.style.background = game.playerOne.getBackground();
       } else {
-        aa.style.background = playerTwo.getBackground();
-        bb.style.background = playerTwo.getBackground();
-        cc.style.background = playerTwo.getBackground();
+        aa.style.background = game.playerTwo.getBackground();
+        bb.style.background = game.playerTwo.getBackground();
+        cc.style.background = game.playerTwo.getBackground();
       }
       return roundWon;
     }

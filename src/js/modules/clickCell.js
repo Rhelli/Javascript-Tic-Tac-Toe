@@ -1,10 +1,14 @@
+const domElements = require('./domElements');
+const game = require('./game');
+const ifCellEmpty = require('./ifCellEmpty');
+
 const clickCell = (event) => {
-  if (namePlayerOne.value === '' && namePlayerTwo.value === '') {
+  if (domElements.namePlayerOne.value === '' && domElements.namePlayerTwo.value === '') {
     alert("Please Enter All Player's Names.");
     throw new Error("Please Enter All Player's Names");
   } else {
-    const symbol = currentPlayer.getSymbol();
-    const img = currentPlayer.getImg();
+    const symbol = game.currentPlayer.getSymbol();
+    const img = game.currentPlayer.getImg();
     ifCellEmpty(event, symbol, img);
   }
 };

@@ -244,7 +244,7 @@ const game = (() => {
         styles.paintBackground(currentPlayer.getBackground(), playerTwoIcon);
       }
       count++;
-    }; 4
+    }; 4;
 
     cells.forEach((cell) => cell.addEventListener('click', clickCell, false));
     return { clickCell, reset };

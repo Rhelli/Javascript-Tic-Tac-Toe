@@ -1,20 +1,26 @@
+const domElements = require('./domElements');
+const game = require('./game');
+const clickCell = require('./clickCell');
+const domManipulation = require('./domManipulation');
+const choosePlayerIcon = require('./playerIcons');
+
 const reset = () => {
-  cells.forEach((element) => {
+  domElements.cells.forEach((element) => {
     element.addEventListener('click', clickCell, false);
     element.innerHTML = '';
     element.dataset.datasymbol = '';
-    styles.initialBackground(element);
-    count = 1;
-    roundCounter.innerHTML = 'Turn 1.';
-    playerTurnIndicator.innerHTML = '';
-    playerOneIcon.innerHTML = '';
-    playerTwoIcon.innerHTML = '';
-    styles.disableBackground(currentPlayer.getBackground(), playerOneIcon);
-    styles.disableBackground(currentPlayer.getBackground(), playerTwoIcon);
-    allIcons.forEach((element) => {
+    domManipulation.initialBackground(element);
+    game.count = 1;
+    domElements.roundCounter.innerHTML = 'Turn 1.';
+    domElements.playerTurnIndicator.innerHTML = '';
+    domElements.playerOneIcon.innerHTML = '';
+    domElements.playerTwoIcon.innerHTML = '';
+    domManipulation.disableBackground(game.currentPlayer.getBackground(), domElements.playerOneIcon);
+    domManipulation.disableBackground(game.currentPlayer.getBackground(), domElements.playerTwoIcon);
+    domElements.allIcons.forEach((element) => {
       element.addEventListener('click', choosePlayerIcon, false);
     });
-    styles.addForm();
+    domManipulation.addForm();
   });
 };
 

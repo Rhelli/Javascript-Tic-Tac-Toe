@@ -1,3 +1,6 @@
+const clickCell = require('./clickCell');
+const playerSwitch = require('./playerSwitch');
+
 const ifCellEmpty = (event, symbol, img) => {
   const imgE = document.createElement('img');
   imgE.src = img;

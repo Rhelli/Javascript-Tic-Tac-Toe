@@ -1,27 +1,30 @@
+const domElements = require('./domElements');
+const game = require('./game');
+
 const choosePlayerIcon = (event) => {
   const chosenIcon = event.target;
-  if (numberOfPlayer === 1) {
-    if (Icons[0]) {
+  if (game.numberOfPlayer === 1) {
+    if (domElements.Icons[0]) {
       document.getElementById('avoid-clicks').id = '';
-      Icons[0] = chosenIcon.src;
+      domElements.Icons[0] = chosenIcon.src;
     } else {
-      Icons.push(chosenIcon.src);
+      domElements.Icons.push(chosenIcon.src);
     }
     chosenIcon.id = 'avoid-clicks';
-    numberOfPlayer = 2;
+    game.numberOfPlayer = 2;
   } else {
-    if (Icons[1]) {
+    if (domElements.domElements.Icons[1]) {
       document.getElementById('avoid-clicks-p2').id = '';
-      Icons[1] = chosenIcon.src;
+      domElements.Icons[1] = chosenIcon.src;
     } else {
-      Icons.push(chosenIcon.src);
+      domElements.Icons.push(chosenIcon.src);
     }
 
     chosenIcon.id = 'avoid-clicks-p2';
-    numberOfPlayer = 1;
+    game.numberOfPlayer = 1;
   }
 
-  return { Icons };
+  // return { domElements.Icons }; why? x2
 };
 
 module.exports = choosePlayerIcon;

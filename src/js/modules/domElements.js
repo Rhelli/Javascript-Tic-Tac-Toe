@@ -7,4 +7,5 @@ const domElements = () => {
   const roundCounter = document.getElementById('turn-counter');
   const playerOneIcon = document.getElementById('activePlayerOne');
   const playerTwoIcon = document.getElementById('activePlayerTwo');
+  const cells = document.querySelectorAll('.cell');
 };

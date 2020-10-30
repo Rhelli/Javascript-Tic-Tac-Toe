@@ -1,4 +1,5 @@
 const game = require('./game');
+const domElements = require('./domElements');
 
 const styles = () => {
   const formContainer = document.getElementById('form-container');
@@ -17,12 +18,12 @@ const styles = () => {
   };
   const initialBackground = (element) => { element.style.background = 'transparent'; };
   const displayRounds = (element) => {
-    if (roundCounter.innerHTML === 'No Turns Yet') {
-      roundCounter.innerHTML = 'Turn 1';
+    if (domElements.roundCounter.innerHTML === 'No Turns Yet') {
+      domElements.roundCounter.innerHTML = 'Turn 1';
     } else {
-      roundCounter.innerHTML = `Turn ${element}.`;
+      domElements.roundCounter.innerHTML = `Turn ${element}.`;
     }
-    playerTurnIndicator.innerHTML = `It is ${oppositePlayer.getName()}'s turn`;
+    game.playerTurnIndicator.innerHTML = `It is ${game.oppositePlayer.getName()}'s turn`;
   };
 
   return {
@@ -30,7 +31,7 @@ const styles = () => {
     initialBackground,
     removeForm,
     displayRounds,
-    playerTurnIndicator,
+    // playerTurnIndicator, why ?
     displayIcon,
     paintBackground,
     disableBackground,

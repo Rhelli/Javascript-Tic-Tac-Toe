@@ -1,22 +1,27 @@
+const domElements = require('./domElements');
+const game = require('./game');
+const domManipulation = require('./domManipulation');
+const player = require('./player');
+
 const gameInit = () => {
-  if (namePlayerOne.value === '' || namePlayerTwo.value === '') {
+  if (domElements.namePlayerOne.value === '' || domElements.namePlayerTwo.value === '') {
     alert("Please add both players' names to continue.");
     return false;
   }
-  if (Icons.length < 2) {
+  if (domElements.Icons.length < 2) {
     alert('Please select a character for both players to continue.');
     return false;
   }
-  if (namePlayerOne.value !== '' && namePlayerTwo.value !== '' && Icons.length === 2) {
-    playerOne = Player(namePlayerOne.value, 'X', 1, Icons[0], 'rgba(144, 164, 174, 0.8');
-    playerTwo = Player(namePlayerTwo.value, 'O', 2, Icons[1], 'rgba(241, 196, 15, 0.8');
-    currentPlayer = playerOne;
-    oppositePlayer = playerTwo;
-    styles.displayIcon(playerOne.getImg(), playerOneIcon);
-    styles.paintBackground(playerOne.getBackground(), playerOneIcon);
-    styles.displayIcon(playerTwo.getImg(), playerTwoIcon);
-    playerTurnIndicator.innerHTML = `It's ${currentPlayer.getName()}'s turn`;
-    styles.removeForm();
+  if (domElements.namePlayerOne.value !== '' && domElements.namePlayerTwo.value !== '' && domElements.Icons.length === 2) {
+    game.playerOne = player(domElements.namePlayerOne.value, 'X', 1, domElements.Icons[0], 'rgba(144, 164, 174, 0.8');
+    game.playerTwo = player(domElements.namePlayerTwo.value, 'O', 2, domElements.Icons[1], 'rgba(241, 196, 15, 0.8');
+    game.currentPlayer = game.playerOne;
+    game.oppositePlayer = game.playerTwo;
+    domManipulation.displayIcon(game.playerOne.getImg(), domElements.playerOneIcon);
+    domManipulation.paintBackground(game.playerOne.getBackground(), domElements.playerOneIcon);
+    domManipulation.displayIcon(game.playerTwo.getImg(), domElements.playerTwoIcon);
+    domElements.playerTurnIndicator.innerHTML = `It's ${game.currentPlayer.getName()}'s turn`;
+    domManipulation.removeForm();
     return true;
   }
   return false;
