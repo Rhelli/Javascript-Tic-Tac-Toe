@@ -1,4 +1,4 @@
-import domElements from './domElements';
+import * as domElements from './domElements';
 import game from './game';
 import ifCellEmpty from './ifCellEmpty';
 

@@ -1,8 +1,7 @@
-import domElements from './domElements';
+import * as domElements from './domElements';
 import game from './game';
-import domManipulation from './domManipulation';
+import * as domManipulation from './domManipulation';
 import player from './player';
-
 
 const gameInit = () => {
   console.log('sup perro');

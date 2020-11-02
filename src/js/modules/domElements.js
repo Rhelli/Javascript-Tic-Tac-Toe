@@ -8,9 +8,17 @@ const playerOneIcon = document.getElementById('activePlayerOne');
 const playerTwoIcon = document.getElementById('activePlayerTwo');
 const cells = document.querySelectorAll('.cell');
 const call = () => console.log(allIcons);
-
+const initButton = document.getElementById('startGameButton');
 
 export {
   call,
   Icons, allIcons,
-}
+  namePlayerOne,
+  namePlayerTwo,
+  playerTurnIndicator,
+  roundCounter,
+  playerOneIcon,
+  playerTwoIcon,
+  cells,
+  initButton,
+};

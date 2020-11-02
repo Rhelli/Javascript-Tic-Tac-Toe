@@ -1,8 +1,7 @@
-import domElements from './domElements';
+import * as domElements from './domElements';
 import game from './game';
 import clickCell from './clickCell';
-import domManipulation from './domManipulation';
-import choosePlayerIcon from './playerIcons';
+import * as domManipulation from './domManipulation'; import choosePlayerIcon from './playerIcons';
 
 const reset = () => {
   domElements.cells.forEach((element) => {

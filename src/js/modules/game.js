@@ -1,9 +1,7 @@
 import gameboard from './gameboard';
-import styles from './domManipulation';
-import playerCreator from './player';
 import playerIcons from './playerIcons';
 import gameInit from './gameInit';
-import domElements from './domElements';
+import * as domElements from './domElements';
 
 const game = () => {
   const count = 1;
@@ -16,15 +14,11 @@ const game = () => {
   // const playerTurnIndicator = document.getElementById('player-turn');
   const currentPlayer = '';
   const oppositePlayer = '';
-  styles();
+  domElements.initButton.addEventListener('click', gameInit);
   // const Icons = [];
   // const roundCounter = document.getElementById('turn-counter');
   // const playerOneIcon = document.getElementById('activePlayerOne');
   // const playerTwoIcon = document.getElementById('activePlayerTwo');
-
-  playerCreator();
-  playerIcons();
-  gameInit();
   domElements.allIcons.forEach((element) => {
     element.addEventListener('click', playerIcons, false);
   });
