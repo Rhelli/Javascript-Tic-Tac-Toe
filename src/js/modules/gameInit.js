@@ -4,6 +4,11 @@ import game from './game';
 import * as domManipulation from './domManipulation';
 import player from './player';
 
+let playerOne;
+let playerTwo;
+let currentPlayer;
+let oppositePlayer;
+
 const gameInit = () => {
   console.log('sup perro');
   if (domElements.namePlayerOne.value === '' || domElements.namePlayerTwo.value === '') {
@@ -15,14 +20,14 @@ const gameInit = () => {
     return false;
   }
   if (domElements.namePlayerOne.value !== '' && domElements.namePlayerTwo.value !== '' && Icons.length === 2) {
-    game.playerOne = player(domElements.namePlayerOne.value, 'X', 1, Icons[0], 'rgba(144, 164, 174, 0.8');
-    game.playerTwo = player(domElements.namePlayerTwo.value, 'O', 2, Icons[1], 'rgba(241, 196, 15, 0.8');
-    game.currentPlayer = game.playerOne;
-    game.oppositePlayer = game.playerTwo;
-    domManipulation.displayIcon(game.playerOne.getImg(), domElements.playerOneIcon);
-    domManipulation.paintBackground(game.playerOne.getBackground(), domElements.playerOneIcon);
-    domManipulation.displayIcon(game.playerTwo.getImg(), domElements.playerTwoIcon);
-    domElements.playerTurnIndicator.innerHTML = `It's ${game.currentPlayer.getName()}'s turn`;
+    playerOne = player(domElements.namePlayerOne.value, 'X', 1, Icons[0], 'rgba(144, 164, 174, 0.8');
+    playerTwo = player(domElements.namePlayerTwo.value, 'O', 2, Icons[1], 'rgba(241, 196, 15, 0.8');
+    currentPlayer = playerOne;
+    oppositePlayer = playerTwo;
+    domManipulation.displayIcon(playerOne.getImg(), domElements.playerOneIcon);
+    domManipulation.paintBackground(playerOne.getBackground(), domElements.playerOneIcon);
+    domManipulation.displayIcon(playerTwo.getImg(), domElements.playerTwoIcon);
+    domElements.playerTurnIndicator.innerHTML = `It's ${currentPlayer.getName()}'s turn`;
     domManipulation.removeForm();
     return true;
   }

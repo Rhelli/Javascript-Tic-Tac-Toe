@@ -1,14 +1,13 @@
-const styles = require('./domManipulation');
-const reset = require('./reset');
-const winningValidation = require('./winningValidations');
-const updateBoardArray = require('./updateBoard');
-const domElements = require('./domElements');
-const game = require('./game');
+import * as styles from './domManipulation';
+import  reset from './reset';
+import winningValidation from './winningValidations';
+import updateBoardArray from './updateBoard';
+import * as domElements from './domElements';
 
 const playerSwitch = () => {
-  styles.displayRounds(game.count + 1);
+  styles.displayRounds(domElements.count + 1);
 
-  if (winningValidation(updateBoardArray(), game.currentPlayer.getSymbol()) === false && game.count === 9) {
+  if (winningValidation(updateBoardArray(), domElements.currentPlayer.getSymbol()) === false && domElements.count === 9) {
     setTimeout(() => {
       const reMatch = confirm("It's a draw! Would you like to play again?");
       if (reMatch) {
@@ -17,10 +16,10 @@ const playerSwitch = () => {
         alert('How sad.');
       }
     }, 450);
-  } else if (winningValidation(updateBoardArray(), game.currentPlayer.getSymbol())) {
+  } else if (winningValidation(updateBoardArray(), domElements.currentPlayer.getSymbol())) {
     setTimeout(() => {
       const rematch = confirm(
-        `${game.currentPlayer.getName()} has won. Would you like to play again?`,
+        `${domElements.currentPlayer.getName()} has won. Would you like to play again?`,
       );
       if (rematch === true) {
         reset(domElements.cells);

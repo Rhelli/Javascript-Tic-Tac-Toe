@@ -13,4 +13,7 @@ const clickCell = (event) => {
   }
 };
 
+// we need to create a current/opposite player update state function
+// so we can pass that value to line 10/11
+
 export default clickCell;

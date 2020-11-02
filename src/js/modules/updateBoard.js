@@ -1,3 +1,4 @@
+const cells = document.querySelectorAll('.cell');
 const updateBoardArray = () => {
   const cellsArray = Array.from(cells);
   const renderBoard = cellsArray.map(

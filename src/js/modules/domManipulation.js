@@ -28,7 +28,7 @@ const displayRounds = (element) => {
   } else {
     domElements.roundCounter.innerHTML = `Turn ${element}.`;
   }
-  game.playerTurnIndicator.innerHTML = `It is ${game.oppositePlayer.getName()}'s turn`;
+  domElements.playerTurnIndicator.innerHTML = `It is ${game.oppositePlayer.getName()}'s turn`;
 };
 
 export {
