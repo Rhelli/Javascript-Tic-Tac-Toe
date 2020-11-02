@@ -1,34 +1,32 @@
 import * as domElements from './domElements';
 
-let Icons = [];
-
+const Icons = [];
+let numberOfPlayer = 1;
 const choosePlayerIcon = (element) => {
-  let icon = Icons;
+  console.log(Icons.length);
+  console.log(numberOfPlayer);
   const chosenIcon = element;
-  if (domElements.numberOfPlayer === 1) {
-    if (icon[0]) {
+  if (numberOfPlayer === 1) {
+    if (Icons[0]) {
       document.getElementById('avoid-clicks').id = '';
-      icon[0] = chosenIcon.src;
+      Icons[0] = chosenIcon.src;
     } else {
       Icons.push(chosenIcon.src);
     }
     console.log(Icons.length);
     chosenIcon.id = 'avoid-clicks';
-    domElements.numberOfPlayer = 2;
+    numberOfPlayer = 2;
   } else {
-    if (icon[1]) {
+    if (Icons[1]) {
       document.getElementById('avoid-clicks-p2').id = '';
-      icon[1] = chosenIcon.src;
+      Icons[1] = chosenIcon.src;
     } else {
       Icons.push(chosenIcon.src);
     }
     console.log(Icons.length);
     chosenIcon.id = 'avoid-clicks-p2';
-    domElements.numberOfPlayer = 1;
+    numberOfPlayer = 1;
   }
-
-  Icons = icon;
-
   return { Icons };
 };
 
