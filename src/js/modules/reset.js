@@ -1,18 +1,20 @@
 import * as domElements from './domElements';
 import game from './game';
 import clickCell from './clickCell';
-import * as domManipulation from './domManipulation'; import choosePlayerIcon from './playerIcons';
-import { retrieveItem } from './localStorage';
+import * as domManipulation from './domManipulation'; 
+import choosePlayerIcon from './playerIcons';
+import { retrieveItem, saveItem } from './localStorage';
 
-const currentPlayer = retrieveItem('currentPlayer');
 
 const reset = () => {
+  const currentPlayer = retrieveItem('currentPlayer');
+  let count = retrieveItem('count')
   domElements.cells.forEach((element) => {
     element.addEventListener('click', clickCell, false);
     element.innerHTML = '';
     element.dataset.datasymbol = '';
     domManipulation.initialBackground(element);
-    game.count = 1;
+    count = 1;
     domElements.roundCounter.innerHTML = 'Turn 1.';
     domElements.playerTurnIndicator.innerHTML = '';
     domElements.playerOneIcon.innerHTML = '';
@@ -24,6 +26,8 @@ const reset = () => {
     });
     domManipulation.addForm();
   });
+  saveItem('currentPlayer', currentPlayer);
+  saveItem('count', count);
 };
 
 export default reset;

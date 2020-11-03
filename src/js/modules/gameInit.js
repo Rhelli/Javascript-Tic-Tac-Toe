@@ -20,6 +20,11 @@ const gameInit = () => {
     const currentPlayer = playerOne;
     const oppositePlayer = playerTwo;
     const count = 1;
+    if (!playerOne.img && !playerTwo.img) {
+      alert('Please select a character for both players to continue.');
+      return false;
+    }
+
     domManipulation.displayIcon(playerOne.img, domElements.playerOneIcon);
     domManipulation.paintBackground(playerOne.background, domElements.playerOneIcon);
     domManipulation.displayIcon(playerTwo.img, domElements.playerTwoIcon);

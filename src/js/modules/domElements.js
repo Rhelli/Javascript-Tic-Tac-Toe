@@ -8,7 +8,7 @@ const playerTwoIcon = document.getElementById('activePlayerTwo');
 const cells = document.querySelectorAll('.cell');
 const call = () => console.log(allIcons);
 const initButton = document.getElementById('startGameButton');
-
+const resetButton = document.getElementById('resetButton');
 const count = 1;
 let playerOne;
 let playerTwo;
@@ -32,4 +32,5 @@ export {
   playerOne,
   playerTwo,
   playerNumber,
+  resetButton,
 };
