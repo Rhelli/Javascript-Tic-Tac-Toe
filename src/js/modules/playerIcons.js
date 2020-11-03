@@ -1,11 +1,15 @@
 import * as domElements from './domElements';
 import { retrieveItem, saveItem } from './localStorage';
 
+
+
+
 let numberOfPlayer = 1;
 const Icons = [];
 
 const choosePlayerIcon = (element) => {
   const chosenIcon = element;
+
   if (numberOfPlayer === 1) {
     if (Icons[0]) {
       document.getElementById('avoid-clicks').id = '';
