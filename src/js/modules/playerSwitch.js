@@ -1,13 +1,20 @@
 import * as styles from './domManipulation';
-import  reset from './reset';
+import reset from './reset';
 import winningValidation from './winningValidations';
 import updateBoardArray from './updateBoard';
 import * as domElements from './domElements';
+import * as gameInit from './gameInit';
+
+let currentPlayer = gameInit.currentPlayer;
+let oppositePlayer = gameInit.oppositePlayer;
+let playerOne = gameInit.playerOne;
+let playerTwo = gameInit.playerTwo;
+let count = 1;
 
 const playerSwitch = () => {
-  styles.displayRounds(domElements.count + 1);
+  styles.displayRounds(count + 1);
 
-  if (winningValidation(updateBoardArray(), domElements.currentPlayer.getSymbol()) === false && domElements.count === 9) {
+  if (winningValidation(updateBoardArray(), currentPlayer.getSymbol()) === false && count === 9) {
     setTimeout(() => {
       const reMatch = confirm("It's a draw! Would you like to play again?");
       if (reMatch) {
@@ -16,10 +23,10 @@ const playerSwitch = () => {
         alert('How sad.');
       }
     }, 450);
-  } else if (winningValidation(updateBoardArray(), domElements.currentPlayer.getSymbol())) {
+  } else if (winningValidation(updateBoardArray(), currentPlayer.getSymbol())) {
     setTimeout(() => {
       const rematch = confirm(
-        `${domElements.currentPlayer.getName()} has won. Would you like to play again?`,
+        `${currentPlayer.getName()} has won. Would you like to play again?`,
       );
       if (rematch === true) {
         reset(domElements.cells);
@@ -27,18 +34,19 @@ const playerSwitch = () => {
         alert('Loser.');
       }
     }, 450);
-  } else if (game.oppositePlayer.getNumber() === 1) {
-    styles.disableBackground(game.currentPlayer.getBackground(), domElements.playerTwoIcon);
-    game.currentPlayer = game.playerOne;
-    game.oppositePlayer = game.playerTwo;
-    styles.paintBackground(game.currentPlayer.getBackground(), domElements.playerOneIcon);
+  } else if (oppositePlayer.getNumber() === 1) {
+    styles.disableBackground(currentPlayer.getBackground(), domElements.playerTwoIcon);
+    currentPlayer = playerOne;
+    oppositePlayer = playerTwo;
+    styles.paintBackground(currentPlayer.getBackground(), domElements.playerOneIcon);
   } else {
-    styles.disableBackground(game.currentPlayer.getBackground(), domElements.playerOneIcon);
-    game.currentPlayer = game.playerTwo;
-    game.oppositePlayer = game.playerOne;
-    styles.paintBackground(game.currentPlayer.getBackground(), domElements.playerTwoIcon);
+    styles.disableBackground(currentPlayer.getBackground(), domElements.playerOneIcon);
+    currentPlayer = playerTwo;
+    oppositePlayer = playerOne;
+    styles.paintBackground(currentPlayer.getBackground(), domElements.playerTwoIcon);
   }
-  game.count++;
+  count++;
 };
 
 export default playerSwitch;
+export { currentPlayer };

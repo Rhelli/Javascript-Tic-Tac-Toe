@@ -35,3 +35,4 @@ const gameInit = () => {
 };
 
 export default gameInit;
+export { playerOne, playerTwo, currentPlayer, oppositePlayer }
