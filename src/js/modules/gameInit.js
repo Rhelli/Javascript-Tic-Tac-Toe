@@ -1,6 +1,5 @@
 import * as domElements from './domElements';
 import { Icons } from './playerIcons';
-import game from './game';
 import * as domManipulation from './domManipulation';
 import player from './player';
 import { saveItem } from './localStorage';
@@ -36,6 +35,7 @@ const gameInit = () => {
     saveItem('oppositePlayer', oppositePlayer);
     saveItem('count', count);
   }
+  return true;
 };
 
 export default gameInit;

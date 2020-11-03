@@ -1,12 +1,9 @@
-import game from './game';
 import { retrieveItem } from './localStorage';
-
-
 
 const winningValidation = (array, symbol) => {
   const playerOne = retrieveItem('playerOne');
-const playerTwo = retrieveItem('playerTwo');
-const currentPlayer = retrieveItem('currentPlayer');
+  const playerTwo = retrieveItem('playerTwo');
+  const currentPlayer = retrieveItem('currentPlayer');
   let roundWon = false;
   const winningConditions = [
     [0, 1, 2],

@@ -1,4 +1,3 @@
-import clickCell from './clickCell';
 import playerSwitch from './playerSwitch';
 
 const ifCellEmpty = (event, symbol, img) => {
@@ -6,7 +5,7 @@ const ifCellEmpty = (event, symbol, img) => {
   imgE.src = img;
   event.target.dataset.datasymbol = symbol;
   event.target.appendChild(imgE);
-  event.target.removeEventListener('click', clickCell, false);
+  event.target.classList.add('prevent-clicks');
   playerSwitch();
 };
 

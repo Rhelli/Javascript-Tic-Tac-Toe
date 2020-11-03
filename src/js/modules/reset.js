@@ -1,15 +1,8 @@
-import * as domElements from './domElements';
-import game from './game';
-import clickCell from './clickCell';
-import * as domManipulation from './domManipulation';
-import choosePlayerIcon from './playerIcons';
-import { retrieveItem, saveItem } from './localStorage';
-
-
 const reset = () => {
-    window.localStorage.clear()
-    window.location.reload()
-    domManipulation.addForm();
-  };
+  window.localStorage.clear();
+  window.location.reload();
+  const formContainer = document.getElementById('form-container');
+  formContainer.style.display = 'flex';
+};
 
 export default reset;

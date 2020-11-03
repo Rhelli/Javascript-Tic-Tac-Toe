@@ -1,4 +1,5 @@
-const cells = document.querySelectorAll('.cell');
+import { cells } from './domElements';
+
 const updateBoardArray = () => {
   const cellsArray = Array.from(cells);
   const renderBoard = cellsArray.map(

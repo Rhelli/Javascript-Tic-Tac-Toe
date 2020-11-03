@@ -1,4 +1,3 @@
-import game from './game';
 import * as domElements from './domElements';
 import { retrieveItem } from './localStorage';
 
@@ -38,7 +37,6 @@ export {
   initialBackground,
   removeForm,
   displayRounds,
-  // playerTurnIndicator, why ?
   displayIcon,
   paintBackground,
   disableBackground,

@@ -5,10 +5,7 @@ import updateBoardArray from './updateBoard';
 import * as domElements from './domElements';
 import { retrieveItem, saveItem } from './localStorage';
 
-
-
 const playerSwitch = () => {
-
   let currentPlayer = retrieveItem('currentPlayer');
   let oppositePlayer = retrieveItem('oppositePlayer');
   const playerOne = retrieveItem('playerOne');
@@ -36,7 +33,6 @@ const playerSwitch = () => {
       }
     }, 450);
   } else if (oppositePlayer.playerNumber === 1) {
-    console.log(`opposite player number is one`)
     styles.disableBackground(currentPlayer.background, domElements.playerTwoIcon);
     currentPlayer = playerOne;
     oppositePlayer = playerTwo;
@@ -53,6 +49,6 @@ const playerSwitch = () => {
   }
   count++;
   saveItem('count', count);
-}
+};
 
 export default playerSwitch;
