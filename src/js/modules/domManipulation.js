@@ -1,5 +1,6 @@
 import game from './game';
 import * as domElements from './domElements';
+import { retrieveItem } from './localStorage';
 
 const formContainer = document.getElementById('form-container');
 const removeForm = () => {
@@ -23,12 +24,13 @@ const initialBackground = (element) => {
   element.style.background = 'transparent';
 };
 const displayRounds = (element) => {
+  const oppositePlayer = retrieveItem('oppositePlayer');
   if (domElements.roundCounter.innerHTML === 'No Turns Yet') {
     domElements.roundCounter.innerHTML = 'Turn 1';
   } else {
     domElements.roundCounter.innerHTML = `Turn ${element}.`;
   }
-  domElements.playerTurnIndicator.innerHTML = `It is ${game.oppositePlayer.name}'s turn`;
+  domElements.playerTurnIndicator.innerHTML = `It is ${oppositePlayer.name}'s turn`;
 };
 
 export {
