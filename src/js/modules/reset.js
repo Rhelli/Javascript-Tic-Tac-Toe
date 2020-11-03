@@ -1,7 +1,7 @@
 import * as domElements from './domElements';
 import game from './game';
 import clickCell from './clickCell';
-import * as domManipulation from './domManipulation'; 
+import * as domManipulation from './domManipulation';
 import choosePlayerIcon from './playerIcons';
 import { retrieveItem, saveItem } from './localStorage';
 
@@ -19,13 +19,19 @@ const reset = () => {
     domElements.playerTurnIndicator.innerHTML = '';
     domElements.playerOneIcon.innerHTML = '';
     domElements.playerTwoIcon.innerHTML = '';
+    domElements.namePlayerOne.value = '';
+    domElements.namePlayerTwo.value = '';
     domManipulation.disableBackground(currentPlayer.background, domElements.playerOneIcon);
     domManipulation.disableBackground(currentPlayer.background, domElements.playerTwoIcon);
     domElements.allIcons.forEach((element) => {
       element.addEventListener('click', choosePlayerIcon, false);
     });
+    document.getElementById('avoid-clicks').id = '';
+    document.getElementById('avoid-clicks-p2').id = '';
     domManipulation.addForm();
   });
+  const resetIconSelect = 1;
+  saveItem('numberOfPlayer', resetIconSelect);
   saveItem('currentPlayer', currentPlayer);
   saveItem('count', count);
 };
