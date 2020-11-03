@@ -16,8 +16,6 @@ let playerTwo;
 const playerNumber = 1;
 
 const numberOfPlayers = 1;
-const currentPlayer = '';
-const oppositePlayer = '';
 
 export {
   call,
@@ -34,6 +32,4 @@ export {
   playerOne,
   playerTwo,
   playerNumber,
-  currentPlayer,
-  oppositePlayer,
 };
