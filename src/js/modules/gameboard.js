@@ -10,7 +10,7 @@ const gameboard = () => {
   domElements.cells.forEach((cell) => {
     cell.addEventListener('click', (event) => {
       //event.preventDefault();
-      clickCell();
+      clickCell(event);
     });
   });
 }
