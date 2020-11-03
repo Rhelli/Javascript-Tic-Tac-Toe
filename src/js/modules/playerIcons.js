@@ -3,8 +3,6 @@ import * as domElements from './domElements';
 const Icons = [];
 let numberOfPlayer = 1;
 const choosePlayerIcon = (element) => {
-  console.log(Icons.length);
-  console.log(numberOfPlayer);
   const chosenIcon = element;
   if (numberOfPlayer === 1) {
     if (Icons[0]) {
@@ -13,7 +11,6 @@ const choosePlayerIcon = (element) => {
     } else {
       Icons.push(chosenIcon.src);
     }
-    console.log(Icons.length);
     chosenIcon.id = 'avoid-clicks';
     numberOfPlayer = 2;
   } else {
@@ -23,7 +20,6 @@ const choosePlayerIcon = (element) => {
     } else {
       Icons.push(chosenIcon.src);
     }
-    console.log(Icons.length);
     chosenIcon.id = 'avoid-clicks-p2';
     numberOfPlayer = 1;
   }

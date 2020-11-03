@@ -1,4 +1,9 @@
 import game from './game';
+import { retrieveItem } from './localStorage';
+
+const playerOne = retrieveItem('playerOne');
+const playerTwo = retrieveItem('playerTwo');
+const currentPlayer = retrieveItem('currentPlayer');
 
 const winningValidation = (array, symbol) => {
   let roundWon = false;
@@ -23,14 +28,14 @@ const winningValidation = (array, symbol) => {
     const cc = document.getElementById(`c${winCondition[2]}`);
     if (a === symbol && b === symbol && c === symbol) {
       roundWon = true;
-      if (game.currentPlayer === game.playerOne) {
-        aa.style.background = game.playerOne.getBackground();
-        bb.style.background = game.playerOne.getBackground();
-        cc.style.background = game.playerOne.getBackground();
+      if (currentPlayer === playerOne) {
+        aa.style.background = playerOne.background;
+        bb.style.background = playerOne.background;
+        cc.style.background = playerOne.background;
       } else {
-        aa.style.background = game.playerTwo.getBackground();
-        bb.style.background = game.playerTwo.getBackground();
-        cc.style.background = game.playerTwo.getBackground();
+        aa.style.background = playerTwo.background;
+        bb.style.background = playerTwo.background;
+        cc.style.background = playerTwo.background;
       }
       return roundWon;
     }

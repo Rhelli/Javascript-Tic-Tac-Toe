@@ -1,18 +1,16 @@
 import * as domElements from './domElements';
 import game from './game';
 import ifCellEmpty from './ifCellEmpty';
-import * as gameInit from './gameInit';
-import * as playerSwitch from './playerSwitch';
-
-let currentPlayer = playerSwitch.currentPlayer;
+import { retrieveItem } from './localStorage';
 
 const clickCell = (event) => {
+  const currentPlayer = retrieveItem('currentPlayer');
   if (domElements.namePlayerOne.value === '' && domElements.namePlayerTwo.value === '') {
     alert("Please Enter All Player's Names.");
     throw new Error("Please Enter All Player's Names");
   } else {
-    const symbol = currentPlayer.getSymbol();
-    const img = currentPlayer.getImg();
+    const symbol = currentPlayer.symbol;
+    const img = currentPlayer.img;
     ifCellEmpty(event, symbol, img);
   }
 };

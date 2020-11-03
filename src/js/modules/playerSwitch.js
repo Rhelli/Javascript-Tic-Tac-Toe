@@ -3,18 +3,18 @@ import reset from './reset';
 import winningValidation from './winningValidations';
 import updateBoardArray from './updateBoard';
 import * as domElements from './domElements';
-import * as gameInit from './gameInit';
+import { retrieveItem, saveItem } from './localStorage';
 
-let currentPlayer = gameInit.currentPlayer;
-let oppositePlayer = gameInit.oppositePlayer;
-let playerOne = gameInit.playerOne;
-let playerTwo = gameInit.playerTwo;
+let currentPlayer = retrieveItem('currentPlayer');
+let oppositePlayer = retrieveItem('oppositePlayer');
+let playerOne = retrieveItem('playerOne');
+let playerTwo = retrieveItem('playerTwo');
 let count = 1;
 
 const playerSwitch = () => {
   styles.displayRounds(count + 1);
 
-  if (winningValidation(updateBoardArray(), currentPlayer.getSymbol()) === false && count === 9) {
+  if (winningValidation(updateBoardArray(), currentPlayer.symbol) === false && count === 9) {
     setTimeout(() => {
       const reMatch = confirm("It's a draw! Would you like to play again?");
       if (reMatch) {
@@ -23,10 +23,10 @@ const playerSwitch = () => {
         alert('How sad.');
       }
     }, 450);
-  } else if (winningValidation(updateBoardArray(), currentPlayer.getSymbol())) {
+  } else if (winningValidation(updateBoardArray(), currentPlayer.symbol)) {
     setTimeout(() => {
       const rematch = confirm(
-        `${currentPlayer.getName()} has won. Would you like to play again?`,
+        `${currentPlayer.name} has won. Would you like to play again?`,
       );
       if (rematch === true) {
         reset(domElements.cells);
@@ -34,19 +34,22 @@ const playerSwitch = () => {
         alert('Loser.');
       }
     }, 450);
-  } else if (oppositePlayer.getNumber() === 1) {
-    styles.disableBackground(currentPlayer.getBackground(), domElements.playerTwoIcon);
+  } else if (oppositePlayer.number === 1) {
+    styles.disableBackground(currentPlayer.background, domElements.playerTwoIcon);
     currentPlayer = playerOne;
     oppositePlayer = playerTwo;
-    styles.paintBackground(currentPlayer.getBackground(), domElements.playerOneIcon);
+    saveItem('currentPlayer', currentPlayer);
+    saveItem('oppositePlayer', oppositePlayer);
+    styles.paintBackground(currentPlayer.background, domElements.playerOneIcon);
   } else {
-    styles.disableBackground(currentPlayer.getBackground(), domElements.playerOneIcon);
+    styles.disableBackground(currentPlayer.background, domElements.playerOneIcon);
     currentPlayer = playerTwo;
     oppositePlayer = playerOne;
-    styles.paintBackground(currentPlayer.getBackground(), domElements.playerTwoIcon);
+    saveItem('currentPlayer', currentPlayer);
+    saveItem('oppositePlayer', oppositePlayer);
+    styles.paintBackground(currentPlayer.background, domElements.playerTwoIcon);
   }
   count++;
-};
+}
 
 export default playerSwitch;
-export { currentPlayer };
