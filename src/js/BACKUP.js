@@ -244,7 +244,7 @@ const game = (() => {
         styles.paintBackground(currentPlayer.getBackground(), playerTwoIcon);
       }
       count++;
-    };
+    }; 4;
 
     cells.forEach((cell) => cell.addEventListener('click', clickCell, false));
     return { clickCell, reset };
@@ -252,24 +252,3 @@ const game = (() => {
 
   return { gameInit, gameBoard };
 })();
-
-/*
-TO DO LIST
-  - ADD FORM THAT APPEARS ON GAME STARTUP
-    - LIST PROMPTS USERS FOR THEIR NAMES
-    - USERS CAN CHOOSE THEIR SYMBOLS / ICONS
-    - FORM'S BUTTON STARTS THE GAME
-    - FORM REAPPEARS AT THE END OF THE GAME
-
-  - COLORS & DESIGN
-    - STONE BACKGROUND (RED)
-    - WOOD FOR TABLE EFFECT (SLATEBLUE)
-    - PARCHMENT FOR THE GAMEBOARD (GREEN)
-    - YELLOW COLOR????
-
-  - USER ICONS / TURN COUNTER
-    - USERS SELECT THEIR ICONS FROM THE FORM
-    - ICONS ARE DISPLAYED ON THE RIGHT HAND SIDE OF THE BOARD
-    - RED & GREEN TRAFFIC LIGHTS BESIDE EACH PLAYERS ICON, GREEN FOR THEIR TURN AND RED WHEN IT ISNT
-
-*/
