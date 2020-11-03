@@ -5,15 +5,16 @@ import updateBoardArray from './updateBoard';
 import * as domElements from './domElements';
 import { retrieveItem, saveItem } from './localStorage';
 
-let currentPlayer = retrieveItem('currentPlayer');
-let oppositePlayer = retrieveItem('oppositePlayer');
-let playerOne = retrieveItem('playerOne');
-let playerTwo = retrieveItem('playerTwo');
-let count = 1;
+
 
 const playerSwitch = () => {
-  styles.displayRounds(count + 1);
 
+  let currentPlayer = retrieveItem('currentPlayer');
+  let oppositePlayer = retrieveItem('oppositePlayer');
+  const playerOne = retrieveItem('playerOne');
+  const playerTwo = retrieveItem('playerTwo');
+  let count = retrieveItem('count');
+  styles.displayRounds(count + 1);
   if (winningValidation(updateBoardArray(), currentPlayer.symbol) === false && count === 9) {
     setTimeout(() => {
       const reMatch = confirm("It's a draw! Would you like to play again?");
@@ -34,7 +35,8 @@ const playerSwitch = () => {
         alert('Loser.');
       }
     }, 450);
-  } else if (oppositePlayer.number === 1) {
+  } else if (oppositePlayer.playerNumber === 1) {
+    console.log(`opposite player number is one`)
     styles.disableBackground(currentPlayer.background, domElements.playerTwoIcon);
     currentPlayer = playerOne;
     oppositePlayer = playerTwo;
@@ -50,6 +52,7 @@ const playerSwitch = () => {
     styles.paintBackground(currentPlayer.background, domElements.playerTwoIcon);
   }
   count++;
+  saveItem('count', count);
 }
 
 export default playerSwitch;
