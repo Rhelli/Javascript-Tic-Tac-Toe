@@ -23,17 +23,17 @@ const gameInit = (namePlayerOne, namePlayerTwo, Icons) => {
     saveItem('playerTwo', playerTwo);
     saveItem('currentPlayer', currentPlayer);
     saveItem('oppositePlayer', oppositePlayer);
-    saveItem('count', count);  
+    saveItem('count', count);
   }
   return true;
 };
 
 const afterGameInit = (namePlayerOne, namePlayerTwo, Icons, playerOneIcon, playerTwoIcon) => {
-  
+
   if (gameInit(namePlayerOne, namePlayerTwo, Icons, domManipulation)) {
-    gameInit(namePlayerOne, namePlayerTwo, Icons,   domManipulation);
+    gameInit(namePlayerOne, namePlayerTwo, Icons, domManipulation);
     domManipulation.displayIcon(Icons[0], playerOneIcon);
-    domManipulation.paintBackground('rgba(144, 164, 174, 0.8',  playerOneIcon);
+    domManipulation.paintBackground('rgba(144, 164, 174, 0.8', playerOneIcon);
     domManipulation.displayIcon(Icons[1], playerTwoIcon);
     const currentPlayer = retrieveItem('currentPlayer')
     domElements.playerTurnIndicator.innerHTML = `It's ${currentPlayer.name}'s turn`;
