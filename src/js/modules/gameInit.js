@@ -29,16 +29,15 @@ const gameInit = (namePlayerOne, namePlayerTwo, Icons) => {
 };
 
 const afterGameInit = (namePlayerOne, namePlayerTwo, Icons, playerOneIcon, playerTwoIcon) => {
-
   if (gameInit(namePlayerOne, namePlayerTwo, Icons, domManipulation)) {
     gameInit(namePlayerOne, namePlayerTwo, Icons, domManipulation);
     domManipulation.displayIcon(Icons[0], playerOneIcon);
     domManipulation.paintBackground('rgba(144, 164, 174, 0.8', playerOneIcon);
     domManipulation.displayIcon(Icons[1], playerTwoIcon);
-    const currentPlayer = retrieveItem('currentPlayer')
+    const currentPlayer = retrieveItem('currentPlayer');
     domElements.playerTurnIndicator.innerHTML = `It's ${currentPlayer.name}'s turn`;
     domManipulation.removeForm();
   }
-}
+};
 export default afterGameInit;
-export { gameInit }
+export { gameInit };
