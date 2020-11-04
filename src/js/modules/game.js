@@ -9,7 +9,9 @@ const game = () => {
   domElements.initButton.addEventListener('click', () => {
     afterGameInit(domElements.namePlayerOne, domElements.namePlayerTwo, Icons, domElements.playerOneIcon, domElements.playerTwoIcon)
   });
-  domElements.resetButton.addEventListener('click', reset);
+  domElements.resetButton.addEventListener('click', () => {
+    reset(domElements.formContainer);
+  });
   domElements.allIcons.forEach((element) => {
     element.addEventListener('click', (event) => {
       event.preventDefault();

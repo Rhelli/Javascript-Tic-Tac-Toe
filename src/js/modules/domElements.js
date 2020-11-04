@@ -8,6 +8,7 @@ const playerTwoIcon = document.getElementById('activePlayerTwo');
 const cells = document.querySelectorAll('.cell');
 const initButton = document.getElementById('startGameButton');
 const resetButton = document.getElementById('resetButton');
+const formContainer = document.getElementById('form-container');
 
 export {
   allIcons,
@@ -20,4 +21,5 @@ export {
   cells,
   initButton,
   resetButton,
+  formContainer,
 };
