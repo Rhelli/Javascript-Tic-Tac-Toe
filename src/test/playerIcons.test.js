@@ -1,40 +1,10 @@
 import choosePlayerIcon from '../js/modules/playerIcons';
+import { Icons } from '../js/modules/playerIcons';
+import ImageMock from './imageMock';
 
-const icon1 = document.createElement('img');
-icon1.src = 'testSrc';
+const icon1 = new ImageMock('assets/got/cersei.png');
 
-test.only('Returns an array', () => {
-  expect(choosePlayerIcon(icon1)).toBe({ Icons: ['testSrc'] });
+test('Returns an array', () => {
+  expect(choosePlayerIcon(icon1)).toEqual(['assets/got/cersei.png']);
 });
 
-test('Limits the icon array to two icons', () => {
-  expect().toBe();
-});
-
-test('Allows player one to re-select a new icon', () => {
-  expect().toBe();
-});
-
-test("Pushes player one's chosen player icon into the icon array", () => {
-  expect().toBe();
-});
-
-test("Highlights player one's chosen icon with their color by class addition", () => {
-  expect().toBe();
-});
-
-test('Allows player one to re-select a new icon', () => {
-  expect().toBe();
-});
-
-test("Pushes player two's chosen player icon into the icon array", () => {
-  expect().toBe();
-});
-
-test("Highlights player two's chosen icon with their color by class addition", () => {
-  expect().toBe();
-});
-
-test('Allows player two to re-select an icon', () => {
-  expect().toBe();
-});
