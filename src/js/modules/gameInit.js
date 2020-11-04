@@ -1,7 +1,8 @@
 import * as domElements from './domElements';
 import * as domManipulation from './domManipulation';
 import player from './player';
-import { saveItem } from './localStorage';
+import { retrieveItem, saveItem } from './localStorage';
+import { Icons } from './playerIcons';
 
 const gameInit = (namePlayerOne, namePlayerTwo, Icons) => {
   if (namePlayerOne.value === '' || namePlayerTwo.value === '') {
@@ -18,18 +19,26 @@ const gameInit = (namePlayerOne, namePlayerTwo, Icons) => {
     const currentPlayer = playerOne;
     const oppositePlayer = playerTwo;
     const count = 1;
-    domManipulation.displayIcon(playerOne.img, domElements.playerOneIcon);
-    domManipulation.paintBackground(playerOne.background, domElements.playerOneIcon);
-    domManipulation.displayIcon(playerTwo.img, domElements.playerTwoIcon);
-    domElements.playerTurnIndicator.innerHTML = `It's ${currentPlayer.name}'s turn`;
-    domManipulation.removeForm();
     saveItem('playerOne', playerOne);
     saveItem('playerTwo', playerTwo);
     saveItem('currentPlayer', currentPlayer);
     saveItem('oppositePlayer', oppositePlayer);
-    saveItem('count', count);
+    saveItem('count', count);  
   }
   return true;
 };
 
-export default gameInit;
+const afterGameInit = (namePlayerOne, namePlayerTwo, Icons, playerOneIcon, playerTwoIcon) => {
+  
+  if (gameInit(namePlayerOne, namePlayerTwo, Icons, domManipulation)) {
+    gameInit(namePlayerOne, namePlayerTwo, Icons,   domManipulation);
+    domManipulation.displayIcon(Icons[0], playerOneIcon);
+    domManipulation.paintBackground('rgba(144, 164, 174, 0.8',  playerOneIcon);
+    domManipulation.displayIcon(Icons[1], playerTwoIcon);
+    const currentPlayer = retrieveItem('currentPlayer')
+    domElements.playerTurnIndicator.innerHTML = `It's ${currentPlayer.name}'s turn`;
+    domManipulation.removeForm();
+  }
+}
+export default afterGameInit;
+export { gameInit }
