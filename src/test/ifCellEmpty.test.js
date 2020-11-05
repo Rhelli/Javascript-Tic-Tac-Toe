@@ -10,12 +10,14 @@ namePlayerOne.value = ''
 const namePlayerTwo = document.createElement('input');
 namePlayerTwo.value = playerOne.name
 const event = document.createElement("div");
-const playerSwitchMock = jest.fn()
+const playerSwitchMock = jest.fn(() => {
+  return true;
+})
 
 document.body.append(event);
 window.alert = jest.fn();
 
-it("throws an error if one of the players name is empty", () => {
-    expect(ifCellEmpty(playerOne, mockEvent, playerSwitchMock)
-    ).toThrowError(new Error("Please Enter All Player's Names"));
-});
+it('calls the playerSwitch function on correct execution', () => {
+  ifCellEmpty(playerOne, mockEvent, playerSwitchMock)
+  expect(playerSwitchMock()).toBe(true);
+})
