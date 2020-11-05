@@ -1,11 +1,22 @@
-import { expect } from '@jest/globals';
+import { expect, jest } from '@jest/globals';
 import gameboard from '../js/modules/gameboard';
+import player from '../js/modules/player';
 
-const element = document.createElement('div')
-const forEachTest = [element]
-const mockClickCell = jest.fn(true);
+const playerOne = player('fun', 'X', 1, 'imagepath', 'backgroundColor');
+const playerTwo = player('fan', 'X', 1, 'imagepath', 'backgroundColor');
+
+function mockGameBoard(items, callback) {
+  for (let index = 0; index < items.length; index++) {
+    callback(items[index]);
+  }
+}
+
+const element = document.createElement('div');
+const forEachTest = [element, element];
+const mockClickCell = jest.fn((event) => event);
+
+mockGameBoard(forEachTest, mockClickCell);
 
 test('adds event listeners to event', () => {
-    // pass foreachetest
-    expect(gameboard())
-})
+  expect(mockClickCell.mock.calls.length).toBe(2);
+});
