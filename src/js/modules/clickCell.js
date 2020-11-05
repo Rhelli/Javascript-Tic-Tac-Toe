@@ -9,7 +9,7 @@ const clickCell = (event, namePlayerOne, namePlayerTwo, currentPlayer) => {
   } else {
     const { symbol } = currentPlayer;
     const { img } = currentPlayer;
-    ifCellEmpty(event, symbol, img);
+    ifCellEmpty(event.target, symbol, img);
   }
 };
 

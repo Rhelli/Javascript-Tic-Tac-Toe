@@ -7,9 +7,10 @@ const namePlayerOne = playerOne.name;
 const namePlayerTwo = playerTwo.name;
 const emptyPlayer = '';
 const event = document.createElement('div');
+
+document.body.append(event);
 window.alert = jest.fn();
 
 it('passes', () => {
-  const currentPlayer = playerOne;
-  expect(clickCell(event, namePlayerOne, namePlayerTwo)).toBeTruthy();
+  expect(clickCell(event, namePlayerOne, namePlayerTwo, playerOne)).toBeTruthy();
 });
