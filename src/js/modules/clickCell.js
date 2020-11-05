@@ -2,9 +2,8 @@ import * as domElements from './domElements';
 import ifCellEmpty from './ifCellEmpty';
 import { retrieveItem } from './localStorage';
 
-const clickCell = (event) => {
-  const currentPlayer = retrieveItem('currentPlayer');
-  if (domElements.namePlayerOne.value === '' && domElements.namePlayerTwo.value === '') {
+const clickCell = (event, namePlayerOne, namePlayerTwo, currentPlayer) => {
+  if (namePlayerOne.value === '' && namePlayerTwo.value === '') {
     alert("Please Enter All Player's Names.");
     throw new Error("Please Enter All Player's Names");
   } else {

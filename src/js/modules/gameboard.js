@@ -1,12 +1,15 @@
 import * as domElements from './domElements';
 import clickCell from './clickCell';
+import { retrieveItem } from './localStorage';
 
-// pass cells as an argument, then inject cells wereva we get gameboard
 
 const gameboard = () => {
+  const namePlayerOne = domElements.namePlayerOne;
+  const namePlayerTwo = domElements.namePlayerTwo;
   domElements.cells.forEach((cell) => {
     cell.addEventListener('click', (event) => {
-      clickCell(event);
+      const currentPlayer = retrieveItem('currentPlayer');
+      clickCell(event, namePlayerOne, namePlayerTwo, currentPlayer);
     });
   });
 };

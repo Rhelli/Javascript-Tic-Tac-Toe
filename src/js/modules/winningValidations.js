@@ -25,17 +25,10 @@ const winningValidation = (array, symbol) => {
     const bb = document.getElementById(`c${winCondition[1]}`);
     const cc = document.getElementById(`c${winCondition[2]}`);
     if (a === symbol && b === symbol && c === symbol) {
+      aa.style.background = currentPlayer.background;
+      bb.style.background = currentPlayer.background;
+      cc.style.background = currentPlayer.background;
       roundWon = true;
-      if (currentPlayer === playerOne) {
-        aa.style.background = playerOne.background;
-        bb.style.background = playerOne.background;
-        cc.style.background = playerOne.background;
-      } else {
-        aa.style.background = playerTwo.background;
-        bb.style.background = playerTwo.background;
-        cc.style.background = playerTwo.background;
-      }
-      return roundWon;
     }
   }
   return roundWon;
