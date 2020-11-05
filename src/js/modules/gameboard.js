@@ -3,7 +3,6 @@ import { retrieveItem } from './localStorage';
 import playerSwitch from './playerSwitch';
 import ifCellEmpty from './ifCellEmpty';
 
-
 const gameboard = () => {
   domElements.cells.forEach((cell) => {
     cell.addEventListener('click', (event) => {
