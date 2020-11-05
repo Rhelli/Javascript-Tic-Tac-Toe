@@ -1,15 +1,14 @@
 import * as domElements from './domElements';
-import clickCell from './clickCell';
 import { retrieveItem } from './localStorage';
+import playerSwitch from './playerSwitch';
+import ifCellEmpty from './ifCellEmpty';
 
 
 const gameboard = () => {
-  const namePlayerOne = domElements.namePlayerOne;
-  const namePlayerTwo = domElements.namePlayerTwo;
   domElements.cells.forEach((cell) => {
     cell.addEventListener('click', (event) => {
       const currentPlayer = retrieveItem('currentPlayer');
-      clickCell(event, namePlayerOne, namePlayerTwo, currentPlayer);
+      ifCellEmpty(currentPlayer, event, playerSwitch);
     });
   });
 };

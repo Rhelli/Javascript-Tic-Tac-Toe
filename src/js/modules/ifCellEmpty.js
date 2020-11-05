@@ -1,12 +1,12 @@
-import playerSwitch from './playerSwitch';
 
-const ifCellEmpty = (event, symbol, img) => {
+
+const ifCellEmpty = (currentPlayer, event, fun) => {
   const imgE = document.createElement('img');
-  imgE.src = img;
-  event.dataset.datasymbol = symbol;
-  event.appendChild(imgE);
-  event.classList.add('prevent-clicks');
-  playerSwitch();
+  imgE.src = currentPlayer.img;
+  event.target.dataset.datasymbol = currentPlayer.symbol;
+  event.target.appendChild(imgE);
+  event.target.classList.add('prevent-clicks');
+  fun();
 };
 
 export default ifCellEmpty;
