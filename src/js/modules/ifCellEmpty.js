@@ -1,5 +1,3 @@
-
-
 const ifCellEmpty = (currentPlayer, event, fun) => {
   const imgE = document.createElement('img');
   imgE.src = currentPlayer.img;

@@ -11,7 +11,7 @@ const playerSwitch = () => {
   const playerOne = retrieveItem('playerOne');
   const playerTwo = retrieveItem('playerTwo');
   let count = retrieveItem('count');
-  styles.displayRounds(count + 1);
+  styles.displayRounds(count + 1, oppositePlayer);
   if (winningValidation(updateBoardArray(), currentPlayer.symbol) === false && count === 9) {
     setTimeout(() => {
       const reMatch = confirm("It's a draw! Would you like to play again?");

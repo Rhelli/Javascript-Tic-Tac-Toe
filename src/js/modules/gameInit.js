@@ -36,7 +36,8 @@ const afterGameInit = (namePlayerOne, namePlayerTwo, Icons, playerOneIcon, playe
     domManipulation.displayIcon(Icons[1], playerTwoIcon);
     const currentPlayer = retrieveItem('currentPlayer');
     domElements.playerTurnIndicator.innerHTML = `It's ${currentPlayer.name}'s turn`;
-    domManipulation.removeForm();
+    const formContainer = document.getElementById('form-container');
+    domManipulation.removeForm(formContainer);
   }
 };
 export default afterGameInit;
