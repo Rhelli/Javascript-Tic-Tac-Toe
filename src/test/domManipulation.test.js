@@ -3,12 +3,11 @@ import { roundCounter, playerTurnIndicator } from '../js/modules/domElements';
 import player from '../js/modules/player';
 
 jest.mock('../js/modules/domElements', () => ({
-  roundCounter: jest.fn(),
   playerTurnIndicator: jest.fn(),
   oppositePlayer: jest.fn(),
 }));
 
-
+const playerOne = player('Ale', 'O', 1, 'no.png', '#404040');
 const container = document.createElement('div');
 
 it('removes a form from the container', () => {
@@ -35,8 +34,7 @@ it('sets the background of an item to its initial transparent value', () => {
 });
 
 it('displays the round of the game', () => {
-  roundCounter.mockImplementation(() => 'No Turns Yet');
-  const oppositePlayer = player("fun", "X", 1, "imagepath", "backgroundColor");
-  domManipulation.displayRounds();
-  expect(roundCounter).toBe('Turn 1');
+  
+  domManipulation.displayRounds(1, container, playerOne);
+  expect(container.innerHTML).toBe('Turn 1.');
 })
