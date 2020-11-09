@@ -1,10 +1,10 @@
-const ifCellEmpty = (currentPlayer, event, fun) => {
+const ifCellEmpty = (currentPlayer, event, fun, param1, param2, param3, param4, param5) => {
   const imgE = document.createElement('img');
   imgE.src = currentPlayer.img;
   event.target.dataset.datasymbol = currentPlayer.symbol;
   event.target.appendChild(imgE);
   event.target.classList.add('prevent-clicks');
-  fun();
+  fun(param1, param2, param3, param4, param5);
 };
 
 export default ifCellEmpty;
