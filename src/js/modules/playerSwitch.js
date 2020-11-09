@@ -12,7 +12,7 @@ const playerSwitch = () => {
   const playerTwo = retrieveItem('playerTwo');
   let count = retrieveItem('count');
   styles.displayRounds(count + 1, domElements.roundCounter, oppositePlayer);
-  if (winningValidation(updateBoardArray(), currentPlayer.symbol) === false && count === 9) {
+  if (winningValidation(currentPlayer, updateBoardArray(), currentPlayer.symbol) === false && count === 9) {
     setTimeout(() => {
       const reMatch = confirm("It's a draw! Would you like to play again?");
       if (reMatch) {
@@ -21,7 +21,7 @@ const playerSwitch = () => {
         alert('How sad.');
       }
     }, 450);
-  } else if (winningValidation(updateBoardArray(), currentPlayer.symbol)) {
+  } else if (winningValidation(currentPlayer, updateBoardArray(), currentPlayer.symbol)) {
     setTimeout(() => {
       const rematch = confirm(
         `${currentPlayer.name} has won. Would you like to play again?`,
