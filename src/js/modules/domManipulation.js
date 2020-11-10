@@ -1,13 +1,10 @@
 import * as domElements from './domElements';
 import { retrieveItem } from './localStorage';
 
-const formContainer = document.getElementById('form-container');
-const removeForm = () => {
-  formContainer.style.display = 'none';
+const removeForm = (container) => {
+  container.style.display = 'none';
 };
-const addForm = () => {
-  formContainer.style.display = 'flex';
-};
+
 const displayIcon = (icon, container) => {
   const imgElement = document.createElement('img');
   imgElement.src = icon;
@@ -22,18 +19,16 @@ const disableBackground = (color, element) => {
 const initialBackground = (element) => {
   element.style.background = 'transparent';
 };
-const displayRounds = (element) => {
-  const oppositePlayer = retrieveItem('oppositePlayer');
-  if (domElements.roundCounter.innerHTML === 'No Turns Yet') {
-    domElements.roundCounter.innerHTML = 'Turn 1';
+const displayRounds = (element, roundCounter, oppositePlayer) => {
+  if (roundCounter.innerHTML === 'No Turns Yet') {
+    roundCounter.innerHTML = 'Turn 1';
   } else {
-    domElements.roundCounter.innerHTML = `Turn ${element}.`;
+    roundCounter.innerHTML = `Turn ${element}.`;
   }
   domElements.playerTurnIndicator.innerHTML = `It is ${oppositePlayer.name}'s turn`;
 };
 
 export {
-  addForm,
   initialBackground,
   removeForm,
   displayRounds,

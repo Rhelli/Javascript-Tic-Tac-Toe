@@ -8,7 +8,7 @@ This project focuses on creating a GoT vs LOTR themed tic tac toe app.
 
 The specifications and the guide to the project can be found The Odin Project's ['TicTacToe Project'](https://www.theodinproject.com/courses/javascript/lessons/tic-tac-toe-javascript) page.
 
-The premise of this project is to use  javascript modules and factories  to create a TicTacToe app. Here the user will be able to create 2 players, select their names, choose a character, and play the game!
+The premise of this project's branch was to test the project using the Jest Library
 
 ## 📽️ Previews
 
@@ -43,6 +43,7 @@ The premise of this project is to use  javascript modules and factories  to crea
 - StyleLint
 - CSS/SASS
 - Stickler CI
+- Jest Framework
 
 ## 🔰 Setup & Usage
 
