@@ -12,6 +12,8 @@ const playerSwitch = (
   playerOne,
   playerTwo,
   count,
+  updateBoardArray,
+  cells,
 ) => {
   styles.displayRounds(count + 1, domElements.roundCounter, oppositePlayer);
   if (
