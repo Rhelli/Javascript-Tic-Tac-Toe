@@ -1,5 +1,4 @@
 import { expect, jest } from '@jest/globals';
-import gameboard from '../js/modules/gameboard';
 import player from '../js/modules/player';
 
 const playerOne = player('fun', 'X', 1, 'imagepath', 'backgroundColor');

@@ -3,7 +3,6 @@ import ifCellEmpty from '../js/modules/ifCellEmpty';
 import mockEvent from './mockEvent';
 
 const playerOne = player('fun', 'X', 1, 'imagepath', 'backgroundColor');
-const playerTwo = player('fan', 'X', 1, 'imagepath', 'backgroundColor');
 const namePlayerOne = document.createElement('input');
 namePlayerOne.value = '';
 const namePlayerTwo = document.createElement('input');

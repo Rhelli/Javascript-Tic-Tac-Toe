@@ -1,5 +1,4 @@
 import { expect } from '@jest/globals';
-import { retrieveItem } from '../js/modules/localStorage';
 import player from '../js/modules/player';
 import winningValidation from '../js/modules/winningValidations';
 

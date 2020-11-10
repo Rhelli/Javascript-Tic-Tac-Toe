@@ -10,8 +10,6 @@ window.location = {
   reload: jest.fn(),
 };
 
-const location = window.location.reload;
-
 it('wipes the windows local storage', () => {
   reset(formContainer);
   expect(retrieveItem('currentPlayer')).toBeFalsy();

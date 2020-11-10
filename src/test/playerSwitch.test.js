@@ -18,16 +18,6 @@ jest.mock('../js/modules/domElements', () => ({
   oppositePlayer: jest.fn(),
 }));
 
-// jest.mock('../js/modules/updateBoard.js', () => ({
-//  updateBoardArray: jest.fn().mockImplementation(() => true),
-// }));
-
-// jest.mock('../js/modules/updateBoard', () => ({
-//  default: () => ({
-//    updateBoardArray: jest.fn()
-//  }),
-// }));
-
 const cells = document.querySelectorAll('.cells');
 const playerOne = player('Alex', 'X', 1, 'O', 'rgba(144, 164, 174, 0.8');
 const playerTwo = player('Rory', 'O', 2, 'x', 'rgba(241, 196, 15, 0.8');
